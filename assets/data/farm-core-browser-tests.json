@@ -1,0 +1,60 @@
+{
+  "browser": "155.0.8059.84",
+  "passed": 13,
+  "failed": 0,
+  "checks": [
+    {
+      "test": "dashboard_loaded_with_canvas_and_live_state",
+      "result": "PASS"
+    },
+    {
+      "test": "play_speed_pause_updates_actual_worker_positions",
+      "result": "PASS"
+    },
+    {
+      "test": "map_zoom_fit_and_path_visibility",
+      "result": "PASS"
+    },
+    {
+      "test": "fast_forward_completes_and_renders_all_workers_onboard",
+      "result": "PASS"
+    },
+    {
+      "test": "plan_download_is_valid_fleet_json",
+      "result": "PASS"
+    },
+    {
+      "test": "export_control_displays_destination",
+      "result": "PASS"
+    },
+    {
+      "test": "blocked_route_requires_explicit_clearance_via_UI",
+      "result": "PASS"
+    },
+    {
+      "test": "fault_requires_correct_robot_repair_via_UI",
+      "result": "PASS"
+    },
+    {
+      "test": "recall_rendered_as_cancelled_not_completed",
+      "result": "PASS"
+    },
+    {
+      "test": "responsive_layout_1440px_no_page_overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "responsive_layout_1024px_no_page_overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "responsive_layout_390px_no_page_overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "no_browser_javascript_errors",
+      "result": "PASS"
+    }
+  ],
+  "pageErrors": []
+}

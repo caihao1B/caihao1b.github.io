@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="780" viewBox="0 0 1000 780">
+<rect width="1000" height="780" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" fill="#0f172a">
+<text x="45" y="35" font-size="25" font-weight="bold">Feld 13: original boundary, synthetic access</text>
+<text x="45" y="59" font-size="14">Local metres · east/right, north/up · planning map, not a surveyed road or SLAM map</text>
+<polygon points="151.37,160.16 678.00,161.10 749.03,647.68 175.05,443.60" fill="#dcfce7" stroke="#15803d" stroke-width="2.5"/>
+<polyline points="97.32,122.32 97.32,135.25 168.42,135.25 168.42,141.71" fill="none" stroke="#93c5fd" stroke-width="10.34" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="97.32,122.32 97.32,135.25 168.42,135.25 168.42,141.71" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="6 4"/>
+<polygon points="164.54,137.83 172.30,137.83 172.30,168.86 164.54,168.86" fill="#fbbf24" fill-opacity="0.6" stroke="#b45309" stroke-width="1"/>
+<circle cx="97.32" cy="122.32" r="5" fill="#1d4ed8"/><text x="105.32" y="112.32" fill="#1d4ed8" font-size="14">Demo depot</text><circle cx="168.42" cy="141.71" r="5" fill="#b45309"/><text x="176.42" y="134.71" fill="#b45309" font-size="14">Staging</text><circle cx="168.42" cy="161.10" r="5" fill="#b91c1c"/><text x="180.42" y="180.10" fill="#b91c1c" font-size="14">Original entrance</text>
+<text x="438.36" y="353.13" text-anchor="middle" font-size="24">Feld 13</text>
+<text x="438.36" y="380.13" text-anchor="middle" font-size="16">12.388 ha · 4 original vertices</text>
+<path d="M70 685h129.27" fill="none" stroke="#0f172a" stroke-width="4"/>
+<text x="70" y="676" font-size="13">100 m</text>
+<path d="M930 140v-40m0 0l-6 10m6-10l6 10" fill="none" stroke="#0f172a" stroke-width="2"/>
+<text x="923" y="90" font-size="17">N</text>
+<text x="45" y="725" font-size="14">Green: source field. Blue: synthetic demo road (8 m wide). Amber: synthetic access corridor (6 m wide).</text>
+<text x="45" y="749" font-size="13">Original Hof1 kept separately: (1536.4, -796.7) m; no verified route to it is supplied.</text>
+</g></svg>

@@ -1,0 +1,221 @@
+{
+  "passed": true,
+  "method": "Node + jsdom DOM integration; production HTML and scripts evaluated",
+  "environment": {
+    "node": "v24.19.0",
+    "jsdom": "26.1.0"
+  },
+  "limitations": {
+    "realBrowserRendering": "not_run",
+    "responsiveLayout": "not_run",
+    "canvasPixels": "not_run",
+    "pointerHitTestingAtActualScreenCoordinates": "not_run",
+    "downloadNavigation": "not_run",
+    "statement": "本报告是 Node + jsdom 的 DOM 与事件联动验证。Canvas、尺寸、RAF 和 ResizeObserver 为受控替身，未验收真实浏览器像素、字体、响应式布局或浏览器下载行为。"
+  },
+  "stubs": [
+    "CanvasRenderingContext2D drawing calls",
+    "canvas bounding rectangle 700 x 480",
+    "ResizeObserver",
+    "matchMedia false",
+    "requestAnimationFrame controlled clock",
+    "scrollIntoView",
+    "setPointerCapture",
+    "blob URL creation"
+  ],
+  "checkCount": 14,
+  "passedCount": 14,
+  "failedCount": 0,
+  "checks": [
+    {
+      "name": "actual page and dependency scripts initialise",
+      "passed": true,
+      "details": {
+        "defaultSimulationTime": 600,
+        "scriptCount": 5,
+        "canvasCommandsIssued": true
+      }
+    },
+    {
+      "name": "select all three robots and keep Agent, map selection and robot FSM aligned",
+      "passed": true,
+      "details": [
+        {
+          "id": "robot_1",
+          "state": "WORKING"
+        },
+        {
+          "id": "robot_2",
+          "state": "WORKING"
+        },
+        {
+          "id": "robot_3",
+          "state": "WORKING"
+        }
+      ]
+    },
+    {
+      "name": "switch all five scenarios using the actual select change event",
+      "passed": true,
+      "details": [
+        {
+          "scenario": "normal",
+          "time": 0,
+          "status": "RUNNING"
+        },
+        {
+          "scenario": "low_battery",
+          "time": 0,
+          "status": "RUNNING"
+        },
+        {
+          "scenario": "harvest",
+          "time": 0,
+          "status": "RUNNING"
+        },
+        {
+          "scenario": "blocked_return",
+          "time": 896.5,
+          "status": "WAITING_RECOVERY"
+        },
+        {
+          "scenario": "robot_fault",
+          "time": 80.25,
+          "status": "WAITING_RECOVERY"
+        }
+      ]
+    },
+    {
+      "name": "chapter buttons seek to actual event snapshots",
+      "passed": true,
+      "details": [
+        {
+          "type": "MISSION_START",
+          "time": 0,
+          "frameIndex": 0
+        },
+        {
+          "type": "WORK_START",
+          "time": 44,
+          "frameIndex": 13
+        },
+        {
+          "type": "RETURN_REQUEST",
+          "time": 896.5,
+          "frameIndex": 216
+        },
+        {
+          "type": "SERVICE_START",
+          "time": 1008.25,
+          "frameIndex": 241
+        },
+        {
+          "type": "SERVICE_DONE",
+          "time": 1211,
+          "frameIndex": 284
+        },
+        {
+          "type": "WORK_START_RESUMED",
+          "time": 1354.75,
+          "task": "field13_strip_33",
+          "breakpointM": 98.8
+        }
+      ]
+    },
+    {
+      "name": "robot fault hold and explicit operator clearance are visible and seekable",
+      "passed": true,
+      "details": {
+        "simulationTime": 80.25,
+        "presentationWaitSeconds": 12
+      }
+    },
+    {
+      "name": "blocked route hold and explicit route clearance are visible and seekable",
+      "passed": true,
+      "details": {
+        "simulationTime": 896.5,
+        "presentationWaitSeconds": 12
+      }
+    },
+    {
+      "name": "all five final chapters show complete strips and all robots aboard",
+      "passed": true,
+      "details": [
+        "normal",
+        "low_battery",
+        "harvest",
+        "blocked_return",
+        "robot_fault"
+      ]
+    },
+    {
+      "name": "reset returns to scenario start and keeps original low battery parameters",
+      "passed": true,
+      "details": {
+        "time": 0,
+        "robot1BatteryPercent": 30
+      }
+    },
+    {
+      "name": "mission and Agent trees switch, collapse, expand and inspect actual nodes",
+      "passed": true,
+      "details": {
+        "missionNodes": 27,
+        "agentNodes": 35,
+        "selectedNode": "battery"
+      }
+    },
+    {
+      "name": "state clicks and keyboard activation explain the selected state without changing actual state",
+      "passed": true,
+      "details": {
+        "actualState": "ONBOARD",
+        "inspectedStates": [
+          "WORKING",
+          "FAULT"
+        ]
+      }
+    },
+    {
+      "name": "event filter follows the selected robot and events seek back to their recorded times",
+      "passed": true,
+      "details": {
+        "selectedRobot": "robot_3",
+        "selectedEvent": "WORK_START",
+        "time": 1957.75
+      }
+    },
+    {
+      "name": "controlled RAF playback advances and pause prevents further advance",
+      "passed": true,
+      "details": {
+        "startTime": 600,
+        "advancedReplayTime": 612
+      }
+    },
+    {
+      "name": "map keyboard selection, layer toggles and zoom handlers execute without DOM errors",
+      "passed": true,
+      "details": {
+        "drawingCommandsIssued": true,
+        "pixelsVerified": false
+      }
+    },
+    {
+      "name": "no uncaught script or DOM event errors",
+      "passed": true,
+      "details": {
+        "runtimeErrors": 0
+      }
+    }
+  ],
+  "inputSha256": {
+    "farm-carrier.html": "4f4a36f28e272a328b2f77609f43db0cc4a051fa88d5d338a3c94eda98447dff",
+    "assets/site.js": "e67736cd367f976184f792cebfda6c4e1a6e1bee10ee470fa85f83d9dfca9828",
+    "assets/data/farm-replays.js": "fb88d1252642821b5a2aae3b71baeee7601d416d81415d0d755f80c80e65c417",
+    "assets/data/farm-decision-model.js": "49e4e7feff9237e9ac70332c9005dfdef9e071cb7ba23e208a2ad1be8b1ba1b4",
+    "assets/farm-graphs.js": "8156aa52a7e38d2ba230efef2f555db6f19aa86f07c2ac3510dc9f0416b450da",
+    "assets/farm.js": "21b48ac9e166a76665d75ccdaa96d3696f156caad11243505c4a4aaa423942a4"
+  }
+}

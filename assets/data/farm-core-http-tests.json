@@ -1,0 +1,72 @@
+{
+  "suite": "Loopback HTTP application acceptance",
+  "passed": 16,
+  "failed": 0,
+  "checks": [
+    {
+      "test": "dashboard_assets_served",
+      "result": "PASS"
+    },
+    {
+      "test": "mutation_requires_local_session_token",
+      "result": "PASS"
+    },
+    {
+      "test": "invalid_configuration_preserves_mission",
+      "result": "PASS"
+    },
+    {
+      "test": "single_step_advances_half_second",
+      "result": "PASS"
+    },
+    {
+      "test": "start_pause_freezes_time",
+      "result": "PASS"
+    },
+    {
+      "test": "clearing_route_does_not_clear_device_fault",
+      "result": "PASS"
+    },
+    {
+      "test": "explicit_fault_clear_resumes",
+      "result": "PASS"
+    },
+    {
+      "test": "normal_mission_all_workers_recovered",
+      "result": "PASS"
+    },
+    {
+      "test": "run_export_written",
+      "result": "PASS"
+    },
+    {
+      "test": "harvest_mission_completed",
+      "result": "PASS"
+    },
+    {
+      "test": "harvest_cargo_transferred_to_carrier",
+      "result": "PASS"
+    },
+    {
+      "test": "recall_does_not_claim_full_coverage",
+      "result": "PASS"
+    },
+    {
+      "test": "fault_scenario_waits_for_repair",
+      "result": "PASS"
+    },
+    {
+      "test": "fault_scenario_recovers_after_acknowledgement",
+      "result": "PASS"
+    },
+    {
+      "test": "blocked_scenario_waits_for_clearance",
+      "result": "PASS"
+    },
+    {
+      "test": "blocked_scenario_recovers_after_clearance",
+      "result": "PASS"
+    }
+  ],
+  "browser_rendering": "Separate test; HTTP checks do not prove visual layout."
+}

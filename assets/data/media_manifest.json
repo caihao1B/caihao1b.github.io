@@ -1,0 +1,20 @@
+{
+  "heading_loop": {
+    "frames": 624,
+    "fps": 24,
+    "video_seconds": 26,
+    "simulation_t0": 38.02497619960856,
+    "simulation_t1": 58.52839879166215,
+    "turn_id": "heading_3",
+    "word": "RLR"
+  },
+  "forward_uturn": {
+    "frames": 624,
+    "fps": 24,
+    "video_seconds": 26,
+    "simulation_t0": 32.98791833357766,
+    "simulation_t1": 70.20504797363758,
+    "turn_id": "bridge_1",
+    "word": "RLR"
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "name": "Zehao Portfolio · Farm Carrier integration",
+  "version": "1.0",
+  "created_utc": "2026-10-22T11:17:22.876316+00:00",
+  "entry": "index.html",
+  "project_entry": "farm-carrier.html",
+  "run": "Open farm-carrier.html directly or run START_PREVIEW.cmd / python preview_server.py",
+  "scope": "Static replay of actual Java core records; decision trees explain rules/FSM, not a BT execution engine.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 60,
+      "sha256": "8f4b8c46dce0ce4c52bb372b58576e16b2dea03fa0a728adc985c9e08e67b932"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6223,
+      "sha256": "5600be763f07a99da21a58eaace9ea02760c762b563bf8254857b297b0565c52"
+    },
+    {
+      "path": "START_HERE.html",
+      "bytes": 28018,
+      "sha256": "91874acbf63f45adbd9f84aa4a657a6f58ab1b7724e6a9cc0b2084976429e04f"
+    },
+    {
+      "path": "START_HERE_中文.md",
+      "bytes": 22536,
+      "sha256": "cb650492d1f561390a722ee69fe38e7b682f68f6eb97cde3b4d3f16d54c940e8"
+    },
+    {
+      "path": "START_PREVIEW.cmd",
+      "bytes": 318,
+      "sha256": "eb9781e090b5c745a9ae5058b763a53c532ee75e75a29bdd9cd568efe8f97ad1"
+    },
+    {
+      "path": "assets/data/car_r060_visits.csv",
+      "bytes": 6582,
+      "sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6"
+    },
+    {
+      "path": "assets/data/car_r090_visits.csv",
+      "bytes": 6582,
+      "sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6"
+    },
+    {
+      "path": "assets/data/cases.js",
+      "bytes": 3819348,
+      "sha256": "4f557ce7ee4e9d2c5882bf1a5276ee5f3e78d33bbd88ed13825ddb812a560f5d"
+    },
+    {
+      "path": "assets/data/comparison.csv",
+      "bytes": 1486,
+      "sha256": "07db631a858d7f93e007cee9a8e9c6a71404064629a3df1fbb9a29155ed3d3dc"
+    },
+    {
+      "path": "assets/data/evidence_manifest.json",
+      "bytes": 2208,
+      "sha256": "1870998033592d31651a7bfcf9d0a78322f05857618689359f3163d8544048b8"
+    },
+    {
+      "path": "assets/data/farm-core-benchmark.json",
+      "bytes": 6793,
+      "sha256": "a3fe4618027bcdb3b09eaefb72727fff2145019bb031e3fb9a7cae967a9f3732"
+    },
+    {
+      "path": "assets/data/farm-core-browser-tests.json",
+      "bytes": 1330,
+      "sha256": "45075f743a10ec679419a5e1fe0d97fd76abe569582df086d1c3fd76c262275e"
+    },
+    {
+      "path": "assets/data/farm-core-core-tests.json",
+      "bytes": 21766,
+      "sha256": "e72b1b972439b5dc873838051d98386dd443c021cb78a88e0e10e26beef345d8"
+    },
+    {
+      "path": "assets/data/farm-core-http-tests.json",
+      "bytes": 1575,
+      "sha256": "13cfb6d428550c5efe42a6898398818501dd77771588c96f957af64b38b27bb3"
+    },
+    {
+      "path": "assets/data/farm-core-verification.json",
+      "bytes": 750,
+      "sha256": "2ca80c73c409135f4c5f0b4edc41070de0107cfb230afedfed62d2e5b16b2164"
+    },
+    {
+      "path": "assets/data/farm-decision-model.js",
+      "bytes": 23831,
+      "sha256": "49e4e7feff9237e9ac70332c9005dfdef9e071cb7ba23e208a2ad1be8b1ba1b4"
+    },
+    {
+      "path": "assets/data/farm-evidence.json",
+      "bytes": 16026,
+      "sha256": "f85be4f0834055765eb5c5a4a9b2aaf41349ef07262cd69f0e65b3bcbe32aa80"
+    },
+    {
+      "path": "assets/data/farm-map.json",
+      "bytes": 2696,
+      "sha256": "0a1fb603c7fc948706ad5d1a6aa18eedf762109585e457a04b7fe357344b27d9"
+    },
+    {
+      "path": "assets/data/farm-replays.js",
+      "bytes": 6604039,
+      "sha256": "fb88d1252642821b5a2aae3b71baeee7601d416d81415d0d755f80c80e65c417"
+    },
+    {
+      "path": "assets/data/media_manifest.json",
+      "bytes": 422,
+      "sha256": "2da16e99d5226928d8bf809a99b0f0f226ecd03c0fda6feea141f36130389458"
+    },
+    {
+      "path": "assets/data/square_ga_circular_visits.csv",
+      "bytes": 4610,
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb"
+    },
+    {
+      "path": "assets/data/square_ga_conservative_visits.csv",
+      "bytes": 4610,
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb"
+    },
+    {
+      "path": "assets/data/square_ga_visits.csv",
+      "bytes": 4610,
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb"
+    },
+    {
+      "path": "assets/data/square_greedy_visits.csv",
+      "bytes": 6953,
+      "sha256": "1dda0c3564c50b782f710dfc5add9855c9431eb10ec55ad239aa40a7204aaf01"
+    },
+    {
+      "path": "assets/data/square_mst_visits.csv",
+      "bytes": 6343,
+      "sha256": "ebec751f4ab6d4f90c3132afef27556149e057bd82248109ac88031e368cfd38"
+    },
+    {
+      "path": "assets/data/test-summary.js",
+      "bytes": 63,
+      "sha256": "1da2df8e39155b24d4d132386c7ae5c194dcbb467d6d3a9a61e5dbfcd49f51e6"
+    },
+    {
+      "path": "assets/data/triangle_ga_visits.csv",
+      "bytes": 6223,
+      "sha256": "a82c08b0999f253c490484713638795aa036e15662ed5d70a285eddb05723a89"
+    },
+    {
+      "path": "assets/data/triangle_greedy_visits.csv",
+      "bytes": 9650,
+      "sha256": "20f50b65ab521e51da913f98c99c23140857bcf19d00f6732ffe6ba1c0d04492"
+    },
+    {
+      "path": "assets/data/triangle_mst_visits.csv",
+      "bytes": 8458,
+      "sha256": "af4bdad0db4b3358c5f27f2f8cc855de62df61cafd913bf45face0948e0cac24"
+    },
+    {
+      "path": "assets/downloads/farm-carrier-system-v1.0.zip",
+      "bytes": 1697108,
+      "sha256": "74a67a8c1ad1a0a244894d8584f8bdd60d619f7f9e0f3f4a6d4ed4b87948339e"
+    },
+    {
+      "path": "assets/farm-graphs.css",
+      "bytes": 7829,
+      "sha256": "5aa1b9922efa9c096c603d0c1a15b2d27b22598884f06bc38acb1d00b43583f2"
+    },
+    {
+      "path": "assets/farm-graphs.js",
+      "bytes": 20627,
+      "sha256": "8156aa52a7e38d2ba230efef2f555db6f19aa86f07c2ac3510dc9f0416b450da"
+    },
+    {
+      "path": "assets/farm.css",
+      "bytes": 21937,
+      "sha256": "30ea9bb13dcd5dc830282c4fd51b19691be631af7a55617310e0e871fb3c7cbd"
+    },
+    {
+      "path": "assets/farm.js",
+      "bytes": 25150,
+      "sha256": "21b48ac9e166a76665d75ccdaa96d3696f156caad11243505c4a4aaa423942a4"
+    },
+    {
+      "path": "assets/images/bezier_closeup.png",
+      "bytes": 101633,
+      "sha256": "33dd5a0310975d7e4f8eb20a7550f5b0b1250baffeee288253e291787923ee8d"
+    },
+    {
+      "path": "assets/images/farm-map-preview.svg",
+      "bytes": 2132,
+      "sha256": "c4a88401dd83990438b5baea0d72e0cd776515416ff8c39d2b1e610287b94e01"
+    },
+    {
+      "path": "assets/images/heading_loop.png",
+      "bytes": 105411,
+      "sha256": "6886615fe9d94265a47609eec86f01aecd34b1af8924ab361b54e56393c7f1f0"
+    },
+    {
+      "path": "assets/images/ordered_route.png",
+      "bytes": 90118,
+      "sha256": "3cb7876ba86f1d9844bbf8c406a77b2e84015d27426b69d77d22ca0435ca7b1e"
+    },
+    {
+      "path": "assets/images/radius_comparison.png",
+      "bytes": 75891,
+      "sha256": "f3fd4fa1cf1750f4f836d259179c78b5c30403bba63bb14eb050d0c2636f147e"
+    },
+    {
+      "path": "assets/images/square_ga.png",
+      "bytes": 138519,
+      "sha256": "5b9541653e0d411f5e7b5ad8eeec81e0803b1e5eae43fadc89a2e5f7fa1bb279"
+    },
+    {
+      "path": "assets/images/square_ga_grid.png",
+      "bytes": 43631,
+      "sha256": "afa019876c3d76aa61e5f89d7d4a4a59928979b4b1ff7cc1c5b66413cb17ab87"
+    },
+    {
+      "path": "assets/images/triangle_ga.png",
+      "bytes": 145124,
+      "sha256": "9b05ed7ba788131d822dc84525ac2dd6c320807d86c69612848cd55e3c0ff5e0"
+    },
+    {
+      "path": "assets/images/triangle_ga_grid.png",
+      "bytes": 130340,
+      "sha256": "eeb7c6dd0db76648218d48fba0254066507ac12c7177667f50ed93648ad604b1"
+    },
+    {
+      "path": "assets/replay.js",
+      "bytes": 17309,
+      "sha256": "187b7acdf4d19714a2fdb4637e1d62be0d03eeba29faed85b9548a1a5cc7ccf6"
+    },
+    {
+      "path": "assets/site.css",
+      "bytes": 13564,
+      "sha256": "2d6bb1cb06e04b7886c665a90ce66eb8fa2797971b7cdc6b474e9dbb40a46347"
+    },
+    {
+      "path": "assets/site.js",
+      "bytes": 552,
+      "sha256": "e67736cd367f976184f792cebfda6c4e1a6e1bee10ee470fa85f83d9dfca9828"
+    },
+    {
+      "path": "assets/source/Geometry.java",
+      "bytes": 9042,
+      "sha256": "c6343815a18096b083e2b576240a104c3a3efab78c34d089182ba7de2c04db5a"
+    },
+    {
+      "path": "assets/source/MissionEngine.java",
+      "bytes": 40705,
+      "sha256": "cc9d06ce3b3137706f43b3ab66b700d7576f530df9119c9add75d585efc65c99"
+    },
+    {
+      "path": "assets/videos/forward_uturn.csv",
+      "bytes": 219397,
+      "sha256": "5f24de50726e1727aed394b28f4f0ca7baa05970cfacbb3d89bc0d1ae6780973"
+    },
+    {
+      "path": "assets/videos/forward_uturn.jpg",
+      "bytes": 46901,
+      "sha256": "825ee4c419785b006dd0bbeaa2a45eea2414a358d0b7bd8c57f3654465eb5646"
+    },
+    {
+      "path": "assets/videos/forward_uturn.mp4",
+      "bytes": 470219,
+      "sha256": "bc98ce25fce2afa1298c846642cdcb1ed12e5f7cdb200da4ca6cc94b023a3b3c"
+    },
+    {
+      "path": "assets/videos/heading_loop.csv",
+      "bytes": 219828,
+      "sha256": "8029c91eec6e01a04c9a5c1459596cd1127de8f25ba71a3c43fb5da42036a201"
+    },
+    {
+      "path": "assets/videos/heading_loop.jpg",
+      "bytes": 47800,
+      "sha256": "9fdc6391c11ab58a9579bbf01ab7b4e36066214d5e9e0ebc527b1292a8ce34cf"
+    },
+    {
+      "path": "assets/videos/heading_loop.mp4",
+      "bytes": 628710,
+      "sha256": "a686e2e3ea1e0c9858b56fdfd1fade9f57c74ff9968404ffb2b2d8f0d4e80658"
+    },
+    {
+      "path": "ccpp.html",
+      "bytes": 13909,
+      "sha256": "160a08bfd849caff0fdb7b617e65f9dd48f110d01448add5197afbe6266658d2"
+    },
+    {
+      "path": "docs/FARM_CARRIER_PRESENTATION_ZH.md",
+      "bytes": 7405,
+      "sha256": "226837bf66fa78374ecde8ea5c34d95e8be5fa3c2f7d9431e9d053b9250bb942"
+    },
+    {
+      "path": "docs/WEBSITE_VALIDATION_ZH.md",
+      "bytes": 3974,
+      "sha256": "7ea406ea210b34ee278f2e8523347acef9c4b7c39ce80616304ac20d7f9189d3"
+    },
+    {
+      "path": "farm-carrier.html",
+      "bytes": 20172,
+      "sha256": "4f4a36f28e272a328b2f77609f43db0cc4a051fa88d5d338a3c94eda98447dff"
+    },
+    {
+      "path": "index.html",
+      "bytes": 7746,
+      "sha256": "08ce42c289e48e72f9c11e599f0ef1bed23465420f661d6ddecd667208e1bc0f"
+    },
+    {
+      "path": "preview_server.py",
+      "bytes": 1913,
+      "sha256": "5fa5e64b64b6f10e817992f8399f5b2a91369e780a68ddfb19dca2dfd601dd30"
+    },
+    {
+      "path": "projects.html",
+      "bytes": 4567,
+      "sha256": "5495247ead75f833f583c5820ad2721cdef9050395a6fb6fa7c909a97a2e51b4"
+    },
+    {
+      "path": "reports/farm-decision-mapping.md",
+      "bytes": 6936,
+      "sha256": "445a0da108d7b84896d00416047b6da654819f51632bb03b3d3243ab77b92a72"
+    },
+    {
+      "path": "reports/farm-graph-validation.json",
+      "bytes": 3827,
+      "sha256": "4506e66e1b08b3afd74f2e9602d5221f9e7717025b977186a7e99fb80d4fe865"
+    },
+    {
+      "path": "reports/farm-replay-validation.json",
+      "bytes": 10811,
+      "sha256": "05fa52e49abe97669e804cc4829aba756dfcd054aac31196c49853f81654469d"
+    },
+    {
+      "path": "reports/farm-site-static-validation.json",
+      "bytes": 10302,
+      "sha256": "910b21ba8591a4a7d96d0ecf6f5ffefcd74e099240401133844dc0403d1d335c"
+    },
+    {
+      "path": "reports/farm-ui-dom-tests.json",
+      "bytes": 5990,
+      "sha256": "ba71dfed3585e8e2c8e1cb82a01c6d801b7cfd0e0f461921d396c66cb69c3e11"
+    },
+    {
+      "path": "reports/test-summary.json",
+      "bytes": 322,
+      "sha256": "93cbbcee49a48af5892047bff5a03f57465f158c89bad19177a17081da960a3b"
+    },
+    {
+      "path": "reports/verification.html",
+      "bytes": 14689,
+      "sha256": "a6a3d25115acf5501a320afbe580025011fba11b577ce4e2746c4f614c9d0e7e"
+    },
+    {
+      "path": "reports/verification.md",
+      "bytes": 9238,
+      "sha256": "932a90d72d61741803e2c9acece0036bd4558ecb548185c29eee41b480b5ed7e"
+    },
+    {
+      "path": "tools/README_FARM_REPLAY.md",
+      "bytes": 4530,
+      "sha256": "f0ff20da08aff92cb5fb18270eaf08f4e9384754e20919a6981b6e3ecb984dad"
+    },
+    {
+      "path": "tools/build_site.py",
+      "bytes": 1002,
+      "sha256": "b0e9a2c11e6641ed0d9470d8eface5abdfe2ab80d095b5ad8b91ba152444912c"
+    },
+    {
+      "path": "tools/check_farm_graphs.cjs",
+      "bytes": 7715,
+      "sha256": "baab3aab1bc620ea409b9bac8146cbfbb8aa3ec32a481ff82036ddafbe2b2673"
+    },
+    {
+      "path": "tools/check_farm_ui.cjs",
+      "bytes": 15921,
+      "sha256": "37f18b42bc8b6058c7c0e667b93de224841e33b4e0b3532496e1c0af5cd9db88"
+    },
+    {
+      "path": "tools/export_farm_replay.check.cjs",
+      "bytes": 2656,
+      "sha256": "c5f8996ffecf5303831841be6e596739bce8c1937bc44a3aa3f92779d604ca87"
+    },
+    {
+      "path": "tools/export_farm_replay.java",
+      "bytes": 7619,
+      "sha256": "a7d223108b119884a42bf8344f91f80de6eafa9a56708ee01653d4ee7a9597d5"
+    },
+    {
+      "path": "tools/export_farm_replay.py",
+      "bytes": 14583,
+      "sha256": "d66f56de878df1aff91778a4fb20300c23f25f91da2dc7a77e22c6c6de2c322b"
+    },
+    {
+      "path": "tools/package_portfolio.py",
+      "bytes": 2445,
+      "sha256": "25e3e1618b916dd886f9a94543ddbd199b3cd5a299e8ff56c7abc2254a92a544"
+    },
+    {
+      "path": "tools/validate_portfolio.py",
+      "bytes": 16358,
+      "sha256": "78d2a42185acf34a97afa9cf4fa1acf3291881842389d5e14b04fa5b7ebfc17b"
+    }
+  ]
+}

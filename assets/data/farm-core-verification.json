@@ -1,0 +1,30 @@
+{
+  "core_tests_passed": 20,
+  "core_tests_failed": 0,
+  "python_contract_suite": "PASS",
+  "java_anylogic_facade": "ANYLOGIC_BRIDGE_SMOKE_PASS (Java facade only; vendor runtime not tested)",
+  "java_to_python_plan_import": [
+    {
+      "robot_id": "robot_1",
+      "segments": 29,
+      "nav2_goals": 62
+    },
+    {
+      "robot_id": "robot_2",
+      "segments": 29,
+      "nav2_goals": 62
+    },
+    {
+      "robot_id": "robot_3",
+      "segments": 29,
+      "nav2_goals": 62
+    }
+  ],
+  "headless_scenarios": 6,
+  "runtime_validation": {
+    "java": "openjdk version \"17.0.20\" 2026-07-21",
+    "anylogic_vendor_runtime": "NOT_AVAILABLE_NOT_TESTED",
+    "ros2_nav2_gazebo": "NOT_AVAILABLE_NOT_TESTED",
+    "physical_robot": "NOT_TESTED"
+  }
+}

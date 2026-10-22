@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "validationType": "static source/model contracts and deterministic replay-to-highlight mapping",
+  "browserExecuted": false,
+  "limitation": "Does not verify browser DOM rendering, Canvas appearance, responsive layout or pointer interactions.",
+  "checks": [
+    {
+      "name": "JavaScript syntax and data-module loading",
+      "passed": true,
+      "details": {
+        "loaded": [
+          "assets/data/farm-decision-model.js",
+          "assets/farm-graphs.js",
+          "assets/data/farm-replays.js"
+        ],
+        "syntaxOnly": [
+          "assets/farm.js"
+        ]
+      }
+    },
+    {
+      "name": "Decision-tree unique IDs and complete explanation fields",
+      "passed": true,
+      "details": {
+        "missionNodes": 27,
+        "agentNodes": 35,
+        "total": 62
+      }
+    },
+    {
+      "name": "FSM counts and edge endpoints",
+      "passed": true,
+      "details": {
+        "robot": {
+          "states": 13,
+          "transitionRules": 27
+        },
+        "carrier": {
+          "states": 6,
+          "transitionRules": 8
+        }
+      }
+    },
+    {
+      "name": "Java source fingerprint, referenced methods and state names",
+      "passed": true,
+      "details": {
+        "sha256": "cc9d06ce3b3137706f43b3ab66b700d7576f530df9119c9add75d585efc65c99",
+        "referencedMethodCount": 23,
+        "robotStateNames": [
+          "FAULT",
+          "LOADING",
+          "ONBOARD",
+          "READY",
+          "RETURNING",
+          "SERVICING",
+          "TO_WORK",
+          "UNLOADING",
+          "WAIT_CORRIDOR",
+          "WAIT_LOAD",
+          "WAIT_RETURN_CORRIDOR",
+          "WAIT_SERVICE",
+          "WORKING"
+        ],
+        "carrierStateNames": [
+          "AT_DEPOT",
+          "COLLECTING",
+          "DEPLOYING",
+          "OPERATING",
+          "TRANSIT_TO_DEPOT",
+          "TRANSIT_TO_FIELD"
+        ]
+      }
+    },
+    {
+      "name": "Page script order, literal element IDs and replay API contract",
+      "passed": true,
+      "details": {
+        "checkedElementIds": 57,
+        "scriptOrder": [
+          "assets/site.js",
+          "assets/data/farm-replays.js",
+          "assets/data/farm-decision-model.js",
+          "assets/farm-graphs.js",
+          "assets/farm.js"
+        ]
+      }
+    },
+    {
+      "name": "All replay states and selected-agent highlights resolve to model nodes",
+      "passed": true,
+      "details": {
+        "frames": 6017,
+        "robotEvaluations": 18051,
+        "pausedFrames": 24,
+        "workingFrames": 9997,
+        "scenarios": [
+          {
+            "id": "normal",
+            "frames": 1175,
+            "pausedFrames": 0
+          },
+          {
+            "id": "low_battery",
+            "frames": 1232,
+            "pausedFrames": 0
+          },
+          {
+            "id": "harvest",
+            "frames": 1230,
+            "pausedFrames": 0
+          },
+          {
+            "id": "blocked_return",
+            "frames": 1191,
+            "pausedFrames": 12
+          },
+          {
+            "id": "robot_fault",
+            "frames": 1189,
+            "pausedFrames": 12
+          }
+        ],
+        "observedRobotStates": [
+          "FAULT",
+          "LOADING",
+          "ONBOARD",
+          "READY",
+          "RETURNING",
+          "SERVICING",
+          "TO_WORK",
+          "UNLOADING",
+          "WAIT_CORRIDOR",
+          "WAIT_RETURN_CORRIDOR",
+          "WAIT_SERVICE",
+          "WORKING"
+        ],
+        "unobservedRobotStates": [
+          "WAIT_LOAD"
+        ],
+        "note": "No adjacent-frame edge assertion: a core step can contain transient states such as WAIT_LOAD immediately followed by LOADING. The complete event log preserves those actions."
+      }
+    }
+  ],
+  "passed": true,
+  "summary": {
+    "passed": 6,
+    "total": 6
+  }
+}

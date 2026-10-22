@@ -1,0 +1,52 @@
+{
+  "square_greedy": {
+    "events_sha256": "61b0c4b74fc79f4a852d56f77040f37c1c85f6df97c1a40bdf2a8d4a2f3e01ab",
+    "order_sha256": "e644d8c89484b155fdd8b301f6898eba8e7c7e09bda268649b1f32f467c7b546",
+    "valid": true
+  },
+  "square_mst": {
+    "events_sha256": "29025802542552dbfe7b8f02a2740cec4d5d76911c23b4a0b2f5735309502842",
+    "order_sha256": "347b0006f98a094134a06243f5b45852e023269049321d07a5da06030ea7a528",
+    "valid": true
+  },
+  "square_ga": {
+    "events_sha256": "00914e0ec49e13eda94bc38f1af6d873dc9220beefb152025b2b706f7057ba0a",
+    "order_sha256": "8ef3f309055715cc6364b6010700db9017d8e4098c7f9a467722bb252d1c83bf",
+    "valid": true
+  },
+  "triangle_greedy": {
+    "events_sha256": "27b2560abfffaef92daf9fd965da7afd06d01703f0d00ec322294d8dee80eca4",
+    "order_sha256": "3036df865c569715f6d7295e33ac120a437e2015691a8fd9a1da24f1e93cc36e",
+    "valid": true
+  },
+  "triangle_mst": {
+    "events_sha256": "e831cf56a4b402effcbdb9ca3afc7ec10431b423b7b0d0d574a66079e2e5e3ef",
+    "order_sha256": "b9028b69339f01b369076fb476a040e41fd4e4b706c3e949c728e2ef61743de5",
+    "valid": true
+  },
+  "triangle_ga": {
+    "events_sha256": "3e7503e52f68b606a4349c563aaa7e2cb9f506ec99fe5425aff7dd84ca331123",
+    "order_sha256": "a9385f2cb45e77096cc4b6099ee3356626831ce1040c8f310d3b14c1428bb7bb",
+    "valid": true
+  },
+  "square_ga_circular": {
+    "events_sha256": "5844f32167e3a2e9cd188e90fd3afa34555e2057c412604117a79f9cf1e9b115",
+    "order_sha256": "8ef3f309055715cc6364b6010700db9017d8e4098c7f9a467722bb252d1c83bf",
+    "valid": true
+  },
+  "square_ga_conservative": {
+    "events_sha256": "2eb749f8807f25cc2e8f71feec80d206dfd4caf1dbdabea543b5e8e250d690b7",
+    "order_sha256": "8ef3f309055715cc6364b6010700db9017d8e4098c7f9a467722bb252d1c83bf",
+    "valid": true
+  },
+  "car_r060": {
+    "events_sha256": "572e816e07c06766dc2d924702e7bd7eb3415b6b6d3dbfb99fb7fd5f34c197a3",
+    "order_sha256": "f02d26d81e6f0cf0b8c9544279b2d744634368e138ee932d0554e4236307fcae",
+    "valid": true
+  },
+  "car_r090": {
+    "events_sha256": "02a6e6d114871d6093ca1832ff64d8417ae4d68d3693ab5422cbb9220581fc51",
+    "order_sha256": "f02d26d81e6f0cf0b8c9544279b2d744634368e138ee932d0554e4236307fcae",
+    "valid": true
+  }
+}

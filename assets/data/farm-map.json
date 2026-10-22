@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "name": "Feld 13 carrier and ground robot demonstration",
+  "units": "m",
+  "axis_convention": "x east, y north",
+  "origin_wgs84": [
+    10.099622011184692,
+    52.25250200521026
+  ],
+  "projection": "WGS84 ellipsoidal local linearization at origin; not a UTM EPSG code",
+  "depot": [
+    -55.0,
+    30.0
+  ],
+  "depot_source": "synthetic near-field demonstration depot",
+  "original_depot": [
+    1536.434767,
+    -796.675944
+  ],
+  "original_depot_name": "Hof1",
+  "original_depot_wgs84": [
+    10.122120380401611,
+    52.2453422983584
+  ],
+  "original_depot_used_for_mission": false,
+  "fields": [
+    {
+      "id": "field13",
+      "name": "Feld 13",
+      "polygon": [
+        [
+          -13.188281,
+          0.730836
+        ],
+        [
+          394.183073,
+          0.0
+        ],
+        [
+          449.134245,
+          -376.395089
+        ],
+        [
+          5.128776,
+          -218.524916
+        ]
+      ],
+      "area_m2": 123875.726,
+      "staging": [
+        0.0,
+        15.0
+      ],
+      "entry": [
+        0.0,
+        0.0
+      ],
+      "entrances": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          379.529428,
+          0.0
+        ],
+        [
+          445.470834,
+          -355.930152
+        ]
+      ],
+      "access_path": [
+        [
+          0.0,
+          15.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -6.0
+        ]
+      ],
+      "access_corridor": [
+        [
+          -3.0,
+          18.0
+        ],
+        [
+          3.0,
+          18.0
+        ],
+        [
+          3.0,
+          -6.0
+        ],
+        [
+          -3.0,
+          -6.0
+        ]
+      ],
+      "access_corridor_source": "synthetic demo access around the first original entrance",
+      "coverage_width_m": 9.0,
+      "source": "original uploaded scenario boundary"
+    }
+  ],
+  "roads": [
+    {
+      "id": "demo_road_1",
+      "points": [
+        [
+          -55.0,
+          30.0
+        ],
+        [
+          -55.0,
+          20.0
+        ],
+        [
+          0.0,
+          20.0
+        ],
+        [
+          0.0,
+          15.0
+        ]
+      ],
+      "width_m": 8.0,
+      "source": "synthetic demo road"
+    }
+  ],
+  "obstacles": [],
+  "assumptions": [
+    "WGS84 longitude/latitude inferred from geographic values and GeoPosition(lat,lon); source has no CRS declaration",
+    "No source obstacles; empty does not certify a real site is obstacle-free",
+    "Road, depot and access corridor are demonstration assumptions, not verified traversability",
+    "9 m coverage width comes from source configuration, not a calibrated ground-robot tool width"
+  ]
+}
