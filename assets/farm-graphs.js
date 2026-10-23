@@ -88,9 +88,9 @@
       scroll.appendChild(svg);fsmRoot.appendChild(scroll);
       var legend=el('div','fg-legend');legend.appendChild(el('span','fg-legend-current','当前真实状态'));legend.appendChild(el('span','fg-legend-selected','已选中查看'));legend.appendChild(el('span','fg-legend-edge','箭头代表允许的条件转换，不是每帧执行轨迹'));fsmRoot.appendChild(legend);
       fsmRoot.appendChild(el('div','fg-fsm-detail','点击状态节点，查看它的职责和所有后续转换。'));
-      var detail=el('details','fg-edge-index'),summary=el('summary',null,'查看完整转换表（'+model.edges.length+' 条规则）');detail.appendChild(summary);
-      var tableWrap=el('div','fg-edge-table-wrap'),table=el('table','fg-edge-table'),thead=el('thead'),tr=el('tr');['起始状态','后续状态','触发条件 / 事件','源码方法'].forEach(function(label){tr.appendChild(el('th',null,label));});thead.appendChild(tr);table.appendChild(thead);var body=el('tbody');
-      model.edges.forEach(function(e){var row=el('tr');row.appendChild(el('td','fg-code',e.from));row.appendChild(el('td','fg-code',e.to));row.appendChild(el('td',null,e.label));row.appendChild(el('td','fg-code',e.source));body.appendChild(row);state.fsmRows.push({el:row,edge:e});});table.appendChild(body);tableWrap.appendChild(table);detail.appendChild(tableWrap);detail.appendChild(el('p','fg-caption','ANY / PREVIOUS 表示故障中断及恢复；人工召回在 command() 中还会根据当前位置、货箱和资源占用调用统一返航分支。'));fsmRoot.appendChild(detail);
+      var detail=el('details','fg-edge-index'),summary=el('summary',null,'查看全部状态转换规则');detail.appendChild(summary);
+      var rules=el('ul','transition-rules');
+      model.edges.forEach(function(e){var row=el('li');row.appendChild(el('strong','fg-code',e.from+' → '+e.to));row.appendChild(el('p',null,e.label));row.appendChild(el('code',null,e.source));rules.appendChild(row);state.fsmRows.push({el:row,edge:e});});detail.appendChild(rules);fsmRoot.appendChild(detail);
       applyActive();drawSelection();showFsmDetail();
     }
     function showFsmDetail(){

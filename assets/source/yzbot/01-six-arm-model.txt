@@ -1,0 +1,260 @@
+六轴机械臂模型与配置
+来源：用户上传 yzbot_competition_deploy_20260604_181348.rar
+类型：静态源码摘录；未在当前环境运行 ROS 2 / Gazebo。
+行号保留原文件位置；区间之间省略了非相关内容。
+这些摘录用于解释现有实现，不代表所有源文件均为个人独立原创。
+
+================================================================
+原始路径：mybot_description/urdf/arm.xacro
+SHA-256（原文件字节）：17752f12c9289bcee6778b862685c9baf79102521879c47aaa63b4d80e792050
+原文件行 18–51
+   18 |     <xacro:property name="M_PI" value="3.1415926" />
+   19 | 
+   20 |     <!-- 连杆半径和长度 -->
+   21 |     <!-- link1 -->
+   22 |     <xacro:property name="link1_rad" value="0.03" />
+   23 |     <xacro:property name="link1_len" value="0.1" />
+   24 |     <!-- link2 -->
+   25 |     <xacro:property name="link2_rad" value="0.03" />
+   26 |     <xacro:property name="link2_len" value="0.14" />
+   27 |     <!-- link3 -->
+   28 |     <xacro:property name="link3_rad" value="0.03" />
+   29 |     <xacro:property name="link3_len" value="0.22" />
+   30 |     <!-- link4 -->
+   31 |     <xacro:property name="link4_rad" value="0.025" />
+   32 |     <xacro:property name="link4_len" value="0.06" />
+   33 |     <!-- link5 -->
+   34 |     <xacro:property name="link5_rad" value="0.03" />
+   35 |     <xacro:property name="link5_len" value="0.06" />
+   36 |     <!-- link6 -->
+   37 |     <xacro:property name="link6_rad" value="0.05" />
+   38 |     <xacro:property name="link6_len" value="0.02" />
+   39 |     <!-- 夹爪 长宽高-->
+   40 |     <!-- gripper -->
+   41 |     <xacro:property name="gripper_l" value="0.08" />
+   42 |     <xacro:property name="gripper_w" value="0.01" />
+   43 |     <xacro:property name="gripper_h" value="0.02" />
+   44 |     <!-- 夹爪安装距离参数0~1 -->
+   45 |     <xacro:property name="gripper_offset" value="0.75" />
+   46 |     <xacro:property name="gripper_offset_h" value="0.002" />
+   47 |     <!-- 底座长宽高 -->
+   48 |     <!-- base -->
+   49 |     <xacro:property name="base_l" value="0.1" />
+   50 |     <xacro:property name="base_w" value="0.1" />
+   51 |     <xacro:property name="base_h" value="0.04" />
+原文件行 106–114
+  106 |     <!-- joint1 -->
+  107 |     <joint name="joint1" type="revolute">
+  108 |         <parent link="arm_base_link" />
+  109 |         <child link="link1" />
+  110 |         <origin xyz="0 0 ${base_h / 2 + link1_len / 2}" rpy="0 0 0" />
+  111 |         <axis xyz="0 0 1" />
+  112 |         <limit lower="-3.14" upper="3.14" effort="300" velocity="1.0" />
+  113 |         <joint_properties damping="50" friction="1" />
+  114 |     </joint>
+原文件行 151–159
+  151 |     <!-- joint2 -->
+  152 |     <joint name="joint2" type="revolute">
+  153 |         <parent link="link1" />
+  154 |         <child link="link2" />
+  155 |         <origin xyz="0 0 ${link1_len/2}" rpy="0 0 0" />
+  156 |         <axis xyz="0 1 0" />
+  157 |         <limit effort="300" velocity="1.0" lower="-2.35" upper="2.35" />
+  158 |         <joint_properties damping="50" friction="1" />
+  159 |     </joint>
+原文件行 179–188
+  179 |     <!-- joint3 -->
+  180 |     <joint name="joint3" type="revolute">
+  181 |         <parent link="link2" />
+  182 |         <child link="link3" />
+  183 |         <origin xyz="0 0 ${link2_len}" rpy="0 0 0" />
+  184 |         <axis xyz="0 1 0" />
+  185 |         <limit effort="300" velocity="1.0" lower="-2.62" upper="2.62" />
+  186 | 
+  187 |         <joint_properties damping="50" friction="1" />
+  188 |     </joint>
+原文件行 207–215
+  207 |     <!-- joint4 -->
+  208 |     <joint name="joint4" type="revolute">
+  209 |         <parent link="link3" />
+  210 |         <child link="link4" />
+  211 |         <origin xyz="0 0 ${link3_len}" rpy="0 0 0" />
+  212 |         <axis xyz="0 0 1" />
+  213 |         <limit lower="-3.14" upper="3.14" effort="300" velocity="1.0" />
+  214 |         <joint_properties damping="50" friction="1" />
+  215 |     </joint>
+原文件行 235–244
+  235 |     <!-- joint5 -->
+  236 |     <joint name="joint5" type="revolute">
+  237 |         <parent link="link4" />
+  238 |         <child link="link5" />
+  239 |         <origin xyz="0 0 ${link4_len}" rpy="0 0 0" />
+  240 |         <axis xyz="0 -1 0" />
+  241 |         <limit effort="300" velocity="1.0" lower="-2.35" upper="2.35" />
+  242 | 
+  243 |         <joint_properties damping="50" friction="1" />
+  244 |     </joint>
+原文件行 264–274
+  264 |     <!-- joint6 -->
+  265 |     <joint name="joint6" type="revolute">
+  266 |         <parent link="link5" />
+  267 |         <child link="link6" />
+  268 |         <origin xyz="0 0 ${link5_len}" rpy="0 0 0" />
+  269 |         <axis xyz="0 0 1" />
+  270 |         <limit lower="-3.14" upper="3.14" effort="300" velocity="1.0" />
+  271 |         <joint_properties damping="50" friction="1" />
+  272 |     </joint>
+  273 | 
+  274 |     <!-- 夹爪 -->
+原文件行 295–321
+  295 | 
+  296 |     <joint name="finger_joint1" type="prismatic">
+  297 |         <parent link="link6" />
+  298 |         <child link="gripper_finger_link1" />
+  299 |         <origin xyz="0 -${link6_rad *gripper_offset} ${gripper_h*2+gripper_offset_h}"
+  300 |             rpy="0 ${M_PI/2} 0" />
+  301 |         <axis xyz="0 1 0" />
+  302 |         <limit effort="100" lower="0" upper="${link6_rad+gripper_w}" velocity="1.0" />
+  303 |         <dynamics damping="50" friction="1" />
+  304 |     </joint>
+  305 | 
+  306 |     <joint name="finger_joint2" type="fixed">
+  307 |         <parent link="link6" />
+  308 |         <child link="gripper_finger_link2" />
+  309 |         <origin xyz="0 ${link6_rad *gripper_offset} ${gripper_h*2+gripper_offset_h}"
+  310 |             rpy="0 ${M_PI/2} 0" />
+  311 |     </joint>
+  312 | 
+  313 |     <!-- Grasping frame -->
+  314 |     <link name="grasping_frame" />
+  315 | 
+  316 |     <joint name="grasping_frame_joint" type="fixed">
+  317 |         <parent link="link6" />
+  318 |         <child link="grasping_frame" />
+  319 |         <origin xyz="0 0 0" rpy="0 0 0" />
+  320 |     </joint>
+  321 | </robot>
+
+================================================================
+原始路径：mybot_description/urdf/originbot_with_rgbd_gazebo_arm.xacro
+SHA-256（原文件字节）：30f4f11e542769065e5bede27c0b65c6df1983a16aa7ec25b2fc261f81472cfa
+原文件行 59–65
+   59 |     <joint name="connect_joint" type="fixed">
+   60 |         <origin xyz="${arm_offset_x} ${arm_offset_y} ${arm_offset_z}" rpy=" 0 0 0" />
+   61 |         <parent link="base_link" />
+   62 |         <child link="arm_base_link" />
+   63 |     </joint>
+   64 | 
+   65 | </robot>
+
+================================================================
+原始路径：tools_demo/config/competition_scene.json
+SHA-256（原文件字节）：342c96f000524c5080dcc17c064f9ee694fbf657ec3d9e9e46cd6c0fddf837e0
+原文件行 1–23
+    1 | {
+    2 |   "robot_model": "six_arm",
+    3 |   "grasp_link": "link6",
+    4 |   "grasp_attachment_enabled": true,
+    5 |   "map_frame": "map",
+    6 |   "base_frame": "base_footprint",
+    7 |   "odom_topic": "/odom",
+    8 |   "model_states_topic": "/competition/model_states",
+    9 |   "require_live_model_truth": true,
+   10 |   "camera_topics": [
+   11 |     "/camera/image_raw",
+   12 |     "/camera_rgbd/camera_rgbd/image_raw"
+   13 |   ],
+   14 |   "map_topic": "/map",
+   15 |   "plan_topic": "/plan",
+   16 |   "amcl_pose_topic": "/amcl_pose",
+   17 |   "pick_reach_radius": 1.35,
+   18 |   "pick_truth_verification_enabled": true,
+   19 |   "pick_truth_max_base_distance_m": 1.0,
+   20 |   "pick_truth_min_object_z_m": 0.05,
+   21 |   "pick_truth_timeout_sec": 2.0,
+   22 |   "pick_truth_sample_period_sec": 0.1,
+   23 |   "pick_truth_required_stable_samples": 1,
+原文件行 463–544
+  463 |   "arm_joint_names": [
+  464 |     "joint1",
+  465 |     "joint2",
+  466 |     "joint3",
+  467 |     "joint4",
+  468 |     "joint5",
+  469 |     "joint6"
+  470 |   ],
+  471 |   "gripper_joint_names": [
+  472 |     "finger_joint1"
+  473 |   ],
+  474 |   "arm_presets": {
+  475 |     "home": [
+  476 |       0.0,
+  477 |       0.0,
+  478 |       0.0,
+  479 |       0.0,
+  480 |       0.0,
+  481 |       0.0
+  482 |     ],
+  483 |     "pick_hover": [
+  484 |       0.0,
+  485 |       0.9,
+  486 |       1.17,
+  487 |       0.0,
+  488 |       -0.3,
+  489 |       0.0
+  490 |     ],
+  491 |     "pick_contact": [
+  492 |       0.0,
+  493 |       1.2,
+  494 |       1.17,
+  495 |       0.0,
+  496 |       -0.3,
+  497 |       0.0
+  498 |     ],
+  499 |     "carry": [
+  500 |       0.0,
+  501 |       0.7,
+  502 |       1.0,
+  503 |       0.0,
+  504 |       -0.45,
+  505 |       0.0
+  506 |     ],
+  507 |     "place_hover": [
+  508 |       0.0,
+  509 |       0.9,
+  510 |       1.0,
+  511 |       0.0,
+  512 |       -0.35,
+  513 |       0.0
+  514 |     ],
+  515 |     "place_release": [
+  516 |       0.0,
+  517 |       1.1,
+  518 |       0.95,
+  519 |       0.0,
+  520 |       -0.25,
+  521 |       0.0
+  522 |     ]
+  523 |   },
+  524 |   "arm_durations_sec": {
+  525 |     "home": 2.0,
+  526 |     "pick_hover": 2.2,
+  527 |     "pick_contact": 1.1,
+  528 |     "carry": 1.5,
+  529 |     "place_hover": 1.8,
+  530 |     "place_release": 1.1
+  531 |   },
+  532 |   "gripper_positions": {
+  533 |     "open": 0.2,
+  534 |     "closed": 0.0
+  535 |   },
+  536 |   "gripper_durations_sec": {
+  537 |     "open": 1.1,
+  538 |     "closed": 1.0
+  539 |   },
+  540 |   "model_prefix": {
+  541 |     "red": "red_cube_",
+  542 |     "blue": "blue_cube_"
+  543 |   }
+  544 | }
+

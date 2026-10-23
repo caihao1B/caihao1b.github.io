@@ -1,0 +1,232 @@
+任务状态与物理审计
+来源：用户上传 yzbot_competition_deploy_20260604_181348.rar
+类型：静态源码摘录；未在当前环境运行 ROS 2 / Gazebo。
+行号保留原文件位置；区间之间省略了非相关内容。
+这些摘录用于解释现有实现，不代表所有源文件均为个人独立原创。
+
+================================================================
+原始路径：tools_demo/tools_demo/competition_controller.py
+SHA-256（原文件字节）：70cb58077b85c5f63f9b0256f75ec9e82f2b4712303de46bdd9292847fb8e9d4
+原文件行 234–279
+  234 |         self.status_pub = self.create_publisher(
+  235 |             String, "/competition/status", competition_qos
+  236 |         )
+  237 |         self.task_pub = self.create_publisher(
+  238 |             String, "/competition/task", competition_qos
+  239 |         )
+  240 |         self.question_pub = self.create_publisher(
+  241 |             String, "/competition/question", competition_qos
+  242 |         )
+  243 |         self.llm_pub = self.create_publisher(
+  244 |             String, "/competition/llm_raw", competition_qos
+  245 |         )
+  246 |         self.validation_pub = self.create_publisher(
+  247 |             String, "/competition/validation", competition_qos
+  248 |         )
+  249 |         self.progress_pub = self.create_publisher(
+  250 |             String, "/competition/progress", competition_qos
+  251 |         )
+  252 |         self.display_pub = self.create_publisher(
+  253 |             String, "/competition/display", competition_qos
+  254 |         )
+  255 |         self.judge_instruction_pub = self.create_publisher(
+  256 |             String, "/competition/judge/current_instruction", competition_qos
+  257 |         )
+  258 |         self.judge_target_pub = self.create_publisher(
+  259 |             String, "/competition/judge/target_identification", competition_qos
+  260 |         )
+  261 |         self.judge_grasp_pub = self.create_publisher(
+  262 |             String, "/competition/judge/grasp_state", competition_qos
+  263 |         )
+  264 |         self.judge_status_pub = self.create_publisher(
+  265 |             String, "/competition/judge/status_feedback", competition_qos
+  266 |         )
+  267 |         self.judge_task_state_pub = self.create_publisher(
+  268 |             Int16, "/competition/judge/task_state_code", competition_qos
+  269 |         )
+  270 |         self.judge_target_color_pub = self.create_publisher(
+  271 |             Int16, "/competition/judge/target_color_code", competition_qos
+  272 |         )
+  273 |         self.judge_grasp_state_pub = self.create_publisher(
+  274 |             Int16, "/competition/judge/grasp_state_code", competition_qos
+  275 |         )
+  276 |         self.judge_markers_pub = self.create_publisher(
+  277 |             MarkerArray, "/competition/judge/markers", competition_qos
+  278 |         )
+  279 | 
+原文件行 429–449
+  429 |         self.current_task.selected_models = all_selected_models
+  430 |         self.current_task.execution_order = [
+  431 |             f"{item.variable or item.color}:pick:{model_name}"
+  432 |             if step % 2 == 0
+  433 |             else f"{item.variable or item.color}:place:{model_name}"
+  434 |             for item in self.current_task.execution_items()
+  435 |             for model_name in item.selected_models
+  436 |             for step in range(2)
+  437 |         ]
+  438 |         self.artifacts.write_json("task_plan.json", self.current_task.to_dict())
+  439 |         self._publish_task(self.current_task)
+  440 |         self._publish_status("question_parsed", self.current_task.to_dict(), self.current_task)
+  441 | 
+  442 |         completed_models: list[str] = []
+  443 |         self.completed_object_records = {}
+  444 |         jobs = [
+  445 |             (item_index, item, target_index, model_name)
+  446 |             for item_index, item in enumerate(self.current_task.execution_items())
+  447 |             for target_index, model_name in enumerate(item.selected_models)
+  448 |         ]
+  449 |         total_jobs = len(jobs)
+原文件行 1724–1742
+ 1724 |     def _judge_status_label(self, status: str) -> str:
+ 1725 |         labels = {
+ 1726 |             "startup": "启动中",
+ 1727 |             "question_received": "已收到题目",
+ 1728 |             "question_parsed": "题目已解析",
+ 1729 |             "navigating_to_pick": "导航到抓取点",
+ 1730 |             "grasping": "机械臂抓取中",
+ 1731 |             "navigating_to_place": "导航到放置区",
+ 1732 |             "placing": "机械臂放置中",
+ 1733 |             "placed": "已放置",
+ 1734 |             "retreating_after_place": "放置后撤离",
+ 1735 |             "navigating_to_exit": "退出放置区",
+ 1736 |             "recovering_navigation": "导航恢复中",
+ 1737 |             "exit_navigation_skipped": "跳过退出导航",
+ 1738 |             "exit_navigation_failed": "退出导航失败",
+ 1739 |             "task_succeeded": "任务成功",
+ 1740 |             "task_failed": "任务失败",
+ 1741 |         }
+ 1742 |         return labels.get(status, status)
+原文件行 2573–2666
+ 2573 |     def _register_completed_object(
+ 2574 |         self,
+ 2575 |         *,
+ 2576 |         model_name: str,
+ 2577 |         target_zone: str,
+ 2578 |         item: Any,
+ 2579 |         job_index: int,
+ 2580 |         place_goal: Pose2DConfig,
+ 2581 |         nominal_place_goal: Pose2DConfig,
+ 2582 |         place_diagnostic: dict[str, Any],
+ 2583 |     ) -> None:
+ 2584 |         if not hasattr(self, "completed_object_records"):
+ 2585 |             self.completed_object_records = {}
+ 2586 |         self.completed_object_records[model_name] = {
+ 2587 |             "model_name": model_name,
+ 2588 |             "target_zone": target_zone,
+ 2589 |             "job_index": job_index,
+ 2590 |             "item": item.to_dict() if hasattr(item, "to_dict") else {"repr": str(item)},
+ 2591 |             "place_goal": place_goal.to_dict(),
+ 2592 |             "nominal_place_goal": nominal_place_goal.to_dict(),
+ 2593 |             "placed_world_pose": place_diagnostic.get("live_target_pose"),
+ 2594 |             "placed_zone_local_pose": place_diagnostic.get(
+ 2595 |                 "live_target_zone_local_pose"
+ 2596 |             ),
+ 2597 |             "registered_at": datetime.now().isoformat(timespec="seconds"),
+ 2598 |         }
+ 2599 | 
+ 2600 |     def _audit_completed_objects(
+ 2601 |         self,
+ 2602 |         *,
+ 2603 |         event: str,
+ 2604 |         phase: str,
+ 2605 |         trigger_model: Optional[str] = None,
+ 2606 |     ) -> Optional[dict[str, Any]]:
+ 2607 |         records = getattr(self, "completed_object_records", {})
+ 2608 |         if not records:
+ 2609 |             return None
+ 2610 | 
+ 2611 |         objects = [
+ 2612 |             self._completed_object_truth_snapshot(record)
+ 2613 |             for record in records.values()
+ 2614 |         ]
+ 2615 |         violations = [
+ 2616 |             item for item in objects if not item.get("truth_ok", False)
+ 2617 |         ]
+ 2618 |         displacement_warnings = [
+ 2619 |             item for item in objects if item.get("moved_since_place_warning", False)
+ 2620 |         ]
+ 2621 |         payload: dict[str, Any] = {
+ 2622 |             "timestamp": datetime.now().isoformat(timespec="seconds"),
+ 2623 |             "event": event,
+ 2624 |             "phase": phase,
+ 2625 |             "trigger_model": trigger_model,
+ 2626 |             "robot_pose": self._model_pose_summary(
+ 2627 |                 self.grasp_executor.get_model_pose(self.scene.robot_model)
+ 2628 |             ),
+ 2629 |             "object_count": len(objects),
+ 2630 |             "all_truth_ok": not violations,
+ 2631 |             "violation_count": len(violations),
+ 2632 |             "displacement_warning_count": len(displacement_warnings),
+ 2633 |             "objects": objects,
+ 2634 |         }
+ 2635 |         if violations:
+ 2636 |             payload["violations"] = [
+ 2637 |                 {
+ 2638 |                     "model_name": item.get("model_name"),
+ 2639 |                     "target_zone": item.get("target_zone"),
+ 2640 |                     "violation_reasons": item.get("violation_reasons", []),
+ 2641 |                     "live_world_pose": item.get("live_world_pose"),
+ 2642 |                     "live_zone_local_pose": item.get("live_zone_local_pose"),
+ 2643 |                     "moved_since_place_m": item.get("moved_since_place_m"),
+ 2644 |                 }
+ 2645 |                 for item in violations
+ 2646 |             ]
+ 2647 |             self.get_logger().warning(
+ 2648 |                 "Completed object audit detected displaced object(s): "
+ 2649 |                 + ", ".join(
+ 2650 |                     f"{item.get('model_name')}:{'/'.join(item.get('violation_reasons', []))}"
+ 2651 |                     for item in violations
+ 2652 |                 )
+ 2653 |             )
+ 2654 |         if displacement_warnings:
+ 2655 |             payload["displacement_warnings"] = [
+ 2656 |                 {
+ 2657 |                     "model_name": item.get("model_name"),
+ 2658 |                     "target_zone": item.get("target_zone"),
+ 2659 |                     "moved_since_place_m": item.get("moved_since_place_m"),
+ 2660 |                     "live_world_pose": item.get("live_world_pose"),
+ 2661 |                     "placed_world_pose": item.get("placed_world_pose"),
+ 2662 |                 }
+ 2663 |                 for item in displacement_warnings
+ 2664 |             ]
+ 2665 |         self.artifacts.append_jsonl("completed_object_audit.jsonl", payload)
+ 2666 |         return payload
+原文件行 5222–5258
+ 5222 |     def _succeed(
+ 5223 |         self,
+ 5224 |         completed_models: list[str],
+ 5225 |         *,
+ 5226 |         result: str = "success",
+ 5227 |         reason: Optional[str] = None,
+ 5228 |         extra_details: Optional[Dict[str, Any]] = None,
+ 5229 |     ) -> bool:
+ 5230 |         payload: Dict[str, Any] = {
+ 5231 |             "completed_models": completed_models,
+ 5232 |             "items": [item.to_dict() for item in self.current_task.execution_items()],
+ 5233 |         }
+ 5234 |         if reason:
+ 5235 |             payload["reason"] = reason
+ 5236 |         if extra_details:
+ 5237 |             payload.update(extra_details)
+ 5238 |         final_audit = self._audit_completed_objects(
+ 5239 |             event="task_succeeded",
+ 5240 |             phase="final",
+ 5241 |         )
+ 5242 |         if final_audit is not None:
+ 5243 |             payload["completed_object_audit"] = final_audit
+ 5244 |         self._publish_status("task_succeeded", payload, self.current_task)
+ 5245 |         summary: Dict[str, Any] = {
+ 5246 |             "run_id": self.artifacts.run_id,
+ 5247 |             "result": result,
+ 5248 |             "completed_models": completed_models,
+ 5249 |             "task": self.current_task.to_dict() if self.current_task else None,
+ 5250 |         }
+ 5251 |         if reason:
+ 5252 |             summary["reason"] = reason
+ 5253 |         if extra_details:
+ 5254 |             summary["details"] = extra_details
+ 5255 |         if final_audit is not None:
+ 5256 |             summary["completed_object_audit"] = final_audit
+ 5257 |         self.artifacts.finalize(summary)
+ 5258 |         self._linger_after_final("task_succeeded", payload)
+

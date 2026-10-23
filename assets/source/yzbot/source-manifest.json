@@ -1,0 +1,199 @@
+[
+  {
+    "excerpt": "01-six-arm-model.txt",
+    "title": "六轴机械臂模型与配置",
+    "sources": [
+      {
+        "path": "mybot_description/urdf/arm.xacro",
+        "sha256": "17752f12c9289bcee6778b862685c9baf79102521879c47aaa63b4d80e792050",
+        "ranges": [
+          [
+            18,
+            51
+          ],
+          [
+            106,
+            114
+          ],
+          [
+            151,
+            159
+          ],
+          [
+            179,
+            188
+          ],
+          [
+            207,
+            215
+          ],
+          [
+            235,
+            244
+          ],
+          [
+            264,
+            274
+          ],
+          [
+            295,
+            324
+          ]
+        ]
+      },
+      {
+        "path": "mybot_description/urdf/originbot_with_rgbd_gazebo_arm.xacro",
+        "sha256": "30f4f11e542769065e5bede27c0b65c6df1983a16aa7ec25b2fc261f81472cfa",
+        "ranges": [
+          [
+            59,
+            72
+          ]
+        ]
+      },
+      {
+        "path": "tools_demo/config/competition_scene.json",
+        "sha256": "342c96f000524c5080dcc17c064f9ee694fbf657ec3d9e9e46cd6c0fddf837e0",
+        "ranges": [
+          [
+            1,
+            23
+          ],
+          [
+            463,
+            544
+          ]
+        ]
+      }
+    ],
+    "excerpt_sha256": "a4bc4bb106f4c59c7497941ad2c311f7214298b0ea97598ea6adb577488edd00"
+  },
+  {
+    "excerpt": "02-grasp-execution.txt",
+    "title": "预设轨迹抓取与放置主路径",
+    "sources": [
+      {
+        "path": "tools_demo/tools_demo/grasp_executor.py",
+        "sha256": "25d407b37d6256a218c1b7bc4b84b80be992160c9b2703ae3483230f575bcf07",
+        "ranges": [
+          [
+            99,
+            114
+          ],
+          [
+            1131,
+            1265
+          ],
+          [
+            1934,
+            2040
+          ],
+          [
+            2074,
+            2110
+          ],
+          [
+            2112,
+            2154
+          ]
+        ]
+      }
+    ],
+    "excerpt_sha256": "260a6973aa0f4886832f685dc15cffdcad950eb00b7e7f177c613f8b99e32375"
+  },
+  {
+    "excerpt": "03-task-controller.txt",
+    "title": "任务状态与物理审计",
+    "sources": [
+      {
+        "path": "tools_demo/tools_demo/competition_controller.py",
+        "sha256": "70cb58077b85c5f63f9b0256f75ec9e82f2b4712303de46bdd9292847fb8e9d4",
+        "ranges": [
+          [
+            234,
+            279
+          ],
+          [
+            429,
+            449
+          ],
+          [
+            1724,
+            1742
+          ],
+          [
+            2573,
+            2666
+          ],
+          [
+            5222,
+            5258
+          ]
+        ]
+      }
+    ],
+    "excerpt_sha256": "61859faa234818809798e0acc431111c0819eac9e48ced3261e3650b8588f889"
+  },
+  {
+    "excerpt": "04-navigation-configuration.txt",
+    "title": "当前导航启动与控制参数",
+    "sources": [
+      {
+        "path": "bot_navigation/launch/nav_bringup_gazebo2.launch.py",
+        "sha256": "afb5f4d8b09c5b38739f8393f2ec17eb80efeb833961594a331b03eaf5a88eed",
+        "ranges": [
+          [
+            28,
+            55
+          ]
+        ]
+      },
+      {
+        "path": "bot_navigation/param/originbot_nav2_2.yaml",
+        "sha256": "f369226d993848a36c73bc2a8fd1bfa8bfecef35074f885a5162603baa5acb56",
+        "ranges": [
+          [
+            1,
+            40
+          ],
+          [
+            76,
+            137
+          ],
+          [
+            235,
+            244
+          ]
+        ]
+      }
+    ],
+    "excerpt_sha256": "7fbaf8431d892e9fc258bfb0c9c7aee67a428df802aa2377d3e10babd5e564d8"
+  },
+  {
+    "excerpt": "05-model-truth-bridge.txt",
+    "title": "Gazebo真值桥与保存场景读取",
+    "sources": [
+      {
+        "path": "competition_truth_bridge/src/competition_model_truth_bridge.cpp",
+        "sha256": "860611098f4abc076a1e80bf37dab32a01ba2812c3eea82b0e9be071da91c41d",
+        "ranges": [
+          [
+            22,
+            108
+          ]
+        ]
+      },
+      {
+        "path": "tools_demo/tools_demo/world_truth_audit.py",
+        "sha256": "41f67b368893c202b4f57efa4344eb19ddd916f45269ce948bc4ccb7534c92ed",
+        "ranges": [
+          [
+            47,
+            90
+          ]
+        ]
+      }
+    ],
+    "excerpt_sha256": "61beb22debebb734e34da2468dd20cab77e8b8b922797578f9eb9d8441d750bc"
+  }
+]

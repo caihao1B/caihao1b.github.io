@@ -1,0 +1,353 @@
+预设轨迹抓取与放置主路径
+来源：用户上传 yzbot_competition_deploy_20260604_181348.rar
+类型：静态源码摘录；未在当前环境运行 ROS 2 / Gazebo。
+行号保留原文件位置；区间之间省略了非相关内容。
+这些摘录用于解释现有实现，不代表所有源文件均为个人独立原创。
+
+================================================================
+原始路径：tools_demo/tools_demo/grasp_executor.py
+SHA-256（原文件字节）：25d407b37d6256a218c1b7bc4b84b80be992160c9b2703ae3483230f575bcf07
+原文件行 99–114
+   99 |         self.recent_navigation_watchdog_events: list[dict[str, Any]] = []
+  100 |         self.recent_navigation_watchdog_reasons: list[str] = []
+  101 | 
+  102 |         self.navigate_client = ActionClient(node, NavigateToPose, "/navigate_to_pose")
+  103 |         self.arm_client = ActionClient(
+  104 |             node,
+  105 |             FollowJointTrajectory,
+  106 |             "/arm_controller/follow_joint_trajectory",
+  107 |         )
+  108 |         self.gripper_client = ActionClient(
+  109 |             node,
+  110 |             FollowJointTrajectory,
+  111 |             "/gripper_controller/follow_joint_trajectory",
+  112 |         )
+  113 |         self.attach_client = node.create_client(AttachLink, "/ATTACHLINK")
+  114 |         self.detach_client = node.create_client(DetachLink, "/DETACHLINK")
+原文件行 1131–1265
+ 1131 |     def move_arm_preset(
+ 1132 |         self,
+ 1133 |         preset_name: str,
+ 1134 |         joint1_offset: float = 0.0,
+ 1135 |     ) -> tuple[bool, str]:
+ 1136 |         positions = self.scene.arm_presets.get(preset_name)
+ 1137 |         if positions is None:
+ 1138 |             return False, f"Unknown arm preset: {preset_name}"
+ 1139 |         positions = list(positions)
+ 1140 |         if joint1_offset and positions:
+ 1141 |             positions[0] += joint1_offset
+ 1142 |         duration = self.scene.arm_durations_sec.get(preset_name, 3.0)
+ 1143 |         return self._send_trajectory(
+ 1144 |             self.arm_client,
+ 1145 |             self.scene.arm_joint_names,
+ 1146 |             positions,
+ 1147 |             duration,
+ 1148 |             controller_name="arm",
+ 1149 |             label=f"arm:{preset_name}",
+ 1150 |         )
+ 1151 | 
+ 1152 |     def move_gripper(self, state_name: str) -> tuple[bool, str]:
+ 1153 |         position = self.scene.gripper_positions.get(state_name)
+ 1154 |         if position is None:
+ 1155 |             return False, f"Unknown gripper state: {state_name}"
+ 1156 |         duration = self.scene.gripper_durations_sec.get(state_name, 2.0)
+ 1157 |         return self._send_trajectory(
+ 1158 |             self.gripper_client,
+ 1159 |             self.scene.gripper_joint_names,
+ 1160 |             [position],
+ 1161 |             duration,
+ 1162 |             controller_name="gripper",
+ 1163 |             label=f"gripper:{state_name}",
+ 1164 |         )
+ 1165 | 
+ 1166 |     def pick_model(self, model_name: str) -> tuple[bool, str]:
+ 1167 |         self.last_pick_truth_details = None
+ 1168 |         target_pose = self.get_model_pose(model_name)
+ 1169 |         if target_pose is None and self.scene.require_live_model_truth:
+ 1170 |             return False, f"Live model pose for {model_name} is unavailable."
+ 1171 |         if target_pose and not self._within_reach(target_pose.position.x, target_pose.position.y):
+ 1172 |             return False, f"Model {model_name} is still outside configured reach radius."
+ 1173 |         if target_pose is None:
+ 1174 |             self.node.get_logger().warning(
+ 1175 |                 f"Model pose for {model_name} is unavailable; continuing with fixed-scene baseline."
+ 1176 |             )
+ 1177 |         if self.scene.pick_truth_verification_enabled:
+ 1178 |             ok, message = self._verify_pick_distance_truth(model_name)
+ 1179 |             if not ok:
+ 1180 |                 return False, message
+ 1181 | 
+ 1182 |         ok, message = self.move_gripper("open")
+ 1183 |         if not ok:
+ 1184 |             return False, message
+ 1185 |         for preset in ["pick_hover", "pick_contact"]:
+ 1186 |             ok, message = self.move_arm_preset(preset)
+ 1187 |             if not ok:
+ 1188 |                 return False, message
+ 1189 | 
+ 1190 |         ok, message = self._attach_model(model_name)
+ 1191 |         if not ok:
+ 1192 |             return False, message
+ 1193 | 
+ 1194 |         ok, message = self.move_gripper("closed")
+ 1195 |         if not ok:
+ 1196 |             return False, message
+ 1197 | 
+ 1198 |         for preset in ["carry"]:
+ 1199 |             ok, message = self.move_arm_preset(preset)
+ 1200 |             if not ok:
+ 1201 |                 return False, message
+ 1202 |         if self.scene.pick_truth_verification_enabled:
+ 1203 |             ok, message = self._verify_attached_pick_truth(model_name)
+ 1204 |             if not ok:
+ 1205 |                 return False, message
+ 1206 |         return True, f"Picked {model_name}."
+ 1207 | 
+ 1208 |     def place_model(
+ 1209 |         self,
+ 1210 |         model_name: str,
+ 1211 |         target_zone: str,
+ 1212 |         placement_index: int = 0,
+ 1213 |     ) -> tuple[bool, str]:
+ 1214 |         joint1_offset = self._placement_joint1_offset(placement_index)
+ 1215 |         release_sequence = str(
+ 1216 |             getattr(self.scene, "place_release_sequence", "legacy") or "legacy"
+ 1217 |         ).strip()
+ 1218 |         post_open_settle_sec = max(
+ 1219 |             float(getattr(self.scene, "place_post_open_settle_sec", 0.0) or 0.0),
+ 1220 |             0.0,
+ 1221 |         )
+ 1222 |         post_detach_settle_sec = max(
+ 1223 |             float(getattr(self.scene, "place_post_detach_settle_sec", 0.0) or 0.0),
+ 1224 |             0.0,
+ 1225 |         )
+ 1226 |         for preset in ["place_hover", "place_release"]:
+ 1227 |             ok, message = self.move_arm_preset(preset, joint1_offset)
+ 1228 |             if not ok:
+ 1229 |                 return False, message
+ 1230 | 
+ 1231 |         ok, message = self.move_gripper("open")
+ 1232 |         if not ok:
+ 1233 |             return False, message
+ 1234 | 
+ 1235 |         if release_sequence == "guarded" and post_open_settle_sec > 0.0:
+ 1236 |             time.sleep(post_open_settle_sec)
+ 1237 | 
+ 1238 |         ok, message = self._detach_model(model_name)
+ 1239 |         if not ok:
+ 1240 |             return False, message
+ 1241 | 
+ 1242 |         if post_detach_settle_sec > 0.0:
+ 1243 |             time.sleep(post_detach_settle_sec)
+ 1244 | 
+ 1245 |         if release_sequence == "legacy" and self.scene.post_place_settle_sec > 0.0:
+ 1246 |             time.sleep(self.scene.post_place_settle_sec)
+ 1247 | 
+ 1248 |         retreat_sequence: list[tuple[str, float]] = []
+ 1249 |         if release_sequence == "guarded":
+ 1250 |             retreat_sequence.append(("place_hover", joint1_offset))
+ 1251 |         retreat_sequence.append(("carry", 0.0))
+ 1252 |         if self.scene.post_place_home_enabled or not self.scene.skip_home_between_targets:
+ 1253 |             retreat_sequence.append(("home", 0.0))
+ 1254 | 
+ 1255 |         for preset, retreat_offset in retreat_sequence:
+ 1256 |             ok, message = self.move_arm_preset(preset, retreat_offset)
+ 1257 |             if not ok:
+ 1258 |                 return False, message
+ 1259 |         if self.scene.post_place_settle_sec > 0.0:
+ 1260 |             time.sleep(self.scene.post_place_settle_sec)
+ 1261 |         if self.scene.place_truth_verification_enabled:
+ 1262 |             ok, message = self._verify_place_truth(model_name, target_zone)
+ 1263 |             if not ok:
+ 1264 |                 return False, message
+ 1265 |         return True, f"Placed {model_name}."
+原文件行 1934–2040
+ 1934 |     def _verify_pick_distance_truth(self, model_name: str) -> tuple[bool, str]:
+ 1935 |         debug = self.build_pick_truth_debug(model_name)
+ 1936 |         self.last_pick_truth_details = debug
+ 1937 |         target_pose = self.get_model_pose(model_name)
+ 1938 |         robot_pose = self.get_model_pose(self.scene.robot_model)
+ 1939 |         if target_pose is None:
+ 1940 |             return False, f"Live model pose for {model_name} is unavailable."
+ 1941 |         if robot_pose is None:
+ 1942 |             return False, f"Live robot pose for {self.scene.robot_model} is unavailable."
+ 1943 | 
+ 1944 |         distance = debug["live_base_to_target_distance_m"]
+ 1945 |         if distance > self.scene.pick_truth_max_base_distance_m:
+ 1946 |             return (
+ 1947 |                 False,
+ 1948 |                 "Model "
+ 1949 |                 f"{model_name} exceeds physical pick distance: "
+ 1950 |                 f"{distance:.2f} m > {self.scene.pick_truth_max_base_distance_m:.2f} m.",
+ 1951 |             )
+ 1952 |         return True, "Pick distance truth verified."
+ 1953 | 
+ 1954 |     def _verify_attached_pick_truth(self, model_name: str) -> tuple[bool, str]:
+ 1955 |         deadline = time.time() + max(self.scene.pick_truth_timeout_sec, 0.0)
+ 1956 |         stable_samples = 0
+ 1957 |         last_distance = None
+ 1958 |         last_z = None
+ 1959 | 
+ 1960 |         while time.time() <= deadline:
+ 1961 |             target_pose = self.get_model_pose(model_name)
+ 1962 |             robot_pose = self.get_model_pose(self.scene.robot_model)
+ 1963 |             if target_pose is None or robot_pose is None:
+ 1964 |                 stable_samples = 0
+ 1965 |             else:
+ 1966 |                 last_distance = math.hypot(
+ 1967 |                     target_pose.position.x - robot_pose.position.x,
+ 1968 |                     target_pose.position.y - robot_pose.position.y,
+ 1969 |                 )
+ 1970 |                 last_z = target_pose.position.z
+ 1971 |                 if (
+ 1972 |                     last_distance <= self.scene.pick_truth_max_base_distance_m
+ 1973 |                     and last_z >= self.scene.pick_truth_min_object_z_m
+ 1974 |                 ):
+ 1975 |                     stable_samples += 1
+ 1976 |                     if stable_samples >= self.scene.pick_truth_required_stable_samples:
+ 1977 |                         return True, "Attached pick truth verified."
+ 1978 |                 else:
+ 1979 |                     stable_samples = 0
+ 1980 |             time.sleep(self.scene.pick_truth_sample_period_sec)
+ 1981 | 
+ 1982 |         return (
+ 1983 |             False,
+ 1984 |             "Attached object "
+ 1985 |             f"{model_name} did not appear attached in live truth "
+ 1986 |             f"(distance={last_distance}, z={last_z}).",
+ 1987 |         )
+ 1988 | 
+ 1989 |     def _model_pose_summary(self, pose: Optional[Any]) -> Optional[dict[str, float]]:
+ 1990 |         if pose is None:
+ 1991 |             return None
+ 1992 |         return {
+ 1993 |             "x": round(float(pose.position.x), 6),
+ 1994 |             "y": round(float(pose.position.y), 6),
+ 1995 |             "z": round(float(pose.position.z), 6),
+ 1996 |         }
+ 1997 | 
+ 1998 |     def _verify_place_truth(self, model_name: str, target_zone: str) -> tuple[bool, str]:
+ 1999 |         zone_config = self.scene.zone_service_config.get(target_zone)
+ 2000 |         if zone_config is None:
+ 2001 |             return False, f"Unknown target zone for place verification: {target_zone}."
+ 2002 | 
+ 2003 |         deadline = time.time() + max(self.scene.place_truth_timeout_sec, 0.0)
+ 2004 |         stable_samples = 0
+ 2005 |         last_pose_summary = None
+ 2006 |         half_x = (zone_config.size_x / 2.0) + self.scene.place_truth_zone_margin_m
+ 2007 |         half_y = (zone_config.size_y / 2.0) + self.scene.place_truth_zone_margin_m
+ 2008 | 
+ 2009 |         while time.time() <= deadline:
+ 2010 |             target_pose = self.get_model_pose(model_name)
+ 2011 |             if target_pose is None:
+ 2012 |                 stable_samples = 0
+ 2013 |             else:
+ 2014 |                 local_x, local_y = zone_config.world_to_local(
+ 2015 |                     target_pose.position.x,
+ 2016 |                     target_pose.position.y,
+ 2017 |                 )
+ 2018 |                 inside_zone = (-half_x <= local_x <= half_x) and (-half_y <= local_y <= half_y)
+ 2019 |                 z_ok = target_pose.position.z <= self.scene.place_truth_max_object_z_m
+ 2020 |                 last_pose_summary = {
+ 2021 |                     "x": round(target_pose.position.x, 4),
+ 2022 |                     "y": round(target_pose.position.y, 4),
+ 2023 |                     "z": round(target_pose.position.z, 4),
+ 2024 |                     "local_x": round(local_x, 4),
+ 2025 |                     "local_y": round(local_y, 4),
+ 2026 |                 }
+ 2027 |                 if inside_zone and z_ok:
+ 2028 |                     stable_samples += 1
+ 2029 |                     if stable_samples >= self.scene.place_truth_required_stable_samples:
+ 2030 |                         return True, "Place truth verified."
+ 2031 |                 else:
+ 2032 |                     stable_samples = 0
+ 2033 |             time.sleep(self.scene.place_truth_sample_period_sec)
+ 2034 | 
+ 2035 |         return (
+ 2036 |             False,
+ 2037 |             "Place truth verification failed for "
+ 2038 |             f"{model_name} in {target_zone}: {last_pose_summary}.",
+ 2039 |         )
+ 2040 | 
+原文件行 2074–2110
+ 2074 |     def _attach_model(self, model_name: str) -> tuple[bool, str]:
+ 2075 |         if not bool(getattr(self.scene, "grasp_attachment_enabled", True)):
+ 2076 |             return True, f"Attachment bypassed for {model_name}."
+ 2077 |         if not self.attach_client.wait_for_service(timeout_sec=8.0):
+ 2078 |             return False, "Attach service is unavailable."
+ 2079 |         request = AttachLink.Request()
+ 2080 |         request.model1_name = self.scene.robot_model
+ 2081 |         request.link1_name = self.scene.grasp_link
+ 2082 |         request.model2_name = model_name
+ 2083 |         request.link2_name = "link"
+ 2084 | 
+ 2085 |         future = self.attach_client.call_async(request)
+ 2086 |         response = _wait_for_future(future, 8.0)
+ 2087 |         if response is None:
+ 2088 |             return False, "Attach service timed out."
+ 2089 |         if not getattr(response, "success", True):
+ 2090 |             return False, getattr(response, "message", "Attach service failed.")
+ 2091 |         return True, getattr(response, "message", f"Attached {model_name}.")
+ 2092 | 
+ 2093 |     def _detach_model(self, model_name: str) -> tuple[bool, str]:
+ 2094 |         if not bool(getattr(self.scene, "grasp_attachment_enabled", True)):
+ 2095 |             return True, f"Detach bypassed for {model_name}."
+ 2096 |         if not self.detach_client.wait_for_service(timeout_sec=8.0):
+ 2097 |             return False, "Detach service is unavailable."
+ 2098 |         request = DetachLink.Request()
+ 2099 |         request.model1_name = self.scene.robot_model
+ 2100 |         request.link1_name = self.scene.grasp_link
+ 2101 |         request.model2_name = model_name
+ 2102 |         request.link2_name = "link"
+ 2103 | 
+ 2104 |         future = self.detach_client.call_async(request)
+ 2105 |         response = _wait_for_future(future, 8.0)
+ 2106 |         if response is None:
+ 2107 |             return False, "Detach service timed out."
+ 2108 |         if not getattr(response, "success", True):
+ 2109 |             return False, getattr(response, "message", "Detach service failed.")
+ 2110 |         return True, getattr(response, "message", f"Detached {model_name}.")
+原文件行 2112–2154
+ 2112 |     def _send_trajectory(
+ 2113 |         self,
+ 2114 |         client: ActionClient,
+ 2115 |         joint_names: list[str],
+ 2116 |         positions: list[float],
+ 2117 |         duration_sec: float,
+ 2118 |         *,
+ 2119 |         controller_name: str = "unknown",
+ 2120 |         label: str = "trajectory",
+ 2121 |     ) -> tuple[bool, str]:
+ 2122 |         start_time = time.time()
+ 2123 |         self._record_trajectory_debug(
+ 2124 |             "send_start",
+ 2125 |             controller_name,
+ 2126 |             label,
+ 2127 |             joint_names,
+ 2128 |             positions,
+ 2129 |             duration_sec,
+ 2130 |         )
+ 2131 |         if not client.wait_for_server(timeout_sec=10.0):
+ 2132 |             self._record_trajectory_debug(
+ 2133 |                 "server_unavailable",
+ 2134 |                 controller_name,
+ 2135 |                 label,
+ 2136 |                 joint_names,
+ 2137 |                 positions,
+ 2138 |                 duration_sec,
+ 2139 |                 elapsed_sec=time.time() - start_time,
+ 2140 |             )
+ 2141 |             return False, "Trajectory action server is unavailable."
+ 2142 |         goal = FollowJointTrajectory.Goal()
+ 2143 |         trajectory = JointTrajectory()
+ 2144 |         trajectory.joint_names = joint_names
+ 2145 |         point = JointTrajectoryPoint()
+ 2146 |         point.positions = positions
+ 2147 |         point.time_from_start = Duration(
+ 2148 |             sec=int(duration_sec),
+ 2149 |             nanosec=int((duration_sec - int(duration_sec)) * 1e9),
+ 2150 |         )
+ 2151 |         trajectory.points = [point]
+ 2152 |         goal.trajectory = trajectory
+ 2153 | 
+ 2154 |         send_future = client.send_goal_async(goal)
+

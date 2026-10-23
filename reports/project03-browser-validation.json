@@ -1,0 +1,59 @@
+{
+  "checked_utc": "2026-10-22T17:02:35.185741+00:00",
+  "method": "Observed browser interactions and rendered DOM / screenshots; not an automated end-to-end suite.",
+  "desktop": {
+    "page": "ros2.html",
+    "hero_and_section_layout": "PASS",
+    "arm_pick_contact_preset": {
+      "status": "PASS",
+      "displayed_q_rad": {
+        "J2": 1.2,
+        "J3": 1.17,
+        "J5": -0.3
+      },
+      "displayed_tip_m": [
+        0.353,
+        0.0,
+        0.08
+      ]
+    },
+    "arm_play_pause": "PASS; time advanced then paused",
+    "arm_axes_toggle": "PASS",
+    "arm_phase_jump": "PASS; phase 03 selected at 6.30 s with source pose and service-intent state",
+    "thesis_d2_switch": "PASS; displayed panel changed to D2 remaining-geometry replacement",
+    "video_seek": {
+      "status": "PASS",
+      "selected_seconds": 180,
+      "duration_seconds": 383.8,
+      "readyState": 4,
+      "error": null
+    },
+    "scene_object_selection": {
+      "status": "PASS",
+      "object": "zone_c",
+      "displayed_position_m": [
+        5,
+        -13,
+        0.01
+      ]
+    },
+    "task_flow_audit": "PASS; selected state, heading and source panel updated",
+    "source_excerpt_display": "PASS",
+    "console_review": "No application error in inspected log batch; unrelated browser-extension messages observed."
+  },
+  "narrow_layout": {
+    "method": "390 px iframe in desktop Chrome; approximately 375 CSS px content width with scrollbar. Not a physical mobile device test.",
+    "body_client_width_px": 375,
+    "body_scroll_width_px": 375,
+    "single_column_layout": "PASS",
+    "arm_canvas_projection": "PASS; home geometry no longer overlaps upper caption; camera change limited to canvas widths below 500 px.",
+    "caption_badge": "Moved below caption lines at max-width 420 px; visual verification included in final review."
+  },
+  "limitations": [
+    "No live ROS / Gazebo run or physical robot validation.",
+    "No physics, collision, controller execution, or real grasp-success test.",
+    "No exhaustive browser / operating-system / physical-phone coverage.",
+    "Direct file:// mode was designed using local classic scripts and packaged assets; the browser session used local HTTP preview.",
+    "PNG export and every possible pose / speed combination were not exhaustively exercised."
+  ]
+}

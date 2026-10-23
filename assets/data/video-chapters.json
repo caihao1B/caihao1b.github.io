@@ -1,0 +1,32 @@
+[
+  {
+    "time": 0,
+    "title": "Gazebo 场景与机器人移动",
+    "note": "原始全景录屏，蓝色机器人在场景中运动；这段不提供可辨识的机械臂关节特写。"
+  },
+  {
+    "time": 120,
+    "title": "放置与退出状态日志",
+    "note": "终端出现 placing、retreating_after_place、navigating_to_exit，记录 red_cube_1 已完成后继续任务。"
+  },
+  {
+    "time": 180,
+    "title": "第二次抓取与转场",
+    "note": "终端出现 red_cube_2 的 grasping / navigating_to_place；状态日志可读，但不能由全景画面独立验证抓取物理接触。"
+  },
+  {
+    "time": 240,
+    "title": "第二件物品放置状态",
+    "note": "日志出现 red_cube_2 placing 和退离后转场。"
+  },
+  {
+    "time": 300,
+    "title": "蓝色物体任务与导航稳定检查",
+    "note": "日志出现 blue_cube_1 抓取/移动到放置区，随后有 stabilizing_navigation 与 degraded 健康状态。"
+  },
+  {
+    "time": 355,
+    "title": "看门狗中止与故障说明",
+    "note": "约 5:59 处 task_failed：Navigation watchdog stopped motion: odom_pose_unstable；完整录像保留失败片段。"
+  }
+]

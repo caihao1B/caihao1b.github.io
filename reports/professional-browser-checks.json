@@ -1,0 +1,82 @@
+{
+  "scope": "Updated copy rendering and title wrapping; representative ROS dynamic title check.",
+  "checks": [
+    {
+      "headings": [
+        "董泽豪 Zehao Dong",
+        "研究与工程项目",
+        "教育背景",
+        "实践经历与专业技能",
+        "联系方式"
+      ],
+      "page": "/",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "headings": [
+        "全覆盖路径规划与轨迹生成",
+        "覆盖路径与参考轨迹回放",
+        "运动约束下的转弯轨迹"
+      ],
+      "page": "/ccpp.html",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "headings": [
+        "农田多机器人协同调度系统",
+        "协同任务回放与运行状态",
+        "调度决策与状态转换"
+      ],
+      "page": "/farm-carrier.html",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "headings": [
+        "机器人任务规划与执行架构",
+        "覆盖路径规划",
+        "农田协同调度",
+        "ROS 2 在线执行与机械臂扩展"
+      ],
+      "page": "/projects.html",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "headings": [
+        "ROS 2 在线覆盖导航与机械臂扩展",
+        "六轴机械臂运动学交互"
+      ],
+      "page": "/ros2.html",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "page": "/ros2.html",
+      "scrollWidth": 375,
+      "title": "ROS 2 在线覆盖导航与机械臂扩展",
+      "width": 390
+    },
+    {
+      "page": "/farm-carrier.html",
+      "scrollWidth": 375,
+      "title": "农田多机器人协同调度系统",
+      "width": 390
+    },
+    {
+      "page": "/ccpp.html",
+      "scrollWidth": 375,
+      "title": "全覆盖路径规划与轨迹生成",
+      "width": 390
+    },
+    {
+      "page": "/index.html",
+      "scrollWidth": 375,
+      "title": "董泽豪 Zehao Dong",
+      "width": 390
+    }
+  ],
+  "dynamicTitle": "剩余区域覆盖几何替换"
+}

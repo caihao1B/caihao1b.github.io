@@ -1,0 +1,140 @@
+{
+  "method": "Codex browser: rendered DOM, screenshots and manual UI interactions",
+  "layoutChecks": [
+    {
+      "documentWidth": 1440,
+      "page": "/index.html",
+      "passed": true,
+      "viewport": 1440
+    },
+    {
+      "canvas": {
+        "height": 460,
+        "width": 833
+      },
+      "documentWidth": 1425,
+      "page": "/ros2.html",
+      "passed": true,
+      "viewport": 1440
+    },
+    {
+      "documentWidth": 1425,
+      "page": "/projects.html",
+      "passed": true,
+      "viewport": 1440
+    },
+    {
+      "documentWidth": 375,
+      "page": "/index.html",
+      "passed": true,
+      "viewport": 390
+    },
+    {
+      "documentWidth": 375,
+      "page": "/ccpp.html",
+      "passed": true,
+      "viewport": 390
+    },
+    {
+      "documentWidth": 375,
+      "page": "/farm-carrier.html",
+      "passed": true,
+      "viewport": 390
+    },
+    {
+      "documentWidth": 375,
+      "page": "/projects.html",
+      "passed": true,
+      "viewport": 390
+    },
+    {
+      "documentWidth": 375,
+      "page": "/ros2.html",
+      "passed": true,
+      "viewport": 390
+    },
+    {
+      "documentWidth": 375,
+      "page": "/ros2.html#research",
+      "passed": true,
+      "viewport": 390
+    },
+    {
+      "documentWidth": 375,
+      "page": "/ros2.html#recording",
+      "passed": true,
+      "viewport": 390
+    },
+    {
+      "documentWidth": 375,
+      "page": "/ros2.html#system",
+      "passed": true,
+      "viewport": 390
+    },
+    {
+      "cards": [
+        {
+          "width": 399.5,
+          "x": 32,
+          "y": 644.15625
+        },
+        {
+          "width": 399.5,
+          "x": 453.5,
+          "y": 644.15625
+        },
+        {
+          "width": 821,
+          "x": 32,
+          "y": 1171.546875
+        }
+      ],
+      "documentWidth": 885,
+      "page": "/index.html",
+      "passed": true,
+      "viewport": 900
+    }
+  ],
+  "interactions": [
+    {
+      "name": "Home three project links",
+      "passed": true
+    },
+    {
+      "name": "Coverage playback advances, triangle case and grid view",
+      "passed": true
+    },
+    {
+      "name": "Both coverage videos load; duration 26 seconds",
+      "passed": true
+    },
+    {
+      "name": "Farm playback advances, low-battery scenario and FSM tab",
+      "passed": true
+    },
+    {
+      "name": "ROS tabs, fragment reload, keyboard Home",
+      "passed": true
+    },
+    {
+      "name": "Arm playback and pause when hidden; carry preset updates coordinates",
+      "passed": true
+    },
+    {
+      "name": "D2 decision details update",
+      "passed": true
+    },
+    {
+      "name": "Video chapter 05:55 seeks to 355 seconds; duration 383.8 seconds",
+      "passed": true
+    },
+    {
+      "name": "Work-area map and grasp stage select red_cube_1",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Single browser engine; no ROS/Gazebo/Java experiments rerun.",
+    "Browser checks cover representative interactions, not exhaustive scenario replay."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-22T16:57:22.994171+00:00",
+  "scope": "Third-project portfolio integration. Source-derived browser kinematics and world layout; reported thesis data and original simulation recording. No new ROS/Gazebo runtime validation.",
+  "original_sources": [
+    {
+      "filename": "Zehao_Portfolio_FarmCarrier.zip",
+      "bytes": 5227424,
+      "sha256": "7385d3c0affca4505e7c0f348ae535f7f1398d1149981c6a07b02a51b8d9fa69"
+    },
+    {
+      "filename": "yzbot_competition_deploy_20260604_181348.rar",
+      "bytes": 7397915,
+      "sha256": "050720931399f531e6df4c870221bc7fdd6117aa92857ffa431d349881efd2bb"
+    },
+    {
+      "filename": "搬运机器人系统介绍与实现说明.docx",
+      "bytes": 526144,
+      "sha256": "15ef9af54e1f04695e1c974536616495cc16c177b710bb2160fc99015f66f3a3"
+    },
+    {
+      "filename": "75bde19fa671c561c5562c5b0ec31d4a.mp4",
+      "bytes": 13482347,
+      "sha256": "c10859832905943a078267d8a260bdd37969b3b84d4a2597c34148e4cdc6489a"
+    },
+    {
+      "filename": "01-Design-and-simulation-of-an-online-coverage-path-planning-algorithm-for-a-single-robot-using-ROS-2-and-Gazebo-1-.pdf",
+      "bytes": 11685464,
+      "sha256": "244f2a9b09955ac2cad29c1444f5d11d9078db1fbf7451c66f1fc8cd086a2d33"
+    }
+  ],
+  "source_notes": "Original DOCX and full PDF are not copied into the public package. Code excerpts exclude deployment credentials. Source model and integrated components retain their original attribution.",
+  "arm_validation": "reports/arm-kinematics-validation.json",
+  "source_index": "docs/PROJECT03_SOURCE_INDEX_ZH.md",
+  "recording": {
+    "path": "assets/videos/yzbot-gazebo-recording.mp4",
+    "seconds": 383.8,
+    "width": 1280,
+    "height": 618,
+    "fps": 15,
+    "audio": false,
+    "complete_sequence_preserved": true,
+    "sha256": "c6ea512d177e2c2a9d6d31e6d69e37741fbf2fcb66df7505b814be8a78ed09cd"
+  },
+  "browser_kinematics_not_telemetry": true
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "file": "thesis-architecture.png",
+    "figure": "Figure 5.1",
+    "pdf_page": 57,
+    "printed_page": 41,
+    "clip_pdf_points": [
+      65,
+      91,
+      533,
+      234
+    ],
+    "width": 1639,
+    "height": 501,
+    "source": "Uploaded thesis by Zehao DONG"
+  },
+  {
+    "file": "thesis-rejoin.png",
+    "figure": "Figure 5.2",
+    "pdf_page": 58,
+    "printed_page": 42,
+    "clip_pdf_points": [
+      65,
+      89,
+      533,
+      255
+    ],
+    "width": 1639,
+    "height": 582,
+    "source": "Uploaded thesis by Zehao DONG"
+  },
+  {
+    "file": "thesis-hierarchy.png",
+    "figure": "Figure 5.3",
+    "pdf_page": 65,
+    "printed_page": 49,
+    "clip_pdf_points": [
+      65,
+      91,
+      533,
+      325
+    ],
+    "width": 1639,
+    "height": 820,
+    "source": "Uploaded thesis by Zehao DONG"
+  },
+  {
+    "file": "thesis-results.png",
+    "figure": "Figure 7.1",
+    "pdf_page": 91,
+    "printed_page": 75,
+    "clip_pdf_points": [
+      65,
+      467,
+      533,
+      649
+    ],
+    "width": 1639,
+    "height": 638,
+    "source": "Uploaded thesis by Zehao DONG"
+  }
+]

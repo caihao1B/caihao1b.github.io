@@ -1,6 +1,26 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="母车与农田机器人协同调度的完整仿真展示，以及 ROS 2 在线执行项目的研究定位。"><title>机器人决策与在线执行 | 董泽豪</title><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head><body>
-<nav class="navbar" aria-label="项目导航"><div class="wrap nav-inner"><a class="brand" href="index.html">Zehao Dong · 董泽豪</a><button class="menu-btn" aria-controls="overviewNav" aria-label="展开导航" aria-expanded="false">☰</button><div class="nav-links" id="overviewNav"><a href="index.html#projects">个人主页</a><a href="ccpp.html">全覆盖规划</a><a href="farm-carrier.html">农田调度</a><a href="#ros2">ROS 2 执行</a></div></div></nav>
-<header class="subhero"><div class="wrap"><div class="breadcrumb"><a href="index.html">个人主页</a> / 项目概述</div><h1>从任务决策，到在线执行</h1><p>路径规划给出“怎样走”，任务调度决定“谁去做、何时返回、如何继续”，执行层接收计划并处理真实反馈。三个项目围绕这条链路展开，各自说明已验证的结果与系统边界。</p></div></header>
-<main><section id="transport" class="section"><div class="wrap"><div class="eyebrow">PROJECT 02 · COMPLETED SIMULATION</div><h2 class="section-title">母车与农田机器人协同调度</h2><div class="two-col"><div><p>本项目已实现一台运载母车与三台作业机器人的任务闭环：沿道路运输、依次卸载、领取田间条带、作业与资源检查、返航排队补给、从断点继续，以及全员装车后返仓。</p><p>Agent 分别保存位置、资源、任务和状态。Java 核心使用规则与贪心条带分配，有限状态机推进执行；独立的入口通道、装卸坡道与补给工位约束共享资源。</p><p>完整展示页将真实运行记录同步映射到地图、调度树和 Agent 状态机。调度树是对代码分支的行为树式解释，页面会给出对应条件、动作与源码位置。</p><div class="actions"><a class="button" href="farm-carrier.html">打开完整交互展示</a><a class="button ghost" href="assets/downloads/farm-carrier-system-v1.0.zip" download>下载可运行仿真工程</a></div></div><div><div class="evidence-grid"><div class="evidence"><strong>82.06 min</strong><span>标准场景仿真时长</span></div><div class="evidence"><strong>3 / 3</strong><span>结束时已装车机器人</span></div><div class="evidence"><strong>12.39 ha</strong><span>Feld 13 源田块面积</span></div></div><div class="callout">地图保留来源田界；近田基地与运输道路是演示配置。100% 指完成全部计划条带中心线，尚未证明机具足迹无漏覆盖。网页播放已导出的仿真记录，未连接现场机器人。</div></div></div><p class="small" style="margin-top:22px">结果来源：随包 Java 仿真工程的 <code>reports/benchmark.json</code>、<code>docs/VALIDATION_REPORT.md</code> 与 <code>docs/MAP_PROVENANCE.md</code>。本项目没有宣称使用行为树执行引擎或完成实机装卸验证。</p></div></section>
-<section id="ros2" class="section alt"><div class="wrap prose"><div class="eyebrow">PROJECT 03</div><h2 class="section-title">ROS 2 移动机器人覆盖任务在线执行</h2><p>项目以 ROS 2、Gazebo 和 Nav2 为执行基础，将离线计划表示为可管理的分段覆盖任务。任务层监督执行状态，在动态障碍和进度异常下进行等待、局部恢复及剩余任务调整。</p><p>其核心是离线计划与在线执行之间的接口，以及未完成区域的显式记录。项目 01 的网页动画只是参考轨迹回放，不替代本项目中的 ROS 仿真与系统运行证据。</p><p>项目 02 提供了 ROS 2 计划适配器，作为后续结合的接口基础：它消费冻结几何计划，等待部署和回收确认。当前交付没有建立 Java 调度状态与 ROS 2 机器人反馈之间的完整实时闭环。</p><div class="callout">演示材料待独立整理：版本对应的 Gazebo 视频、行为树执行记录、覆盖统计与失败案例。规划中的机械臂与点云扩展没有列为已完成成果。</div></div></section></main>
-<footer class="footer"><div class="wrap"><a href="index.html#projects">返回个人主页</a> · <a href="farm-carrier.html">查看农田调度完整演示</a></div></footer></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="全覆盖规划、农田协同调度与 ROS 2 在线执行的分层关系。">
+  <title>任务规划与执行架构 | 董泽豪</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/portfolio.css">
+  <link rel="stylesheet" href="assets/merged.css">
+  <script defer src="assets/site.js"></script>
+  <script defer src="assets/portfolio.js"></script>
+</head>
+<body class="concise-page">
+<a class="skip-link" href="#main">跳到正文</a>
+<nav class="navbar" aria-label="主导航"><div class="wrap nav-inner">
+  <a class="brand" href="index.html">Zehao Dong <span>· 董泽豪</span></a>
+  <button class="menu-btn" aria-label="展开导航" aria-controls="mainNav" aria-expanded="false">☰</button>
+  <div class="nav-links" id="mainNav"><a href="index.html#projects">项目介绍</a><a href="ccpp.html">覆盖规划</a><a href="farm-carrier.html">农田调度</a><a href="ros2.html">ROS 2 导航</a><a href="index.html#contact">联系方式</a></div>
+</div></nav>
+
+<main id="main"><header class="project-hero wrap"><a class="back-link" href="index.html#projects">← 项目介绍</a><div class="eyebrow">SYSTEM VIEW</div><h1>机器人任务规划与执行架构</h1><p class="project-lead">三个项目分别涉及离线覆盖路径规划、多机器人任务调度与 ROS 2 在线执行，通过任务表示、状态管理和执行反馈说明各层职责及接口关系。</p></header>
+<section class="section demo-section"><div class="wrap"><div class="system-cards"><a href="ccpp.html"><span class="eyebrow">01 / PLAN</span><h2>覆盖路径规划</h2><p>任务网格、访问顺序与受约束的参考轨迹。</p><span class="text-link">覆盖路径规划项目 →</span></a><a href="farm-carrier.html" id="transport"><span class="eyebrow">02 / COORDINATE</span><h2>农田协同调度</h2><p>运输、部署、资源补给、断点续作与回收。</p><span class="text-link">协同调度项目 →</span></a></div></div></section>
+<section class="section soft-section" id="ros2"><div class="wrap project-bridge"><div class="short-prose"><div class="eyebrow">03 / EXECUTE</div><h2>ROS 2 在线覆盖导航与任务决策</h2><p>以论文中的分层任务监督为核心，组织动态干扰恢复与剩余任务管理；六轴机械臂交互与移动操作仿真作为扩展内容。</p><p class="quiet-note">各项目对应不同技术层级，完整的多机实时反馈闭环尚需集成验证；论文导航与搬运工程采用的配置分别说明。</p><a class="button" href="ros2.html">ROS 2 项目详情 →</a></div><a href="ros2.html#research"><img src="assets/images/thesis-hierarchy.png" alt="在线覆盖导航的分层任务决策与恢复机制" width="1639" height="820" loading="lazy"></a></div></section></main>
+<footer class="footer"><div class="wrap footer-inner"><span>© 2026 董泽豪 · Zehao Dong</span><span>机器人规划 / 协同决策 / 系统集成</span><a href="mailto:545211771@qq.com">545211771@qq.com</a></div></footer>
+</body></html>

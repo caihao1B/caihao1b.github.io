@@ -1,0 +1,10 @@
+来源与署名说明
+这些源码摘录来自用户上传的 yzbot_competition_deploy_20260604_181348.rar；不是在线仓库最新版。
+原项目根 LICENSE 为 Apache License 2.0；原文附在 LICENSE-source-Apache-2.0.txt。
+原 bot_navigation/package.xml 声明维护者 GuYueHome，许可证 Apache 2.0。
+原 mybot/package.xml 声明作者及维护者 yzhcat，许可证字段为 BSD。其 MoveIt 配置不能表述为本网站作者独立原创。
+原 mybot_description、tools_demo、competition_truth_bridge 的 package.xml 许可证字段仍为 TODO: License declaration；维护者分别为 ros、sunrise、sunrise。这些是原包元数据，不能据此断定个人作者归属。
+网站将其用于说明上传项目的现有技术实现，并保留上述出处。源码摘录未包含原部署说明中的虚拟机网络地址、账号或密码。
+重要实现边界：主抓取链路使用关节预设及 FollowJointTrajectory，再调用 Gazebo LinkAttacher；存在 MoveIt/KDL 配置不等于完成在线 IK/碰撞规划闭环。
+夹爪源配置 open=0.2 m，但模型 finger_joint1 的 upper=0.06 m；网页仅对可视化行程作限制，未改写原源码或证明该原配置可执行。
+DOCX 记载的 2026-06-06 P0 cmd_vel_safety.py 不在该 2026-06-04 部署压缩包内；文档测试结论应注明为文档报告，不能称在此环境复测。

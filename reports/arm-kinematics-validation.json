@@ -1,0 +1,73 @@
+{
+  "result": "pass",
+  "scope": "Independent NumPy transform comparison, 6 source presets + nonzero all-axis configuration; 201 timeline samples in URDF limits; static JS syntax. Browser verification belongs to parent workflow.",
+  "reference_frame": "base_footprint",
+  "tool_frame": "grasping_frame (coincident with link6 origin)",
+  "home_tip_m": [
+    0,
+    0,
+    0.7634
+  ],
+  "preset_results": {
+    "home": {
+      "max_transform_error": 0.0,
+      "tip": [
+        0,
+        0,
+        0.7634000000000001
+      ]
+    },
+    "pick_hover": {
+      "max_transform_error": 1.1102230246251565e-16,
+      "tip": [
+        0.3973323692831858,
+        0,
+        0.19337389975625885
+      ]
+    },
+    "pick_contact": {
+      "max_transform_error": 2.220446049250313e-16,
+      "tip": [
+        0.3529815789380127,
+        0,
+        0.07997503757966778
+      ]
+    },
+    "carry": {
+      "max_transform_error": 1.1102230246251565e-16,
+      "tip": [
+        0.41807055058787784,
+        0,
+        0.32155998788826523
+      ]
+    },
+    "place_hover": {
+      "max_transform_error": 1.1102230246251565e-16,
+      "tip": [
+        0.421314183713599,
+        0,
+        0.24221389947274768
+      ]
+    },
+    "place_release": {
+      "max_transform_error": 1.1102230246251565e-16,
+      "tip": [
+        0.41797280635654926,
+        0,
+        0.17782654213731172
+      ]
+    }
+  },
+  "sample_count": 201,
+  "timeline_seconds": 18.35,
+  "gripper_issue": {
+    "configured_open_m": 0.2,
+    "urdf_upper_m": 0.06,
+    "display_only_clamp": true
+  },
+  "limitations": [
+    "No physics or collision test",
+    "No ROS/Gazebo execution",
+    "Timeline service waits are explanatory, not measured"
+  ]
+}

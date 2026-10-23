@@ -1,6 +1,7 @@
 (function () {
   'use strict';
   const $ = id => document.getElementById(id);
+  const text = (id,value) => {const n=$(id);if(n)n.textContent=value;};
   const colors = {robot_1:'#2987af',robot_2:'#b77936',robot_3:'#7963ae',carrier:'#193b5c'};
   const robotNames = {robot_1:'R01',robot_2:'R02',robot_3:'R03',carrier:'母车',system:'系统',operator:'操作员'};
   const states = {ONBOARD:'车上随行',UNLOADING:'正在卸载',READY:'准备 / 申请任务',WAIT_CORRIDOR:'等待入田通道',TO_WORK:'驶向作业断点',WORKING:'执行覆盖条带',WAIT_RETURN_CORRIDOR:'等待返航通道',RETURNING:'沿合法路径返航',WAIT_SERVICE:'排队等待补给',SERVICING:'充电 / 补料 / 卸货',WAIT_LOAD:'等待装车',LOADING:'正在装车',FAULT:'设备故障',TRANSIT_TO_FIELD:'运输机器人到田块',DEPLOYING:'依次卸载机器人',OPERATING:'支持田间作业',COLLECTING:'回收机器人',TRANSIT_TO_DEPOT:'全员返仓',AT_DEPOT:'已回到基地'};
@@ -27,6 +28,7 @@
   }
   const data=window.FarmReplay;
   const graph=window.FarmGraphs.mount({treeRoot:$('farmTree'),fsmRoot:$('farmFsm'),inspectorRoot:$('farmInspector')});
+  graph.collapseAll();
   const canvas=$('farmMap'),ctx=canvas.getContext('2d');
   let scenario='normal',selected='robot_1',playing=false,head=0,duration=0,frame=null,frames=[],events=[],chapters=[];
   let lastIndex=-1,lastEventKey='',lastTimestamp=0,animationId=0,zoom=1,panX=0,panY=0,drag=null,screenRobots=[];
@@ -122,7 +124,7 @@
     $('agentExplain').textContent=(frame.status==='WAITING_RECOVERY'?'状态保持，动作暂不推进。恢复锁解除后：':'')+(stateExplanations[robot.state]||'');
     $('coverageValue').textContent=fmt(frame.coverage.fraction*100,1)+'%';
     $('coverageMeter').value=frame.coverage.fraction;
-    $('coverageLength').textContent=fmt(frame.coverage.completed,2)+' / '+fmt(frame.coverage.total,2)+' m';
+    text('coverageLength',fmt(frame.coverage.completed,2)+' / '+fmt(frame.coverage.total,2)+' m');
     $('carrierState').textContent=states[carrier.state]||carrier.state;
     $('carrierOnboard').textContent='车上 '+carrier.onboard.length+' / '+frame.robots.length+' 台 · '+fmt(carrier.batteryKWh,1)+' kWh';
     $('corridorOwner').textContent=frame.routeBlocked?'阻塞 / 恢复锁':robotName(frame.corridorOwner);
@@ -136,7 +138,7 @@
     else if(['WAIT_SERVICE','SERVICING'].includes(robot.state)){decision='FIFO 服务与资源守恒';detail='母车库存转移，完成后续作';}
     else if(['WAIT_LOAD','LOADING'].includes(robot.state)){decision='申请装卸坡道';detail='全部装车之前母车保持等待';}
     else if(robot.state==='READY'){decision='资源可行后领取任务';detail='优先保留条带，否则选择较近任务';}
-    $('decisionNow').textContent=decision;$('decisionDetail').textContent=detail;
+    text('decisionNow',decision);text('decisionDetail',detail);
     const context=scenario.toUpperCase()+' · '+robotName(selected)+' · '+clock(frame.time);
     $('treeContext').textContent=context;$('fsmClock').textContent=clock(frame.time)+' · '+robotName(selected)+' · '+robot.state;
     $('fsmSelected').textContent='当前选择 '+robotName(selected);
@@ -248,7 +250,7 @@
   $('farmScenario').addEventListener('change',e=>loadScenario(e.target.value));
   $('filterAgentEvents').addEventListener('change',updateEvents);
   document.querySelectorAll('[data-robot]').forEach(b=>b.addEventListener('click',()=>selectRobot(b.dataset.robot)));
-  document.querySelectorAll('[data-tree-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tree-mode]').forEach(a=>{a.classList.toggle('active',a===b);a.setAttribute('aria-pressed',String(a===b));});graph.setTreeMode(b.dataset.treeMode);graph.update(frame,selected);}));
+  document.querySelectorAll('[data-tree-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tree-mode]').forEach(a=>{a.classList.toggle('active',a===b);a.setAttribute('aria-pressed',String(a===b));});graph.setTreeMode(b.dataset.treeMode);graph.collapseAll();graph.update(frame,selected);}));
   document.querySelectorAll('[data-fsm-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-fsm-mode]').forEach(a=>{a.classList.toggle('active',a===b);a.setAttribute('aria-pressed',String(a===b));});graph.setFsmMode(b.dataset.fsmMode);graph.update(frame,selected);}));
   $('expandTree').addEventListener('click',()=>graph.expandAll());$('collapseTree').addEventListener('click',()=>graph.collapseAll());
   $('downloadDecision').addEventListener('click',()=>download('farm-decision-model.json',window.FarmDecisionModel));

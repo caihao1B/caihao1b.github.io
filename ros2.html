@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ROS 2 在线覆盖导航研究：分层任务决策、动态干扰恢复与剩余任务管理，附六轴机械臂运动学交互。">
+  <title>ROS 2 在线覆盖导航与任务决策 | 董泽豪</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/ros2.css">
+  <link rel="stylesheet" href="assets/arm-lab.css">
+  <link rel="stylesheet" href="assets/portfolio.css">
+  <link rel="stylesheet" href="assets/merged.css">
+  <script defer src="assets/site.js"></script>
+  <script defer src="assets/data/robot-scene.js"></script>
+  <script defer src="assets/data/arm-model.js"></script>
+  <script defer src="assets/arm-lab.js"></script>
+  <script defer src="assets/ros2.js"></script>
+  <script defer src="assets/ros2-concise.js"></script>
+</head>
+<body class="concise-page ros-page ros-concise">
+<a class="skip-link" href="#main">跳到正文</a>
+<nav class="navbar" aria-label="主导航"><div class="wrap nav-inner">
+  <a class="brand" href="index.html">Zehao Dong <span>· 董泽豪</span></a>
+  <button class="menu-btn" aria-label="展开导航" aria-controls="mainNav" aria-expanded="false">☰</button>
+  <div class="nav-links" id="mainNav"><a href="index.html#projects">项目介绍</a><a href="ccpp.html">覆盖规划</a><a href="farm-carrier.html">农田调度</a><a href="ros2.html" aria-current="page">ROS 2 导航</a><a href="index.html#contact">联系方式</a></div>
+</div></nav>
+<main id="main">
+<header class="project-hero wrap">
+  <a class="back-link" href="index.html#projects">← 项目介绍</a>
+  <div class="eyebrow">03 / ONLINE COVERAGE & TASK DECISION</div>
+  <h1>ROS 2 在线覆盖导航与任务决策</h1>
+  <p class="project-lead">基于硕士论文，研究动态环境中的在线覆盖导航，以分层任务监督协调等待、让行、局部重接与区域结构修复，并维护剩余任务记录。机械臂运动学交互与移动操作仿真作为扩展展示。</p>
+  <div class="tags"><span>ROS 2 / Nav2</span><span>分层任务决策</span><span>动态恢复</span></div>
+</header>
+<div class="wrap ros-demo-wrap">
+  <div class="ros-demo-tabs" role="tablist" aria-label="ROS 2 项目演示">
+    <button id="tab-research" role="tab" aria-controls="research" aria-selected="true" tabindex="0" data-ros-tab="research">论文决策</button>
+    <button id="tab-arm" role="tab" aria-controls="arm" aria-selected="false" tabindex="-1" data-ros-tab="arm">机械臂交互</button>
+    <button id="tab-recording" role="tab" aria-controls="recording" aria-selected="false" tabindex="-1" data-ros-tab="recording">原始录屏</button>
+    <button id="tab-system" role="tab" aria-controls="system" aria-selected="false" tabindex="-1" data-ros-tab="system">场景与任务</button>
+  </div>
+  <noscript><p>启用 JavaScript 可操作机械臂并切换演示；也可直接<a href="assets/videos/yzbot-gazebo-recording.mp4">打开录像</a>或<a href="docs/PROJECT03_SOURCE_INDEX_ZH.md">阅读材料索引</a>。</p></noscript>
+  <section id="research" class="ros-panel" role="tabpanel" aria-labelledby="tab-research" tabindex="0">
+    <div class="section-heading"><h2>动态干扰下的任务监督与恢复</h2><p>展示各恢复模式的触发条件、执行接口与任务记录。</p></div>
+    <p class="ros-panel-intro">基于滚动路径窗口衔接覆盖计划与 Nav2 执行，通过任务监督组织等待、让行、有序重接和结构修复，并维护剩余区域记录。</p>
+<div class="ros-decision-lab"><div class="ros-tree" role="group" aria-label="论文分层任务监督模式"><div class="ros-tree-root">任务监督 · Selector + BT-style supervisor</div><div class="ros-tree-trunk"></div><div class="ros-tree-level"><button data-mode="none" class="active" aria-pressed="true"><small>NONE</small>正常跟踪</button><button data-mode="wait" aria-pressed="false"><small>A_WAIT</small>短时等待</button><button data-mode="yield" aria-pressed="false"><small>B_YIELD</small>动态让行</button></div><div class="ros-tree-branches"><div><div class="ros-tree-group">C · 有序局部恢复</div><div class="ros-tree-children"><button data-mode="c1" aria-pressed="false"><small>C1_REJOIN</small>同段重接</button><button data-mode="c2" aria-pressed="false"><small>C2_ORDERED_REJOIN</small>下一段有序重接</button></div></div><div><div class="ros-tree-group">D · 区域结构修复</div><div class="ros-tree-children"><button data-mode="d1" aria-pressed="false"><small>D1</small>剩余段序调整</button><button data-mode="d2" aria-pressed="false"><small>D2</small>剩余区域几何替换</button></div></div></div><div class="ros-tree-ledger">所有执行结果 → 进度 / backlog / cleanup / accepted closure</div></div><aside class="ros-mode-panel" aria-live="polite"><span id="modeCode">NONE</span><h4 id="modeTitle">正常覆盖任务跟踪</h4><p id="modeDescription">未触发恢复条件时，保持原分段顺序，通过 Nav2 执行当前路径窗口。</p><dl><dt>执行方式</dt><dd id="modeAction">FollowPath · 动态场景以 MPPI 为主控制器。</dd><dt>任务记录</dt><dd id="modeLedger">更新当前段与进度游标；不修改剩余任务语义。</dd></dl><p class="ros-source-line" id="modeSource">论文第 5 章，第 40–43 页。</p></aside></div><p class="ros-small-note">图为论文逻辑的交互解释，不是实时 BT tick 日志。D1 与 D2 根据准入条件选择，页面的上下关系不表示固定尝试顺序。</p>
+
+    <details class="technical-details"><summary>论文系统架构与原图 <span>按需展开</span></summary><div class="details-body">
+<figure class="ros-paper-figure"><a href="assets/images/thesis-architecture.png" target="_blank" rel="noopener"><img src="assets/images/thesis-architecture.png" width="1639" height="501" loading="lazy" alt="论文图5.1：分段任务与机器人状态进入滚动窗口，感知预测生成决策证据，任务监督组织执行与覆盖记账"></a><figcaption>论文原图 5.1 · 在线执行架构 · 正文第 41 页 / 原 PDF 第 57 页。点击查看大图。</figcaption></figure>
+<details class="ros-details"><summary>查看论文中的重接方式与反应层次原图</summary><div class="ros-figure-pair"><figure><a href="assets/images/thesis-rejoin.png" target="_blank" rel="noopener"><img src="assets/images/thesis-rejoin.png" width="1639" height="582" loading="lazy" alt="论文图5.2：C1回到当前段与C2有序接入下一段的路径示意"></a><figcaption>图 5.2 · 正文第 42 页 / 原 PDF 第 58 页。</figcaption></figure><figure><a href="assets/images/thesis-hierarchy.png" target="_blank" rel="noopener"><img src="assets/images/thesis-hierarchy.png" width="1639" height="820" loading="lazy" alt="论文图5.3：NONE、A等待、B让行、C恢复和D结构修复的层次"></a><figcaption>图 5.3 · 正文第 49 页 / 原 PDF 第 65 页。</figcaption></figure></div></details>
+
+      <p class="quiet-note">硕士论文：Design and simulation of an online coverage path planning algorithm for a single robot using ROS 2 and Gazebo。实验原图与统计口径见<a href="docs/PROJECT03_SOURCE_INDEX_ZH.md">材料索引</a>；本次未重新运行论文实验。</p>
+    </div></details>
+  </section>
+  <section id="arm" class="ros-panel" role="tabpanel" aria-labelledby="tab-arm" tabindex="0" hidden>
+    <div class="section-heading"><h2>六轴机械臂运动学交互</h2><p>支持视角调整、关节参数设置、预设姿态及动作序列回放。</p></div>
+    <div id="armLab"></div>
+    <p class="quiet-note">根据源码重建的运动学演示；播放编排与附着提示用于说明动作，不代表 Gazebo 的实时反馈。</p>
+  </section>
+  <section id="recording" class="ros-panel" role="tabpanel" aria-labelledby="tab-recording" tabindex="0" hidden>
+    <div class="section-heading"><h2>Gazebo 仿真运行记录</h2><p>完整运行录像约 6 分 24 秒，包含任务状态与异常终止记录。</p></div>
+<div class="ros-video-layout"><div class="ros-video-box"><video id="robotVideo" controls playsinline preload="metadata" poster="assets/images/yzbot-recording-poster.jpg" aria-label="移动搬运工程完整 Gazebo 录屏"><source src="assets/videos/yzbot-gazebo-recording.mp4" type="video/mp4"><p>浏览器不支持内嵌视频。<a href="assets/videos/yzbot-gazebo-recording.mp4">下载原始录屏的网页压缩版</a>。</p></video><div class="ros-video-caption">完整时序保留 · 网页压缩版 · 原片无音轨</div></div><div class="ros-chapters" aria-label="录屏章节"><button data-seek="0"><time>00:00</time><span>场景与机器人移动<small>Gazebo 全景</small></span></button><button data-seek="120"><time>02:00</time><span>放置与退出<small>placing / retreating_after_place</small></span></button><button data-seek="180"><time>03:00</time><span>再次抓取与转场<small>red_cube_2 状态日志</small></span></button><button data-seek="240"><time>04:00</time><span>第二件物品放置<small>placing 与后续退离</small></span></button><button data-seek="300"><time>05:00</time><span>蓝色物体任务<small>导航稳定检查</small></span></button><button data-seek="355"><time>05:55</time><span>导航保护停止<small>约 05:59 出现 task_failed</small></span></button></div></div><p id="chapterNote" class="ros-small-note" aria-live="polite">全景中机械臂较小；关节结构和预设动作可在“机械臂交互”标签中的模型中检查。点击章节会跳转并暂停，按播放键观看。</p>
+<details class="ros-details"><summary>工程观察：末段的导航保护停止</summary><div class="ros-observation"><div><h3>导航中止与异常分析</h3><p>约 5:59，终端出现 <code>Navigation watchdog stopped motion: odom_pose_unstable</code> 和 <code>task_failed</code>。这说明该次运行在里程计位姿稳定性检查处终止，需要把导航状态与任务状态一起分析。</p><p>录像末尾关闭进程时还出现 <code>rclpy InvalidHandle</code>。它与前面的导航看门狗中止处于不同阶段，不应混为一个原因。</p><p class="ros-small-note">这段录像可展示运行过程及失败分析；全景画面与状态日志不足以独立验证每个关节动作、物理夹持或整任务成功。</p></div><a href="assets/images/yzbot-watchdog-evidence.jpg" target="_blank" rel="noopener"><img src="assets/images/yzbot-watchdog-evidence.jpg" width="1918" height="926" loading="lazy" alt="约360秒的原录屏：终端中显示导航看门狗因odom_pose_unstable停止任务"></a></div></details>
+
+  </section>
+  <section id="system" class="ros-panel" role="tabpanel" aria-labelledby="tab-system" tabindex="0" hidden>
+    <div class="section-heading"><h2>移动操作场景与任务流程</h2><p>展示源码场景、对象坐标及导航—抓取—放置任务流程。</p></div>
+<div class="ros-system-grid"><div class="ros-map-card"><div class="ros-map-toolbar"><div role="group" aria-label="场景视图范围"><button class="active" id="mapFull" aria-pressed="true">完整场景</button><button id="mapWork" aria-pressed="false">作业区域</button></div><label for="sceneSelect">查看对象 <select id="sceneSelect"></select></label></div><canvas id="sceneCanvas" width="900" height="650" aria-label="源工程保存状态的二维地图：墙体、箱障碍、方块与放置区；可通过对象选择框查看坐标">源地图包含31段墙、13个箱障碍物、10个红蓝方块和3个放置区。使用下方列表查看对象。</canvas><div class="ros-map-footer"><p id="sceneDetail" aria-live="polite">选择一个对象查看其保存状态坐标。</p><span>坐标系 world · 单位 m · 标记大小已放大</span></div></div>
+<aside class="ros-flow-card"><h3>移动操作任务链</h3><p class="ros-small-note">各阶段关联相应执行接口；地图展示源码保存状态，不包含在线导航轨迹。</p><div class="ros-flow-buttons" role="group" aria-label="移动操作任务阶段"><button class="active" data-flow="parse" aria-pressed="true"><b>1</b><span>任务解析与校验<small>颜色 / 数量 / 目标区</small></span></button><button data-flow="navpick" aria-pressed="false"><b>2</b><span>导航到取物点<small>navigating_to_pick</small></span></button><button data-flow="grasp" aria-pressed="false"><b>3</b><span>执行机械臂抓取<small>grasping</small></span></button><button data-flow="navplace" aria-pressed="false"><b>4</b><span>携带并导航到目标区<small>navigating_to_place</small></span></button><button data-flow="place" aria-pressed="false"><b>5</b><span>释放、收回与退出<small>placing / navigating_to_exit</small></span></button><button data-flow="audit" aria-pressed="false"><b>6</b><span>真值核验与完成审计<small>model_states / final audit</small></span></button></div></aside></div>
+<div class="ros-flow-detail" aria-live="polite"><div><span id="flowCode">TASK → PLAN</span><h3 id="flowTitle">任务解析与搬运序列构建</h3></div><p id="flowDescription">控制器根据颜色、数量和目标放置区生成逐件 pick / place 序列，并发布任务与进度。任务解析结果与实际动作完成状态分别核验。</p><a id="flowSource" href="assets/source/yzbot/03-task-controller.txt" target="_blank" rel="noopener">查看源码摘录 ↗</a></div>
+
+    <details class="technical-details"><summary>ROS 2 通信接口与导航配置 <span>按需展开</span></summary><div class="details-body short-prose">
+      <p><strong>导航：</strong>搬运工程通过 NavigateToPose 执行目标，使用 AMCL、NavFn Dijkstra 与 DWB；论文在线覆盖的 FollowPath 与 MPPI / RPP 配置另行说明。</p>
+      <p><strong>抓放：</strong>FollowJointTrajectory 发送预设关节目标，ATTACHLINK / DETACHLINK 请求仿真附着与释放；model_states 为物体位置核验提供真值。</p>
+      <p><strong>任务核验：</strong>该源码会记录 final audit，但 all_truth_ok=false 尚未自动阻断成功状态，需要同时查看审计结果。</p>
+      <a class="text-link" href="assets/source/yzbot/04-navigation-configuration.txt" target="_blank" rel="noopener">导航配置摘录 ↗</a>
+    </div></details>
+  </section>
+</div>
+<section class="section compact-section"><div class="wrap">
+  <div class="project-next"><span>相关研究：覆盖路径规划、多机调度与移动操作。</span><a class="text-link" href="index.html#projects">返回项目总览 →</a></div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span>© 2026 董泽豪 · Zehao Dong</span><span>机器人规划 / 协同决策 / 系统集成</span><a href="mailto:545211771@qq.com">545211771@qq.com</a></div></footer>
+</body></html>

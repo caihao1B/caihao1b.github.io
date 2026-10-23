@@ -1,50 +1,54 @@
-# Zehao Dong · Robotics portfolio
+# 董泽豪 · 三项目精简版作品集
 
-This version extends the supplied static portfolio with **Farm Carrier**, the completed Java simulation of a carrier and three agricultural robot Agents. It preserves the personal profile, CCPP demonstrations, motion videos, and separately scoped ROS 2 project overview. The uploaded original ZIP is unchanged; **Zehao_Portfolio_FarmCarrier.zip** is a separate updated output.
+由 Zehao_Portfolio_Concise.zip 的前两个项目与本地 ROS 2 项目合并。纯 HTML / CSS / JavaScript，无构建和依赖安装步骤。
 
-## Open the portfolio
+## 文案规范与最新修订
 
-Read **START_HERE.html** for the complete Chinese Windows guide. After extracting the whole ZIP, you can open **farm-carrier.html directly as a local file**: the replay data and decision models load from local classic JavaScript files, without a fetch request or backend. Keep the `assets/` directory beside the HTML pages.
+导航、栏目标题和项目介绍统一使用专业技术表述，以研究对象、实现方法与展示范围组织内容，避免口号式标题和口语化设问。
+当前版本以论文中的在线覆盖导航与任务决策为 ROS 2 项目主线，默认展示论文决策，机械臂交互排在第二位。首页使用个人照片，移除独立的“项目来源与验证范围”栏目；原始模型、仿真数据、录像及许可文件保留。
+本轮检查与截图使用 `reports/research-first-*` 前缀。`professional-*` 和 `merged-*` 对应此前文案修订和合并版本。
+此前文案修订摘要见 `docs/PROFESSIONAL_COPY_REVISION_ZH.md`。
 
-**START_PREVIEW.cmd remains the recommended way to preview the complete portfolio.** It starts the supplied Python 3 standard-library preview server on `127.0.0.1` and opens your browser, providing consistent HTTP paths for page navigation and downloads. The displayed website does not require Java, ROS, Node.js, npm, external fonts, a map service, or an API key. Direct local-file viewing does not need Python either.
+## 本地打开
 
-- `index.html`: profile and three project summaries.
-- `ccpp.html`: original grid and trajectory demonstrations, unchanged except navigation.
-- `farm-carrier.html`: synchronized map, scheduling explanation tree, Agent state machines, resource telemetry, and event replay.
-- `projects.html`: project relationships and the separately scoped ROS 2 execution project.
-- `docs/FARM_CARRIER_PRESENTATION_ZH.md`: presentation narrative, an interview demonstration route, and implementation boundaries.
-- `docs/WEBSITE_VALIDATION_ZH.md`: validation scope for this new website, distinct from the original simulator tests.
+Windows 双击 START_PREVIEW.cmd。它会检查可用的 Python 3（先 py，后 python），并打开实际的本地地址。
+也可在本目录执行 `python preview_server.py`；默认端口 8000，冲突时自动换端口。Ctrl+C 停止。
+不启动服务时可直接双击 index.html。保留完整 assets 文件夹。
 
-## Farm Carrier demonstration
+## 三个项目
 
-The new page plays **actual snapshots and events exported from `farm.sim.MissionEngine`**. It provides normal, low-battery, harvest, blocked-route, and robot-fault scenarios. Pause, scrub, select an Agent, inspect decision nodes, and compare scenarios to explain why the system transports, deploys, works, services, resumes, and recovers robots.
+- index.html：简短介绍、三个项目入口、教育与联系方式。
+- ccpp.html：覆盖路线、全部案例、三层视图与两段转弯视频。
+- farm-carrier.html：五类场景、真实记录回放、完整调度树及母车 / 机器人状态机。
+- ros2.html：论文决策（默认）、机械臂交互、原始录像、场景与任务四个标签；支持直接访问相应锚点。
+- projects.html：三个项目之间的关系。
 
-The runtime implementation is **explicit rules, greedy strip assignment, and finite state machines**. The website's behavior tree is an explanatory mapping of those rules. It does not claim to run BehaviorTree.CPP, a reinforcement-learning policy, an LLM Agent, or a ROS navigation stack in the browser. Highlighted nodes describe the recorded state and relevant logic; they are not fabricated BT tick statuses.
+前两个项目的回放代码与数据沿用精简包。第三个项目保留源模型、运动学交互、论文图、完整录像及源码摘录；网页精简不等于重新运行或修改仿真。
+主展示页没有实验数据表或静态指标墙。论文与搬运工程分别说明，录像保留任务失败，机械臂展示为运动学重建。
 
-The Feld 13 boundary is derived from the project map. The near-field depot, road, and default ground-robot resource parameters are demonstration inputs. Coverage means completed planned strip-centerline length; it is not a swept-tool area guarantee. Robot motion uses a planar point model. The three single-capacity resources constrain entry, loading, and service; they do not prove collision avoidance throughout the field.
+## 修改位置
 
-Fault and route-block scenarios stop the simulation clock in `WAITING_RECOVERY`. Recorded recovery commands are explicitly identified as scripted operator actions. Their replay display time must not be interpreted as measured repair downtime.
+介绍文字修改对应 HTML；统一样式在 assets/portfolio.css，本次三项目适配在 assets/merged.css；ROS 2 标签行为在 assets/ros2-concise.js。
+首页照片为 assets/images/zehao-dong-portrait.png，使用原始照片文件，通过 CSS 控制显示尺寸。
+assets/ros2.js 与 assets/arm-lab.js 保留原交互，模型在 assets/data/arm-model.js，场景在 assets/data/robot-scene.js。
+不要为了页面效果修改原始轨迹、模型参数或结果数据。
 
-### Re-run the simulation
+## 检查与打包
 
-`assets/downloads/farm-carrier-system-v1.0.zip` contains the complete original deliverable: Java source and JAR, maps, standalone interactive simulator, configuration, test evidence, and integration examples. Extract it separately and follow its `README_ZH.md`. A Java runtime is needed to run the simulation; opening this portfolio's recorded demonstration does not need it.
+```text
+python tools/check_site.py
+python tools/check_preview.py
+python tools/package_portfolio.py
+```
 
-The source package's `reports/benchmark.json`, `docs/VALIDATION_REPORT.md`, and `docs/MAP_PROVENANCE.md` document the numerical results and model limits. Website export data and verification records are under `assets/data/` and `reports/`. The website's exporter is under `tools/`; use its instructions when regenerating recordings. Source changes do not automatically update exported playback assets.
+打包脚本更新文件哈希清单，在本目录上一级生成 Zehao_Portfolio_Concise_All.zip。
+预览服务器支持视频区间读取，原始录像的章节按钮可在本地 HTTP 预览中直接跳转。
+历史合并检查见 docs/MERGED_SITE_VALIDATION_ZH.md，对应 reports/merged- 前缀。
+其余 reports 与 PROJECT03_VALIDATION_ZH.md 属于原包历史材料，不代表本版测试结果。
+可选旧浏览器回归工具 tools/browser_smoke.py 仅覆盖前两项及概述页，需已有 Playwright 与浏览器；不需要为了浏览本站安装它。
 
-## CCPP data and model scope
+## GitHub Pages 同步
 
-`assets/data/cases.js` is exported from validated CCPP v2.1 results. Playback evaluates saved geometric primitives and time profiles; it does not re-plan inside the browser. These are research reference trajectories, not closed-loop control or calibrated full vehicle dynamics. The ten demonstrations use `loops_only`: no chassis pivot and no reverse driving. Curvature-discontinuous joins stop before steering changes. Actual area coverage is reported separately from discrete task completion.
-
-See `assets/data/comparison.csv`, per-case `*_visits.csv`, and evidence hashes. The separate CCPP project provides `tools/build_comparison_suite.py` and `tools/export_comparison_site.py` for regeneration.
-
-## Website verification
-
-Run `python tools/validate_portfolio.py` to check the source HTML links, anchors, control associations, and preservation of the original CCPP assets. Generated folders such as `dist/` are excluded. Data and decision-model validation are recorded separately. This update does **not** claim a completed real-browser visual or responsive-layout acceptance test: the hosted preview timed out. The original simulator’s browser test results are historical evidence for that simulator, not a passing result for this new page. See `docs/WEBSITE_VALIDATION_ZH.md` for the exact scope and report paths.
-
-## Share and publish
-
-Keep `index.html`, the other HTML pages, and the complete `assets/` directory together. The site is buildless and can be served as static files. The included Windows guide retains the user's GitHub Pages publication workflow. This deliverable does not write to the user's GitHub account. If an online preview is supplied with the delivery, use its actual access settings when sharing it.
-
-## Privacy and maintenance
-
-The original name, education, dates, e-mail, and GitHub handle are preserved. No portrait, personal achievement, employer application, real-robot validation, visitor analytics, or third-party testimonial has been invented. The ZD monogram is a text mark. Future personal contribution claims should remain consistent with work the owner can explain and substantiate.
+发布目标为 https://github.com/caihao1B/caihao1b.github.io 的 main 分支，网站地址为 https://caihao1b.github.io/ 。将本目录内容放在仓库根目录，使 index.html 和 assets 直接位于发布根目录。
+本目录是本地源工程，不含 .git；本次通过 GitHub 接口同步。后续本地编辑不会自动上传，需另行提交同步，并核对对应提交的 Pages 部署结果。保留远程已有配置，不覆盖或删除无关文件。
+后续修改先读 AGENTS.md。来源与许可见 assets/source/yzbot/SOURCE-NOTES.txt。

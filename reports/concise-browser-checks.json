@@ -1,0 +1,206 @@
+{
+  "version": "concise-v2",
+  "generatedAt": "2026-10-22T16:44:30.336819+00:00",
+  "transport": "inline authored HTML/CSS/JS/media, no URL navigation",
+  "browser": "Chromium",
+  "limitations": "Not a live GitHub Pages or Windows App deployment test. No new Java simulation runs.",
+  "checks": [
+    {
+      "name": "index.html: 1440px layout, images, no tables, no errors",
+      "passed": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "tables": 0,
+        "images": true
+      }
+    },
+    {
+      "name": "projects.html: 1440px layout, images, no tables, no errors",
+      "passed": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "tables": 0,
+        "images": true
+      }
+    },
+    {
+      "name": "ccpp.html: 1440px layout, images, no tables, no errors",
+      "passed": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "tables": 0,
+        "images": true
+      }
+    },
+    {
+      "name": "farm-carrier.html: 1440px layout, images, no tables, no errors",
+      "passed": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "tables": 0,
+        "images": true
+      }
+    },
+    {
+      "name": "index.html: 390px layout, images, no tables, no errors",
+      "passed": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390,
+        "tables": 0,
+        "images": true
+      }
+    },
+    {
+      "name": "projects.html: 390px layout, images, no tables, no errors",
+      "passed": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390,
+        "tables": 0,
+        "images": true
+      }
+    },
+    {
+      "name": "ccpp.html: 390px layout, images, no tables, no errors",
+      "passed": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390,
+        "tables": 0,
+        "images": true
+      }
+    },
+    {
+      "name": "farm-carrier.html: 390px layout, images, no tables, no errors",
+      "passed": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390,
+        "tables": 0,
+        "images": true
+      }
+    },
+    {
+      "name": "CCPP: all ten preserved cases initialize",
+      "passed": true,
+      "details": {
+        "cases": [
+          "square_greedy",
+          "square_mst",
+          "square_ga",
+          "triangle_greedy",
+          "triangle_mst",
+          "triangle_ga",
+          "square_ga_circular",
+          "square_ga_conservative",
+          "car_r060",
+          "car_r090"
+        ]
+      }
+    },
+    {
+      "name": "CCPP: views and playback controls",
+      "passed": true,
+      "details": {
+        "modes": 3,
+        "playPauseSeekReset": true
+      }
+    },
+    {
+      "name": "CCPP: focused turns and optional overlays",
+      "passed": true,
+      "details": {
+        "loopFocus": true,
+        "curveFocus": true,
+        "overlays": true
+      }
+    },
+    {
+      "name": "CCPP: both preserved videos load metadata",
+      "passed": true,
+      "details": [
+        {
+          "duration": 26,
+          "width": 960,
+          "height": 672,
+          "error": null
+        },
+        {
+          "duration": 26,
+          "width": 960,
+          "height": 672,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "CCPP: no JavaScript exceptions during interactions",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Farm: five original scenarios reach all-aboard completion",
+      "passed": true,
+      "details": {
+        "scenarioFrames": {
+          "normal": 1175,
+          "low_battery": 1232,
+          "harvest": 1230,
+          "blocked_return": 1191,
+          "robot_fault": 1189
+        },
+        "total": 6017
+      }
+    },
+    {
+      "name": "Farm: playback, chapter jumps, agents and map controls",
+      "passed": true,
+      "details": {
+        "playPauseChaptersAgentsMap": true
+      }
+    },
+    {
+      "name": "Farm: full trees retained, compact defaults and inspectors",
+      "passed": true,
+      "details": {
+        "missionNodes": 27,
+        "agentNodes": 35,
+        "missionInitiallyVisible": 5
+      }
+    },
+    {
+      "name": "Farm: tabbed state machines and readable transition rules",
+      "passed": true,
+      "details": {
+        "robotStates": 13,
+        "carrierStates": 6,
+        "keyboardTabs": true
+      }
+    },
+    {
+      "name": "Farm: explicit recovery records and event navigation",
+      "passed": true,
+      "details": {
+        "blocked_return": {
+          "frame": 216,
+          "replayTime": 896.5
+        },
+        "robot_fault": {
+          "frame": 27,
+          "replayTime": 80.25
+        }
+      }
+    },
+    {
+      "name": "Farm: no JavaScript exceptions during interactions",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "passed": true
+}

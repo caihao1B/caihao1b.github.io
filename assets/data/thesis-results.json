@@ -1,0 +1,39 @@
+{
+  "source": "Table 7.6 / printed p.75 / PDF p.91",
+  "sample_note": "Each family aggregates three map-class means (n=3); mean ± standard deviation. Not a claim of 18 completed test instances.",
+  "metric_note": "η_ref is the realized proportion of the nominal intended reference region, not total free-space coverage. T/T_nom is duration relative to the matching nominal run.",
+  "results": [
+    {
+      "family": "Crossing",
+      "label": "穿越干扰",
+      "reference_realization_mean": 96.4,
+      "reference_realization_sd": 2.4,
+      "time_ratio_mean": 1.101,
+      "time_ratio_sd": 0.062
+    },
+    {
+      "family": "Persistent block",
+      "label": "持续阻塞",
+      "reference_realization_mean": 91.0,
+      "reference_realization_sd": 2.3,
+      "time_ratio_mean": 1.169,
+      "time_ratio_sd": 0.203
+    },
+    {
+      "family": "Mixed",
+      "label": "混合干扰",
+      "reference_realization_mean": 90.2,
+      "reference_realization_sd": 5.3,
+      "time_ratio_mean": 1.394,
+      "time_ratio_sd": 0.141
+    },
+    {
+      "family": "Severe still",
+      "label": "强静态持续干扰",
+      "reference_realization_mean": 85.8,
+      "reference_realization_sd": 6.5,
+      "time_ratio_mean": 1.77,
+      "time_ratio_sd": 1.046
+    }
+  ]
+}

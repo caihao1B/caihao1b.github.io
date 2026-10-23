@@ -1,0 +1,1670 @@
+{
+  "schema": "portfolio-world-layout-v1",
+  "description": "Source-derived saved scene geometry. Static saved world snapshot; no live robot telemetry or executed navigation trajectory.",
+  "frame": "world",
+  "units": "m",
+  "world": "my_world",
+  "source_world": "mybot_description/worlds/offic_room.world",
+  "source_world_sha256": "efad47cda9011a69420f3b3d6508d4f6cabc002a1670a7623acf701a94b292a5",
+  "pose_precedence": "Saved <state> poses take precedence over direct <model> poses; saved link poses are world coordinates. Matches source world_truth_audit.py 86-90.",
+  "bounds": {
+    "minX": -14.002137,
+    "maxX": 16.0053,
+    "minY": -14.975601,
+    "maxY": 5.16367
+  },
+  "operatingBounds": {
+    "minX": -2.5,
+    "maxX": 7.0,
+    "minY": -14.5,
+    "maxY": 2.5
+  },
+  "obstacles": [
+    {
+      "id": "officeroom/Wall_10",
+      "kind": "wall",
+      "x": 15.9231,
+      "y": -4.91484,
+      "z": 1.25,
+      "yaw": -1.57081,
+      "size": [
+        20.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          15.848237,
+          5.085161
+        ],
+        [
+          15.847963,
+          -14.914839
+        ],
+        [
+          15.997963,
+          -14.914841
+        ],
+        [
+          15.998237,
+          5.085159
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_107",
+      "kind": "wall",
+      "x": -5.58215,
+      "y": -8.17176,
+      "z": 1.25,
+      "yaw": -3.08207,
+      "size": [
+        3.27854,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -3.950245,
+          -7.999377
+        ],
+        [
+          -7.222978,
+          -8.194409
+        ],
+        [
+          -7.214055,
+          -8.344143
+        ],
+        [
+          -3.941322,
+          -8.149111
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_109",
+      "kind": "wall",
+      "x": -11.69,
+      "y": -8.34009,
+      "z": 1.25,
+      "yaw": 0.0,
+      "size": [
+        4.5,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -13.94,
+          -8.41509
+        ],
+        [
+          -9.44,
+          -8.41509
+        ],
+        [
+          -9.44,
+          -8.26509
+        ],
+        [
+          -13.94,
+          -8.26509
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_113",
+      "kind": "wall",
+      "x": 5.22198,
+      "y": -7.84863,
+      "z": 1.25,
+      "yaw": 0.0,
+      "size": [
+        7.25,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          1.59698,
+          -7.92363
+        ],
+        [
+          8.84698,
+          -7.92363
+        ],
+        [
+          8.84698,
+          -7.77363
+        ],
+        [
+          1.59698,
+          -7.77363
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_115",
+      "kind": "wall",
+      "x": 13.3118,
+      "y": -7.70906,
+      "z": 1.25,
+      "yaw": 3.14159,
+      "size": [
+        5.25,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          15.9368,
+          -7.634067
+        ],
+        [
+          10.6868,
+          -7.634053
+        ],
+        [
+          10.6868,
+          -7.784053
+        ],
+        [
+          15.9368,
+          -7.784067
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_118",
+      "kind": "wall",
+      "x": 3.60107,
+      "y": -4.78263,
+      "z": 1.25,
+      "yaw": -1.5708,
+      "size": [
+        2.5,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          3.526075,
+          -3.53263
+        ],
+        [
+          3.526065,
+          -6.03263
+        ],
+        [
+          3.676065,
+          -6.03263
+        ],
+        [
+          3.676075,
+          -3.53263
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_12",
+      "kind": "wall",
+      "x": 0.997954,
+      "y": -14.8397,
+      "z": 1.25,
+      "yaw": 3.14159,
+      "size": [
+        30.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          15.997954,
+          -14.76474
+        ],
+        [
+          -14.002046,
+          -14.76466
+        ],
+        [
+          -14.002046,
+          -14.91466
+        ],
+        [
+          15.997954,
+          -14.91474
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_120",
+      "kind": "wall",
+      "x": 2.32198,
+      "y": -8.97446,
+      "z": 1.25,
+      "yaw": -1.0472,
+      "size": [
+        2.75,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          1.569531,
+          -7.821173
+        ],
+        [
+          2.944525,
+          -10.202746
+        ],
+        [
+          3.074429,
+          -10.127747
+        ],
+        [
+          1.699435,
+          -7.746174
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_125",
+      "kind": "wall",
+      "x": -6.82289,
+      "y": -10.3358,
+      "z": 1.25,
+      "yaw": -1.5708,
+      "size": [
+        4.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -6.897883,
+          -8.3358
+        ],
+        [
+          -6.897897,
+          -12.3358
+        ],
+        [
+          -6.747897,
+          -12.3358
+        ],
+        [
+          -6.747883,
+          -8.3358
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_127",
+      "kind": "wall",
+      "x": 8.27993,
+      "y": -9.9436,
+      "z": 1.25,
+      "yaw": -1.5708,
+      "size": [
+        4.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          8.204937,
+          -7.9436
+        ],
+        [
+          8.204923,
+          -11.9436
+        ],
+        [
+          8.354923,
+          -11.9436
+        ],
+        [
+          8.354937,
+          -7.9436
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_129",
+      "kind": "wall",
+      "x": -8.80304,
+      "y": -11.7302,
+      "z": 1.25,
+      "yaw": 2.87979,
+      "size": [
+        4.25,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -6.731038,
+          -12.207753
+        ],
+        [
+          -10.836219,
+          -11.107758
+        ],
+        [
+          -10.875042,
+          -11.252647
+        ],
+        [
+          -6.769861,
+          -12.352642
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_132",
+      "kind": "wall",
+      "x": 10.5155,
+      "y": -11.3344,
+      "z": 1.25,
+      "yaw": 0.261799,
+      "size": [
+        4.75,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          8.240837,
+          -12.021539
+        ],
+        [
+          12.828985,
+          -10.79215
+        ],
+        [
+          12.790163,
+          -10.647261
+        ],
+        [
+          8.202015,
+          -11.87665
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_134",
+      "kind": "wall",
+      "x": 1.44409,
+      "y": -13.5073,
+      "z": 1.25,
+      "yaw": 1.309,
+      "size": [
+        3.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          1.12831,
+          -14.975601
+        ],
+        [
+          1.904759,
+          -12.077821
+        ],
+        [
+          1.75987,
+          -12.038999
+        ],
+        [
+          0.983421,
+          -14.936779
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_15",
+      "kind": "wall",
+      "x": -13.9271,
+      "y": -4.91469,
+      "z": 1.25,
+      "yaw": 1.5708,
+      "size": [
+        20.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -13.852063,
+          -14.91469
+        ],
+        [
+          -13.852137,
+          5.08531
+        ],
+        [
+          -14.002137,
+          5.08531
+        ],
+        [
+          -14.002063,
+          -14.91469
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_2",
+      "kind": "wall",
+      "x": 0.998279,
+      "y": 5.01,
+      "z": 1.25,
+      "yaw": 0.0,
+      "size": [
+        30.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -14.001721,
+          4.935
+        ],
+        [
+          15.998279,
+          4.935
+        ],
+        [
+          15.998279,
+          5.085
+        ],
+        [
+          -14.001721,
+          5.085
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_29",
+      "kind": "wall",
+      "x": 5.6084,
+      "y": 4.49108,
+      "z": 1.25,
+      "yaw": -1.5708,
+      "size": [
+        1.25,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          5.533402,
+          5.11608
+        ],
+        [
+          5.533398,
+          3.86608
+        ],
+        [
+          5.683398,
+          3.86608
+        ],
+        [
+          5.683402,
+          5.11608
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_31",
+      "kind": "wall",
+      "x": 5.58828,
+      "y": 1.68905,
+      "z": 1.25,
+      "yaw": 1.5708,
+      "size": [
+        1.25,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          5.663282,
+          1.06405
+        ],
+        [
+          5.663278,
+          2.31405
+        ],
+        [
+          5.513278,
+          2.31405
+        ],
+        [
+          5.513282,
+          1.06405
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_34",
+      "kind": "wall",
+      "x": -6.92285,
+      "y": 4.0,
+      "z": 1.25,
+      "yaw": -1.5708,
+      "size": [
+        2.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -6.997846,
+          5.0
+        ],
+        [
+          -6.997854,
+          3.0
+        ],
+        [
+          -6.847854,
+          3.0
+        ],
+        [
+          -6.847846,
+          5.0
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_38",
+      "kind": "wall",
+      "x": -8.35729,
+      "y": 0.89644,
+      "z": 1.25,
+      "yaw": 0.0,
+      "size": [
+        11.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -13.85729,
+          0.82144
+        ],
+        [
+          -2.85729,
+          0.82144
+        ],
+        [
+          -2.85729,
+          0.97144
+        ],
+        [
+          -13.85729,
+          0.97144
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_40",
+      "kind": "wall",
+      "x": 8.83774,
+      "y": 1.05399,
+      "z": 1.25,
+      "yaw": 3.14159,
+      "size": [
+        14.25,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          15.96274,
+          1.128971
+        ],
+        [
+          1.71274,
+          1.129009
+        ],
+        [
+          1.71274,
+          0.979009
+        ],
+        [
+          15.96274,
+          0.978971
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_46",
+      "kind": "wall",
+      "x": -8.31072,
+      "y": -1.09426,
+      "z": 1.25,
+      "yaw": -0.004163,
+      "size": [
+        7.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -11.811002,
+          -1.154689
+        ],
+        [
+          -4.811063,
+          -1.18383
+        ],
+        [
+          -4.810438,
+          -1.033831
+        ],
+        [
+          -11.810377,
+          -1.00469
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_49",
+      "kind": "wall",
+      "x": -12.0779,
+      "y": -1.57249,
+      "z": 1.25,
+      "yaw": -1.82702,
+      "size": [
+        1.17019,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -12.002171,
+          -0.987489
+        ],
+        [
+          -12.298732,
+          -2.119477
+        ],
+        [
+          -12.153629,
+          -2.157491
+        ],
+        [
+          -11.857068,
+          -1.025503
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_57",
+      "kind": "wall",
+      "x": -3.21349,
+      "y": -2.03294,
+      "z": 1.25,
+      "yaw": 1.5708,
+      "size": [
+        2.75,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -3.138485,
+          -3.40794
+        ],
+        [
+          -3.138495,
+          -0.65794
+        ],
+        [
+          -3.288495,
+          -0.65794
+        ],
+        [
+          -3.288485,
+          -3.40794
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_59",
+      "kind": "wall",
+      "x": 8.0,
+      "y": -1.15241,
+      "z": 1.25,
+      "yaw": -0.202428,
+      "size": [
+        5.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          5.535968,
+          -0.723258
+        ],
+        [
+          10.433875,
+          -1.728499
+        ],
+        [
+          10.464032,
+          -1.581562
+        ],
+        [
+          5.566125,
+          -0.576321
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_60",
+      "kind": "wall",
+      "x": 10.8846,
+      "y": -1.19517,
+      "z": 1.25,
+      "yaw": 0.527727,
+      "size": [
+        2.1,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          10.015216,
+          -1.788716
+        ],
+        [
+          11.829519,
+          -0.731217
+        ],
+        [
+          11.753984,
+          -0.601624
+        ],
+        [
+          9.939681,
+          -1.659123
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_61",
+      "kind": "wall",
+      "x": 12.3,
+      "y": -1.20596,
+      "z": 1.25,
+      "yaw": -0.523599,
+      "size": [
+        2.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          11.396475,
+          -0.770912
+        ],
+        [
+          13.128525,
+          -1.770912
+        ],
+        [
+          13.203525,
+          -1.641008
+        ],
+        [
+          11.471475,
+          -0.641008
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_66",
+      "kind": "wall",
+      "x": 2.74038,
+      "y": -2.49642,
+      "z": 1.25,
+      "yaw": 2.25548,
+      "size": [
+        3.01901,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          3.75313,
+          -3.618279
+        ],
+        [
+          1.843823,
+          -1.279696
+        ],
+        [
+          1.72763,
+          -1.374561
+        ],
+        [
+          3.636937,
+          -3.713144
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_68",
+      "kind": "wall",
+      "x": -7.68716,
+      "y": -4.43053,
+      "z": 1.25,
+      "yaw": 3.14159,
+      "size": [
+        9.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -3.18716,
+          -4.355542
+        ],
+        [
+          -12.18716,
+          -4.355518
+        ],
+        [
+          -12.18716,
+          -4.505518
+        ],
+        [
+          -3.18716,
+          -4.505542
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_72",
+      "kind": "wall",
+      "x": 8.04038,
+      "y": -3.60763,
+      "z": 1.25,
+      "yaw": 3.14159,
+      "size": [
+        8.9356,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          12.50818,
+          -3.532642
+        ],
+        [
+          3.57258,
+          -3.532618
+        ],
+        [
+          3.57258,
+          -3.682618
+        ],
+        [
+          12.50818,
+          -3.682642
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_75",
+      "kind": "wall",
+      "x": -3.26216,
+      "y": -4.85553,
+      "z": 1.25,
+      "yaw": -1.5708,
+      "size": [
+        3.0,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -3.337154,
+          -3.35553
+        ],
+        [
+          -3.337166,
+          -6.35553
+        ],
+        [
+          -3.187166,
+          -6.35553
+        ],
+        [
+          -3.187154,
+          -3.35553
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "officeroom/Wall_81",
+      "kind": "wall",
+      "x": -2.19878,
+      "y": -9.15024,
+      "z": 1.25,
+      "yaw": -0.523599,
+      "size": [
+        4.25,
+        0.15,
+        2.5
+      ],
+      "polygon": [
+        [
+          -4.076584,
+          -8.152691
+        ],
+        [
+          -0.395976,
+          -10.277692
+        ],
+        [
+          -0.320976,
+          -10.147789
+        ],
+        [
+          -4.001584,
+          -8.022788
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_0",
+      "kind": "box",
+      "x": -10.7673,
+      "y": 4.66367,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          -11.2673,
+          4.16367
+        ],
+        [
+          -10.2673,
+          4.16367
+        ],
+        [
+          -10.2673,
+          5.16367
+        ],
+        [
+          -11.2673,
+          5.16367
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_1",
+      "kind": "box",
+      "x": -8.89993,
+      "y": -1.11285,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          -9.39993,
+          -1.61285
+        ],
+        [
+          -8.39993,
+          -1.61285
+        ],
+        [
+          -8.39993,
+          -0.61285
+        ],
+        [
+          -9.39993,
+          -0.61285
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_10",
+      "kind": "box",
+      "x": 12.6936,
+      "y": -10.8131,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          12.1936,
+          -11.3131
+        ],
+        [
+          13.1936,
+          -11.3131
+        ],
+        [
+          13.1936,
+          -10.3131
+        ],
+        [
+          12.1936,
+          -10.3131
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_11",
+      "kind": "box",
+      "x": -2.50377,
+      "y": -14.1629,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          -3.00377,
+          -14.6629
+        ],
+        [
+          -2.00377,
+          -14.6629
+        ],
+        [
+          -2.00377,
+          -13.6629
+        ],
+        [
+          -3.00377,
+          -13.6629
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_12",
+      "kind": "box",
+      "x": 15.4715,
+      "y": -14.3041,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          14.9715,
+          -14.8041
+        ],
+        [
+          15.9715,
+          -14.8041
+        ],
+        [
+          15.9715,
+          -13.8041
+        ],
+        [
+          14.9715,
+          -13.8041
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_2",
+      "kind": "box",
+      "x": 1.73333,
+      "y": 1.16425,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          1.23333,
+          0.66425
+        ],
+        [
+          2.23333,
+          0.66425
+        ],
+        [
+          2.23333,
+          1.66425
+        ],
+        [
+          1.23333,
+          1.66425
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_3",
+      "kind": "box",
+      "x": 15.5053,
+      "y": 1.54302,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          15.0053,
+          1.04302
+        ],
+        [
+          16.0053,
+          1.04302
+        ],
+        [
+          16.0053,
+          2.04302
+        ],
+        [
+          15.0053,
+          2.04302
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_4",
+      "kind": "box",
+      "x": -2.6955,
+      "y": -3.54292,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          -3.1955,
+          -4.04292
+        ],
+        [
+          -2.1955,
+          -4.04292
+        ],
+        [
+          -2.1955,
+          -3.04292
+        ],
+        [
+          -3.1955,
+          -3.04292
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_5",
+      "kind": "box",
+      "x": 6.42454,
+      "y": -3.66884,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          5.92454,
+          -4.16884
+        ],
+        [
+          6.92454,
+          -4.16884
+        ],
+        [
+          6.92454,
+          -3.16884
+        ],
+        [
+          5.92454,
+          -3.16884
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_6",
+      "kind": "box",
+      "x": 8.16205,
+      "y": -7.42608,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          7.66205,
+          -7.92608
+        ],
+        [
+          8.66205,
+          -7.92608
+        ],
+        [
+          8.66205,
+          -6.92608
+        ],
+        [
+          7.66205,
+          -6.92608
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_7",
+      "kind": "box",
+      "x": 1.57466,
+      "y": -7.73198,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          1.07466,
+          -8.23198
+        ],
+        [
+          2.07466,
+          -8.23198
+        ],
+        [
+          2.07466,
+          -7.23198
+        ],
+        [
+          1.07466,
+          -7.23198
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_8",
+      "kind": "box",
+      "x": -13.437,
+      "y": -7.81538,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          -13.937,
+          -8.31538
+        ],
+        [
+          -12.937,
+          -8.31538
+        ],
+        [
+          -12.937,
+          -7.31538
+        ],
+        [
+          -13.937,
+          -7.31538
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    },
+    {
+      "id": "Untitled/link_9",
+      "kind": "box",
+      "x": -10.6671,
+      "y": -11.0531,
+      "z": 0.5,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "polygon": [
+        [
+          -11.1671,
+          -11.5531
+        ],
+        [
+          -10.1671,
+          -11.5531
+        ],
+        [
+          -10.1671,
+          -10.5531
+        ],
+        [
+          -11.1671,
+          -10.5531
+        ]
+      ],
+      "source": "saved_world_state_with_collision_geometry"
+    }
+  ],
+  "objects": [
+    {
+      "id": "red_cube_1",
+      "x": -1.5,
+      "y": 1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "red",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "red_cube_2",
+      "x": -1.6,
+      "y": 1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "red",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "red_cube_3",
+      "x": -1.7,
+      "y": 1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "red",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "red_cube_4",
+      "x": -1.8,
+      "y": 1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "red",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "red_cube_5",
+      "x": -1.9,
+      "y": 1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "red",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "blue_cube_1",
+      "x": -1.5,
+      "y": -1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "blue",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "blue_cube_2",
+      "x": -1.6,
+      "y": -1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "blue",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "blue_cube_3",
+      "x": -1.7,
+      "y": -1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "blue",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "blue_cube_4",
+      "x": -1.8,
+      "y": -1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "blue",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    },
+    {
+      "id": "blue_cube_5",
+      "x": -1.9,
+      "y": -1.0,
+      "z": 0.015,
+      "yaw": 0.0,
+      "color": "blue",
+      "size": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "saved_world_state"
+    }
+  ],
+  "zones": [
+    {
+      "id": "zone_a",
+      "label": "A",
+      "x": 5.0,
+      "y": -11.0,
+      "z": 0.01,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        0.5
+      ],
+      "config_matches_saved_state": true,
+      "source": "saved_world_state + competition_scene.json dimensions"
+    },
+    {
+      "id": "zone_b",
+      "label": "B",
+      "x": 5.0,
+      "y": -12.0,
+      "z": 0.01,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        0.5
+      ],
+      "config_matches_saved_state": true,
+      "source": "saved_world_state + competition_scene.json dimensions"
+    },
+    {
+      "id": "zone_c",
+      "label": "C",
+      "x": 5.0,
+      "y": -13.0,
+      "z": 0.01,
+      "yaw": 0.0,
+      "size": [
+        1.0,
+        0.5
+      ],
+      "config_matches_saved_state": true,
+      "source": "saved_world_state + competition_scene.json dimensions"
+    }
+  ],
+  "robotInitialPose": {
+    "id": "six_arm",
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "yaw": 0.0,
+    "source": "mybot/launch/gazebo_world2.launch.py lines 147-150 launch defaults; actual run may override"
+  },
+  "pickStaging": {
+    "red": {
+      "x": -0.75,
+      "y": 1.0,
+      "yaw": 3.14159
+    },
+    "blue": {
+      "x": -0.75,
+      "y": -1.0,
+      "yaw": 3.14159
+    }
+  },
+  "placeStaging": {
+    "zone_a": {
+      "x": 4.85,
+      "y": -11.65,
+      "yaw": 0.0
+    },
+    "zone_b": {
+      "x": 4.15,
+      "y": -12.0,
+      "yaw": 0.0
+    },
+    "zone_c": {
+      "x": 4.85,
+      "y": -13.65,
+      "yaw": 0.0
+    }
+  },
+  "map": {
+    "path": "bot_navigation/maps/mapn3.pgm",
+    "resolution": 0.05,
+    "origin": [
+      -15.6,
+      -33.4,
+      0
+    ]
+  },
+  "notes": [
+    "Ground plane is 100 x 100 m and not drawn as an obstacle.",
+    "Cube saved z=0.015 m; direct definitions z=0.75 m are not used.",
+    "No robot is stored in world state; launch spawn is separate.",
+    "Suggested website interaction: select object / zone, show exact saved coordinates; task progression is explanatory."
+  ]
+}

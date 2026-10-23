@@ -1,0 +1,468 @@
+{
+  "generatedAt": "2026-10-22T17:31:28.096745+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "source": "concise-zip",
+      "path": "assets/data/car_r060_visits.csv",
+      "sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/car_r090_visits.csv",
+      "sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/cases.js",
+      "sha256": "4f557ce7ee4e9d2c5882bf1a5276ee5f3e78d33bbd88ed13825ddb812a560f5d",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/comparison.csv",
+      "sha256": "07db631a858d7f93e007cee9a8e9c6a71404064629a3df1fbb9a29155ed3d3dc",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/evidence_manifest.json",
+      "sha256": "1870998033592d31651a7bfcf9d0a78322f05857618689359f3163d8544048b8",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-core-benchmark.json",
+      "sha256": "a3fe4618027bcdb3b09eaefb72727fff2145019bb031e3fb9a7cae967a9f3732",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-core-browser-tests.json",
+      "sha256": "45075f743a10ec679419a5e1fe0d97fd76abe569582df086d1c3fd76c262275e",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-core-core-tests.json",
+      "sha256": "e72b1b972439b5dc873838051d98386dd443c021cb78a88e0e10e26beef345d8",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-core-http-tests.json",
+      "sha256": "13cfb6d428550c5efe42a6898398818501dd77771588c96f957af64b38b27bb3",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-core-verification.json",
+      "sha256": "2ca80c73c409135f4c5f0b4edc41070de0107cfb230afedfed62d2e5b16b2164",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-decision-model.js",
+      "sha256": "49e4e7feff9237e9ac70332c9005dfdef9e071cb7ba23e208a2ad1be8b1ba1b4",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-evidence.json",
+      "sha256": "f85be4f0834055765eb5c5a4a9b2aaf41349ef07262cd69f0e65b3bcbe32aa80",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-map.json",
+      "sha256": "0a1fb603c7fc948706ad5d1a6aa18eedf762109585e457a04b7fe357344b27d9",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/farm-replays.js",
+      "sha256": "fb88d1252642821b5a2aae3b71baeee7601d416d81415d0d755f80c80e65c417",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/media_manifest.json",
+      "sha256": "2da16e99d5226928d8bf809a99b0f0f226ecd03c0fda6feea141f36130389458",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/square_ga_circular_visits.csv",
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/square_ga_conservative_visits.csv",
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/square_ga_visits.csv",
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/square_greedy_visits.csv",
+      "sha256": "1dda0c3564c50b782f710dfc5add9855c9431eb10ec55ad239aa40a7204aaf01",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/square_mst_visits.csv",
+      "sha256": "ebec751f4ab6d4f90c3132afef27556149e057bd82248109ac88031e368cfd38",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/test-summary.js",
+      "sha256": "1da2df8e39155b24d4d132386c7ae5c194dcbb467d6d3a9a61e5dbfcd49f51e6",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/triangle_ga_visits.csv",
+      "sha256": "a82c08b0999f253c490484713638795aa036e15662ed5d70a285eddb05723a89",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/triangle_greedy_visits.csv",
+      "sha256": "20f50b65ab521e51da913f98c99c23140857bcf19d00f6732ffe6ba1c0d04492",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/data/triangle_mst_visits.csv",
+      "sha256": "af4bdad0db4b3358c5f27f2f8cc855de62df61cafd913bf45face0948e0cac24",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/downloads/farm-carrier-system-v1.0.zip",
+      "sha256": "74a67a8c1ad1a0a244894d8584f8bdd60d619f7f9e0f3f4a6d4ed4b87948339e",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/farm-graphs.css",
+      "sha256": "5aa1b9922efa9c096c603d0c1a15b2d27b22598884f06bc38acb1d00b43583f2",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/farm-graphs.js",
+      "sha256": "8de774794014588a61df51939445a4b837e8720998be6426f5c7b9150b44f3d6",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/farm.css",
+      "sha256": "30ea9bb13dcd5dc830282c4fd51b19691be631af7a55617310e0e871fb3c7cbd",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/farm.js",
+      "sha256": "0e6dd92f4bfe2ba3e324c46728f7d567590301e50ae67ff3fcff1e28006fda69",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/bezier_closeup.png",
+      "sha256": "33dd5a0310975d7e4f8eb20a7550f5b0b1250baffeee288253e291787923ee8d",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/farm-map-preview.svg",
+      "sha256": "c4a88401dd83990438b5baea0d72e0cd776515416ff8c39d2b1e610287b94e01",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/heading_loop.png",
+      "sha256": "6886615fe9d94265a47609eec86f01aecd34b1af8924ab361b54e56393c7f1f0",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/ordered_route.png",
+      "sha256": "3cb7876ba86f1d9844bbf8c406a77b2e84015d27426b69d77d22ca0435ca7b1e",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/radius_comparison.png",
+      "sha256": "f3fd4fa1cf1750f4f836d259179c78b5c30403bba63bb14eb050d0c2636f147e",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/square_ga.png",
+      "sha256": "5b9541653e0d411f5e7b5ad8eeec81e0803b1e5eae43fadc89a2e5f7fa1bb279",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/square_ga_grid.png",
+      "sha256": "afa019876c3d76aa61e5f89d7d4a4a59928979b4b1ff7cc1c5b66413cb17ab87",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/triangle_ga.png",
+      "sha256": "9b05ed7ba788131d822dc84525ac2dd6c320807d86c69612848cd55e3c0ff5e0",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/images/triangle_ga_grid.png",
+      "sha256": "eeb7c6dd0db76648218d48fba0254066507ac12c7177667f50ed93648ad604b1",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/portfolio.css",
+      "sha256": "a9735986c0dc5c58bf959eacba0865b81177acfa67f569cf6738c19f9646c279",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/portfolio.js",
+      "sha256": "63a4620379f3f6d9b540071c579b83cd4719770795df67019ba5848138f31593",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/replay.js",
+      "sha256": "fd9e8e0a93cc0d1653d8d2e23c146e743fdc12725f56a585e7d8f07cbf64bb4c",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/site.css",
+      "sha256": "2d6bb1cb06e04b7886c665a90ce66eb8fa2797971b7cdc6b474e9dbb40a46347",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/site.js",
+      "sha256": "e67736cd367f976184f792cebfda6c4e1a6e1bee10ee470fa85f83d9dfca9828",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/source/Geometry.java",
+      "sha256": "c6343815a18096b083e2b576240a104c3a3efab78c34d089182ba7de2c04db5a",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/source/MissionEngine.java",
+      "sha256": "cc9d06ce3b3137706f43b3ab66b700d7576f530df9119c9add75d585efc65c99",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/videos/forward_uturn.csv",
+      "sha256": "5f24de50726e1727aed394b28f4f0ca7baa05970cfacbb3d89bc0d1ae6780973",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/videos/forward_uturn.jpg",
+      "sha256": "825ee4c419785b006dd0bbeaa2a45eea2414a358d0b7bd8c57f3654465eb5646",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/videos/forward_uturn.mp4",
+      "sha256": "bc98ce25fce2afa1298c846642cdcb1ed12e5f7cdb200da4ca6cc94b023a3b3c",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/videos/heading_loop.csv",
+      "sha256": "8029c91eec6e01a04c9a5c1459596cd1127de8f25ba71a3c43fb5da42036a201",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/videos/heading_loop.jpg",
+      "sha256": "9fdc6391c11ab58a9579bbf01ab7b4e36066214d5e9e0ebc527b1292a8ce34cf",
+      "unchanged": true
+    },
+    {
+      "source": "concise-zip",
+      "path": "assets/videos/heading_loop.mp4",
+      "sha256": "a686e2e3ea1e0c9858b56fdfd1fade9f57c74ff9968404ffb2b2d8f0d4e80658",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/arm-lab.css",
+      "sha256": "24394deec4e0f41564ab6ab5f533abc6345c79128d368bd5db94724120db8b4c",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/arm-lab.js",
+      "sha256": "5111a06411454ac95096b27bedda420fbd6dc6b2e8b85214ed4d68264927b409",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/ros2.css",
+      "sha256": "02f82379b4c21cb600c5f1cbb5503f4708e0f62c84f12b7f1c6afec73bdd0148",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/ros2.js",
+      "sha256": "5230c0fa85dae9073f4b15c5854da04f6612e6ff65f0e94a45255b9e5b845a25",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/data/arm-model.js",
+      "sha256": "8743390f0b5cb82a859846d5ff848007a280ce985c1abc6057d56ea37d551b8c",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/data/project03-evidence.json",
+      "sha256": "0b3e93b01c730fb60ee74047ad059fb7e028c75fb1caebc5a35d7b58e87327d4",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/data/robot-scene.js",
+      "sha256": "9d803040f96bddeb3b5d2da28e301f44aa5a4505da88f8b9b7c8d8508107391c",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/data/robot-scene.json",
+      "sha256": "480e8cc89d3fd5738aeb8b73b027332c778b0155777c5b862dd784f33d986972",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/data/thesis-figure-sources.json",
+      "sha256": "114a2b26731e7dd5246bf574494d9c8b4d1acf44962a7eac249e54fde4c3b663",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/data/thesis-results.json",
+      "sha256": "f58abeb5b5db8a233e23243760ba43925f300bae2ff6d2b738f51b23e2098269",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/data/video-chapters.json",
+      "sha256": "346bb5956aa62f8d04f0f2429e50e879a8b29229711a3a67418f33a2995c8219",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/images/thesis-architecture.png",
+      "sha256": "f27a0094e6a10681f38e63738aefaa7df954be7538a33f02068475faf43a0830",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/images/thesis-hierarchy.png",
+      "sha256": "1e3aa97331f9844ff4e57e445f2fb7bf34e09a38565a51dd252900d2af3082cb",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/images/thesis-rejoin.png",
+      "sha256": "d381b842a8c5c04737f53ac2d135dfdc9b0efe9ecc13669f92cd55071da55389",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/images/thesis-results.png",
+      "sha256": "70532cb948f34634a8a045d40f27d673dd6b30a195730f6d6b075577e59ac5ce",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/images/yzbot-recording-poster.jpg",
+      "sha256": "7e216f22455320d48faf0e7aa605089fd14b9d0edaf7c2c62972a2a2d7729bba",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/images/yzbot-watchdog-evidence.jpg",
+      "sha256": "c474f0003e6bd5df7723d9910ab0a0ddef7bd37f3395530d48d889492a0fcba4",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/videos/yzbot-gazebo-recording.mp4",
+      "sha256": "c6ea512d177e2c2a9d6d31e6d69e37741fbf2fcb66df7505b814be8a78ed09cd",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/source/yzbot/01-six-arm-model.txt",
+      "sha256": "a4bc4bb106f4c59c7497941ad2c311f7214298b0ea97598ea6adb577488edd00",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/source/yzbot/02-grasp-execution.txt",
+      "sha256": "260a6973aa0f4886832f685dc15cffdcad950eb00b7e7f177c613f8b99e32375",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/source/yzbot/03-task-controller.txt",
+      "sha256": "61859faa234818809798e0acc431111c0819eac9e48ced3261e3650b8588f889",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/source/yzbot/04-navigation-configuration.txt",
+      "sha256": "7fbaf8431d892e9fc258bfb0c9c7aee67a428df802aa2377d3e10babd5e564d8",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/source/yzbot/05-model-truth-bridge.txt",
+      "sha256": "61beb22debebb734e34da2468dd20cab77e8b8b922797578f9eb9d8441d750bc",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/source/yzbot/LICENSE-source-Apache-2.0.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/source/yzbot/source-manifest.json",
+      "sha256": "e513ca0561f92c5dccde520af26286d7bbc6866bdda676add9ebebc30f2c3d29",
+      "unchanged": true
+    },
+    {
+      "source": "local-ros2",
+      "path": "assets/source/yzbot/SOURCE-NOTES.txt",
+      "sha256": "37aed8350f2d1423e7d082d640d0ede0242e94b50758680e5d2a7ecc8d7af2de",
+      "unchanged": true
+    }
+  ]
+}

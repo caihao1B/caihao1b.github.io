@@ -1,0 +1,74 @@
+{
+  "scope": "Browser verification of research-first presentation and portrait; historical reports remain separate.",
+  "desktopWidth": 1440,
+  "mobileWidth": 390,
+  "portraitLoaded": {
+    "width": 1106,
+    "height": 1422
+  },
+  "defaultPanel": "research",
+  "tabOrder": [
+    "research",
+    "arm",
+    "recording",
+    "system"
+  ],
+  "removedSection": "项目来源与验证范围",
+  "decisionModes": [
+    {
+      "mode": "none",
+      "selected": "true",
+      "title": "正常覆盖任务跟踪"
+    },
+    {
+      "mode": "wait",
+      "selected": "true",
+      "title": "短时干扰等待"
+    },
+    {
+      "mode": "yield",
+      "selected": "true",
+      "title": "动态交互让行"
+    },
+    {
+      "mode": "c1",
+      "selected": "true",
+      "title": "同段局部绕行与重接"
+    },
+    {
+      "mode": "c2",
+      "selected": "true",
+      "title": "下一覆盖段有序重接"
+    },
+    {
+      "mode": "d1",
+      "selected": "true",
+      "title": "剩余覆盖段局部重排序"
+    },
+    {
+      "mode": "d2",
+      "selected": "true",
+      "title": "剩余区域覆盖几何替换"
+    }
+  ],
+  "armCarryJoints": [
+    0,
+    0.7,
+    1,
+    0,
+    -0.45,
+    0
+  ],
+  "keyboardArrowLeftSelectsResearch": true,
+  "mobileRos": {
+    "scrollWidth": 375,
+    "selected": "论文决策",
+    "visiblePanels": [
+      "research"
+    ],
+    "width": 390
+  },
+  "systemDeepLink": true,
+  "consoleErrors": [],
+  "screenshots": "research-first-screenshots/"
+}

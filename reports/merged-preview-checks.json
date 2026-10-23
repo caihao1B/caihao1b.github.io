@@ -1,0 +1,83 @@
+{
+  "scope": "Real HTTP handler with in-memory transport; browser seeking checked separately.",
+  "passed": true,
+  "checks": [
+    {
+      "name": "full video",
+      "passed": true,
+      "status": 200,
+      "bytes": 4819643
+    },
+    {
+      "name": "first bytes",
+      "passed": true,
+      "status": 206,
+      "bytes": 32
+    },
+    {
+      "name": "middle bytes",
+      "passed": true,
+      "status": 206,
+      "bytes": 100
+    },
+    {
+      "name": "open ended",
+      "passed": true,
+      "status": 206,
+      "bytes": 20
+    },
+    {
+      "name": "suffix",
+      "passed": true,
+      "status": 206,
+      "bytes": 17
+    },
+    {
+      "name": "clamped end",
+      "passed": true,
+      "status": 206,
+      "bytes": 8
+    },
+    {
+      "name": "out of bounds",
+      "passed": true,
+      "status": 416,
+      "bytes": 0
+    },
+    {
+      "name": "empty range",
+      "passed": true,
+      "status": 416,
+      "bytes": 0
+    },
+    {
+      "name": "reversed range",
+      "passed": true,
+      "status": 416,
+      "bytes": 0
+    },
+    {
+      "name": "zero suffix",
+      "passed": true,
+      "status": 416,
+      "bytes": 0
+    },
+    {
+      "name": "HEAD range",
+      "passed": true,
+      "status": 206,
+      "bytes": 0
+    },
+    {
+      "name": "multipart fallback",
+      "passed": true,
+      "status": 200,
+      "bytes": 4819643
+    },
+    {
+      "name": "homepage full response",
+      "passed": true,
+      "status": 200
+    }
+  ]
+}

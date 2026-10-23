@@ -7,6 +7,7 @@ if(!cases.length){$('caseHeading').textContent='演示数据未加载：请完�
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),wrap=x=>Math.atan2(Math.sin(x),Math.cos(x));
 const state={data:null,t:0,playing:false,last:0,stage:'curve',focus:null};
 const canvas=$('sceneCanvas'),ctx=canvas.getContext('2d');
+const text=(id,value)=>{const node=$(id);if(node)node.textContent=value;};
 const labels={square_greedy:'方格 · Greedy',square_mst:'方格 · MST–Euler',square_ga:'方格 · GA / 2-opt',triangle_greedy:'三角格 · Greedy',triangle_mst:'三角格 · MST–Euler',triangle_ga:'三角格 · GA / 2-opt',square_ga_circular:'同顺序 · 圆弧平滑',square_ga_conservative:'同曲线 · 保守时间剖面',car_r060:'前进车辆 · R ≥ 0.60 m',car_r090:'前进车辆 · R ≥ 0.90 m'};
 const H=u=>10*u**3-15*u**4+6*u**5,I=u=>2.5*u**4-3*u**5+u**6;
 function profileAt(p,time){
@@ -88,28 +89,18 @@ function draw(){
  }
  ctx.restore();ctx.font='11px "Segoe UI",sans-serif';ctx.fillStyle='#76899b';ctx.fillText('x / y：米 · 序号：计划访问顺序',pad,Ht-9);
  $('timeSlider').value=state.t;$('timeLabel').textContent=`${state.t.toFixed(1)} / ${(state.focus?state.focus.t1:d.events.at(-1).t1).toFixed(1)} s`;
- $('speedValue').textContent=a.v.toFixed(3);$('omegaValue').textContent=a.w.toFixed(3);$('curvatureValue').textContent=a.k.toFixed(3);
+ text('speedValue',a.v.toFixed(3));text('omegaValue',a.w.toFixed(3));text('curvatureValue',a.k.toFixed(3));
  const kinds={WORK:'作业',TRANSIT:'转场/回环',WAIT:'刀具等待',SERVICE:'原地作业',STEER:'停车转舵（车体不旋转）',TURN:'原地转向'};
  $('eventText').textContent=`#${a.event} ${kinds[a.kind]||a.kind}`;window.CCPP_CURRENT_POSE=a;
 }
 function pause(){state.playing=false;state.last=0;$('playButton').textContent='播放';}
-function stage(name){state.stage=name;document.querySelectorAll('[data-stage]').forEach(b=>b.classList.toggle('active',b.dataset.stage===name));if(name!=='curve'){pause();state.focus=null;setRange();}draw();}
+function stage(name){state.stage=name;text('stageHint',({grid:'田界、障碍与可访问任务单元的网格表示。',order:'任务访问顺序及必要回访路径。',curve:'基于已保存参考轨迹的机器人运动回放。'})[name]);document.querySelectorAll('[data-stage]').forEach(b=>b.classList.toggle('active',b.dataset.stage===name));if(name!=='curve'){pause();state.focus=null;setRange();}draw();}
 function setRange(){const d=state.data;$('timeSlider').min=state.focus?state.focus.t0:0;$('timeSlider').max=state.focus?state.focus.t1:d.events.at(-1).t1;}
 function setCase(id){
- state.data=cases.find(d=>d.id===id)||cases[0];state.t=0;state.focus=null;pause();const d=state.data,m=d.metrics;
+ state.data=cases.find(d=>d.id===id)||cases[0];state.t=0;state.focus=null;pause();const d=state.data;
  $('caseSelect').value=d.id;$('caseHeading').textContent=labels[d.id];$('visitStart').value=1;$('visitStart').max=d.visits.length;
- $('targetMetric').textContent=`${m.serviced_centres}/${m.candidate_centres}`;$('visitMetric').textContent=d.visits.length+' 次';
- $('rawMetric').textContent=d.optimization.raw_length_m.toFixed(2)+' m';$('lengthMetric').textContent=m.path_length_m.toFixed(2)+' m';
- $('areaMetric').textContent=(100*m.declared_area_coverage_ratio).toFixed(2)+'%';$('pivotMetric').textContent=m.pivot_fallbacks+' 次';
- $('modelNote').textContent=`${d.robot.length_m.toFixed(2)} × ${d.robot.width_m.toFixed(2)} m 研究车辆；最小移动半径 ${d.config.min_turn_radius_m.toFixed(2)} m。${d.config.motion_model==='bounded_curvature'?'前进曲率受限模型，停车时可转舵。':'差速模型，本例同样禁用原地转向。'}`;
- $('runNote').textContent=`模拟任务 ${(m.trajectory_duration_s/60).toFixed(2)} min；原始田块面积覆盖 ${(m.original_area_coverage_ratio*100).toFixed(2)}%。已记录 ${d.optimization.heading_loops} 次同点改向回环；保留任务区外的人工残留。`;
- $('gridSummary').textContent=`${d.config.grid_type==='square'?'方格':'三角格'} · ${d.config.solver} → 安全连接折线 → ${d.config.trajectory_method} / loops_only → ${d.config.timing} 时间参数化`;
- $('focusNote').textContent='先看序号，再点击“看180°回环掉头”。每个基本段起止静止；快览倍速不是运动学瞬时转向。';
- $('sequenceDownload').href=`assets/data/${d.id}_visits.csv`;
- $('visitTable').replaceChildren(...d.visits.map(r=>{const tr=document.createElement('tr');if(r.revisit)tr.className='revisit';
- [r.sequence,r.node_id,r.x_m.toFixed(3),r.y_m.toFixed(3),r.visit_number,r.revisit?'计划回访':'首次计划访问'].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.appendChild(td);});
- tr.addEventListener('click',()=>{pause();state.focus=null;$('visitStart').value=r.sequence;setRange();stage('order');});return tr;}));
- $('configEvidence').textContent=JSON.stringify({input:d.config,vehicle:d.robot,continuous_seam_audit:d.audit,shape_fallbacks:d.optimization.shape_fallbacks,order_sha256:d.case.order_sha256},null,2);
+ $('gridSummary').textContent=`${d.config.grid_type==='square'?'方格':'三角格'}任务 → 访问顺序 → 曲线轨迹`;
+ $('focusNote').textContent='“回环掉头回放”可定位至完整的局部转弯过程。';
  setRange();draw();
 }
 function focusWindow(win,note){pause();state.focus=win;state.t=win.t0;$('speedSelect').value='1';state.stage='curve';document.querySelectorAll('[data-stage]').forEach(b=>b.classList.toggle('active',b.dataset.stage==='curve'));setRange();$('focusNote').textContent=note;draw();}
@@ -122,18 +113,11 @@ function chooseCurve(){const d=state.data,e=d.events.find(e=>e.curve&&e.curve.ty
  const g=d.curve_groups.find(g=>g.event===e.id),xs=g.points.map(p=>p[0]),ys=g.points.map(p=>p[1]);
  focusWindow({id:null,t0:e.t0,t1:e.t1,bbox:[Math.min(...xs),Math.min(...ys),Math.max(...xs),Math.max(...ys)]},`${e.curve.type} 平滑段，${e.duration.toFixed(1)} s。机器人航向由曲线切线确定，不做额外角度补间。`);
 }
-function full(){pause();state.focus=null;state.t=0;setRange();$('focusNote').textContent='全任务回放已回到开头；可用20×快览，局部转弯请用1×。';draw();}
+function full(){pause();state.focus=null;state.t=0;setRange();$('focusNote').textContent='已回到全任务视图。局部转弯建议使用 1×。';draw();}
 const baseKeys=['square_greedy','square_mst','square_ga','triangle_greedy','triangle_mst','triangle_ga'];
 for(const [title,ids] of [['网格与覆盖算法对照',baseKeys],['固定顺序的曲线与时间对照',['square_ga_circular','square_ga_conservative']],['车辆最小转弯半径对照',['car_r060','car_r090']]]){
  const og=document.createElement('optgroup');og.label=title;ids.forEach(id=>{const o=document.createElement('option');o.value=id;o.textContent=labels[id];og.appendChild(o);});$('caseSelect').appendChild(og);
 }
-function rowButton(d,text){const b=document.createElement('button');b.className='row-link';b.textContent=text;b.addEventListener('click',()=>{setCase(d.id);stage('curve');document.getElementById('demo').scrollIntoView({behavior:'smooth'});});return b;}
-function addRow(target,d,values,label){const tr=document.createElement('tr'),td=document.createElement('td');td.appendChild(rowButton(d,label));tr.appendChild(td);values.forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.appendChild(td);});$(target).appendChild(tr);}
-baseKeys.forEach(id=>{const d=cases.find(d=>d.id===id),m=d.metrics;addRow('comparisonRows',d,[m.candidate_centres,d.visits.length,d.optimization.raw_length_m.toFixed(2),m.path_length_m.toFixed(2),(m.trajectory_duration_s/60).toFixed(2),(m.declared_area_coverage_ratio*100).toFixed(2)+'%',m.pivot_fallbacks+' 次'],labels[id]);});
-['square_ga_circular','square_ga','square_ga_conservative'].forEach(id=>{const d=cases.find(d=>d.id===id),m=d.metrics;addRow('smoothingRows',d,[d.optimization.raw_length_m.toFixed(2),m.path_length_m.toFixed(2),m.trajectory_duration_s.toFixed(1),(100*m.declared_area_coverage_ratio).toFixed(2)+'%'],id==='square_ga'?'Bézier约束平滑 + SLSQP时间':id==='square_ga_conservative'?'相同Bézier曲线 + 保守时间':'圆弧平滑 + SLSQP时间');});
-['car_r060','car_r090'].forEach(id=>{const d=cases.find(d=>d.id===id),m=d.metrics;addRow('radiusRows',d,[d.optimization.raw_length_m.toFixed(2),m.path_length_m.toFixed(2),m.trajectory_duration_s.toFixed(1),'0 / 0'],labels[id]);});
-const base=cases.find(d=>d.id==='square_ga'),safe=cases.find(d=>d.id==='square_ga_conservative');
-$('sameOrderNote').textContent=`上面三行具有相同访问顺序（SHA-256前12位：${base.case.order_sha256.slice(0,12)}）。Bézier方案包含${base.optimization.shape_fallbacks}处经验证的固定G2形状回退；时间优化将相同几何的模拟时间由${safe.metrics.trajectory_duration_s.toFixed(1)} s降至${base.metrics.trajectory_duration_s.toFixed(1)} s。这不是整条任务的全局最优证明。`;
 $('caseSelect').addEventListener('change',e=>setCase(e.target.value));
 document.querySelectorAll('[data-stage]').forEach(b=>b.addEventListener('click',()=>stage(b.dataset.stage)));
 $('playButton').addEventListener('click',()=>{if(state.playing){pause();return;}if(state.stage!=='curve')stage('curve');const end=state.focus?state.focus.t1:state.data.events.at(-1).t1;if(state.t>=end)state.t=state.focus?state.focus.t0:0;state.playing=true;state.last=0;$('playButton').textContent='暂停';});

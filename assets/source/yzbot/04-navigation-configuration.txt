@@ -1,0 +1,158 @@
+当前导航启动与控制参数
+来源：用户上传 yzbot_competition_deploy_20260604_181348.rar
+类型：静态源码摘录；未在当前环境运行 ROS 2 / Gazebo。
+行号保留原文件位置；区间之间省略了非相关内容。
+这些摘录用于解释现有实现，不代表所有源文件均为个人独立原创。
+
+================================================================
+原始路径：bot_navigation/launch/nav_bringup_gazebo2.launch.py
+SHA-256（原文件字节）：afb5f4d8b09c5b38739f8393f2ec17eb80efeb833961594a331b03eaf5a88eed
+原文件行 28–55
+   28 | 
+   29 | 
+   30 | 
+   31 | def generate_launch_description():
+   32 |     navigation2_dir = get_package_share_directory('bot_navigation')
+   33 |     nav2_bringup_dir = get_package_share_directory('nav2_bringup')
+   34 |     map_yaml_file = "mapn3.yaml"
+   35 | 
+   36 |     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+   37 |     use_rviz = LaunchConfiguration('use_rviz', default='true')
+   38 |     map_yaml_path = LaunchConfiguration('map',default=os.path.join(navigation2_dir,f'maps/{map_yaml_file}'))
+   39 |     nav2_param_path = LaunchConfiguration('params_file',default=os.path.join(navigation2_dir,'param','originbot_nav2_2.yaml'))
+   40 |     slam = LaunchConfiguration('slam', default='False')  
+   41 |     rviz_config_dir = os.path.join(nav2_bringup_dir,'rviz','nav2_default_view.rviz')
+   42 |     # slam = LaunchConfiguration('slam', default='True')
+   43 | 
+   44 |     return LaunchDescription([
+   45 |         DeclareLaunchArgument('use_sim_time',default_value=use_sim_time,description='Use simulation (Gazebo) clock if true'),
+   46 |         DeclareLaunchArgument('use_rviz',default_value=use_rviz,description='Start RViz if true'),
+   47 |         DeclareLaunchArgument('params_file',default_value=nav2_param_path,description='Full path to param file to load'),
+   48 |         DeclareLaunchArgument("map", default_value=map_yaml_path, description='Full path to map file to load'),
+   49 | 
+   50 |         IncludeLaunchDescription(
+   51 |             PythonLaunchDescriptionSource([nav2_bringup_dir,'/launch','/bringup_launch.py']),
+   52 |             launch_arguments={
+   53 |                 'map': map_yaml_path,
+   54 |                 'use_sim_time': use_sim_time,
+   55 |                 'params_file': nav2_param_path,
+
+================================================================
+原始路径：bot_navigation/param/originbot_nav2_2.yaml
+SHA-256（原文件字节）：f369226d993848a36c73bc2a8fd1bfa8bfecef35074f885a5162603baa5acb56
+原文件行 1–40
+    1 | amcl:
+    2 |   ros__parameters:
+    3 |     use_sim_time: True
+    4 |     alpha1: 0.2
+    5 |     alpha2: 0.2
+    6 |     alpha3: 0.2
+    7 |     alpha4: 0.2
+    8 |     alpha5: 0.2
+    9 |     base_frame_id: "base_footprint"
+   10 |     beam_skip_distance: 0.5
+   11 |     beam_skip_error_threshold: 0.9
+   12 |     beam_skip_threshold: 0.3
+   13 |     do_beamskip: false
+   14 |     global_frame_id: "map"
+   15 |     lambda_short: 0.1
+   16 |     laser_likelihood_max_dist: 2.0
+   17 |     laser_max_range: 100.0
+   18 |     laser_min_range: -1.0
+   19 |     laser_model_type: "likelihood_field"
+   20 |     max_beams: 60
+   21 |     max_particles: 2000
+   22 |     min_particles: 500
+   23 |     odom_frame_id: "odom"
+   24 |     pf_err: 0.05
+   25 |     pf_z: 0.99
+   26 |     recovery_alpha_fast: 0.0
+   27 |     recovery_alpha_slow: 0.0
+   28 |     resample_interval: 1
+   29 |     robot_model_type: "nav2_amcl::DifferentialMotionModel"
+   30 |     save_pose_rate: 0.5
+   31 |     sigma_hit: 0.2
+   32 |     tf_broadcast: true
+   33 |     transform_tolerance: 1.0
+   34 |     update_min_a: 0.2
+   35 |     update_min_d: 0.25
+   36 |     z_hit: 0.5
+   37 |     z_max: 0.05
+   38 |     z_rand: 0.5
+   39 |     z_short: 0.05
+   40 |     scan_topic: scan
+原文件行 76–137
+   76 |     min_y_velocity_threshold: 0.0
+   77 |     min_theta_velocity_threshold: 0.001
+   78 |     failure_tolerance: 0.3
+   79 |     progress_checker_plugins: ["progress_checker"]
+   80 |     goal_checker_plugins: ["general_goal_checker"]
+   81 |     controller_plugins: ["FollowPath"]
+   82 |     use_realtime_priority: false
+   83 | 
+   84 |     progress_checker:
+   85 |       plugin: "nav2_controller::SimpleProgressChecker"
+   86 |       required_movement_radius: 0.35
+   87 |       movement_time_allowance: 14.0
+   88 | 
+   89 |     general_goal_checker:
+   90 |       stateful: True
+   91 |       plugin: "nav2_controller::SimpleGoalChecker"
+   92 |       xy_goal_tolerance: 0.25
+   93 |       yaw_goal_tolerance: 0.25
+   94 | 
+   95 |     # DWB 控制器配置
+   96 |     FollowPath:
+   97 |       plugin: "dwb_core::DWBLocalPlanner"
+   98 |       debug_trajectory_details: True
+   99 |       min_vel_x: 0.0
+  100 |       min_vel_y: 0.0
+  101 |       max_vel_x: 1.0
+  102 |       max_vel_y: 0.0          # 差速机器人无侧向速度
+  103 |       max_vel_theta: 1.4
+  104 |       min_speed_xy: 0.0
+  105 |       max_speed_xy: 1.0
+  106 |       min_speed_theta: 0.0
+  107 |       acc_lim_x: 2.0
+  108 |       acc_lim_y: 0.0
+  109 |       acc_lim_theta: 2.2
+  110 |       decel_lim_x: -2.0
+  111 |       decel_lim_y: 0.0
+  112 |       decel_lim_theta: -2.2
+  113 |       vx_samples: 20
+  114 |       vy_samples: 5
+  115 |       vtheta_samples: 20
+  116 |       sim_time: 1.7
+  117 |       sim_granularity: 0.05
+  118 |       angular_sim_granularity: 0.1
+  119 |       xy_goal_tolerance: 0.25
+  120 |       yaw_goal_tolerance: 0.25
+  121 |       transform_tolerance: 0.1
+  122 |       critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+  123 |       RotateToGoal:
+  124 |         enabled: true
+  125 |       Oscillation:
+  126 |         enabled: true
+  127 |       BaseObstacle:
+  128 |         enabled: true
+  129 |       GoalAlign:
+  130 |         enabled: true
+  131 |       PathAlign:
+  132 |         enabled: true
+  133 |       PathDist:
+  134 |         enabled: true
+  135 |       GoalDist:
+  136 |         enabled: true
+  137 | 
+原文件行 235–244
+  235 |     use_sim_time: True
+  236 |     expected_planner_frequency: 20.0
+  237 |     planner_plugins: ["GridBased"]
+  238 |     GridBased:
+  239 |       plugin: "nav2_navfn_planner/NavfnPlanner"
+  240 |       tolerance: 0.5
+  241 |       use_astar: false
+  242 |       allow_unknown: true
+  243 | 
+  244 | smoother_server:
+

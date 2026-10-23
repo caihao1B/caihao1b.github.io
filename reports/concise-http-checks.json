@@ -1,0 +1,423 @@
+{
+  "scope": "Python HTTP client against local preview, not browser URL navigation",
+  "checked": 83,
+  "results": [
+    {
+      "path": "portfolio_manifest.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "START_HERE.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "ccpp.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "projects.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "START_HERE_中文.md",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "farm-carrier.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "README.md",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "AGENTS.md",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "docs/FARM_CARRIER_PRESENTATION_ZH.md",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "docs/EDIT_WITH_CODEX_ZH.md",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "docs/WEBSITE_VALIDATION_ZH.md",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/concise-data-preservation.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/farm-replay-validation.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/concise-static-checks.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/farm-site-static-validation.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/farm-decision-mapping.md",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/farm-ui-dom-tests.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/concise-graph-checks.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/farm-graph-validation.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/verification.md",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/concise-browser-checks.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/test-summary.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/verification.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/farm.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/portfolio.css",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/farm-graphs.css",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/farm-graphs.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/portfolio.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/site.css",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/site.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/farm.css",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/replay.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/source/Geometry.java",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/source/MissionEngine.java",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/videos/heading_loop.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/videos/forward_uturn.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/videos/heading_loop.jpg",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/videos/forward_uturn.jpg",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/videos/heading_loop.mp4",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/videos/forward_uturn.mp4",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/square_greedy_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/cases.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-evidence.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/square_ga_conservative_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/triangle_ga_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/comparison.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/square_mst_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/media_manifest.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-core-benchmark.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/square_ga_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-core-verification.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-map.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/car_r060_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-core-http-tests.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-replays.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-decision-model.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/triangle_greedy_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/car_r090_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/square_ga_circular_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/evidence_manifest.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/test-summary.js",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/triangle_mst_visits.csv",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-core-browser-tests.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/data/farm-core-core-tests.json",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/bezier_closeup.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/square_ga_grid.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/heading_loop.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/ordered_route.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/triangle_ga_grid.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/triangle_ga.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/radius_comparison.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/farm-map-preview.svg",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/images/square_ga.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "assets/downloads/farm-carrier-system-v1.0.zip",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/screenshots/projects_390.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/screenshots/ccpp_1440.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/screenshots/farm-carrier_390.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/screenshots/index_390.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/screenshots/projects_1440.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/screenshots/ccpp_390.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/screenshots/index_1440.png",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "path": "reports/screenshots/farm-carrier_1440.png",
+      "status": 200,
+      "bytesMatch": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

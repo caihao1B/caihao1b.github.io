@@ -1,0 +1,970 @@
+{
+  "generatedAt": "2026-10-23T00:31:41.061615+00:00",
+  "scope": "Professional presentation copy; no data, model, recording or source changes.",
+  "changes": [
+    {
+      "file": "index.html",
+      "old": "精选项目",
+      "new": "项目介绍",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": ">联系</a>",
+      "new": ">联系方式</a>",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "精选项目",
+      "new": "项目介绍",
+      "occurrences": 2
+    },
+    {
+      "file": "ccpp.html",
+      "old": ">联系</a>",
+      "new": ">联系方式</a>",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "精选项目",
+      "new": "项目介绍",
+      "occurrences": 2
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": ">联系</a>",
+      "new": ">联系方式</a>",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "精选项目",
+      "new": "项目介绍",
+      "occurrences": 2
+    },
+    {
+      "file": "projects.html",
+      "old": ">联系</a>",
+      "new": ">联系方式</a>",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "精选项目",
+      "new": "项目介绍",
+      "occurrences": 2
+    },
+    {
+      "file": "ros2.html",
+      "old": ">联系</a>",
+      "new": ">联系方式</a>",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "关注机器人怎样完成任务：从覆盖路径生成，到多机协同调度，再到 ROS 2 在线执行。",
+      "new": "研究与项目工作涉及机器人全覆盖路径规划、多机器人任务调度及 ROS 2 导航与系统集成。",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "查看项目演示 ↘",
+      "new": "查看项目介绍 ↘",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "SELECTED WORK",
+      "new": "RESEARCH &amp; ENGINEERING",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "用演示，让项目说话。",
+      "new": "研究与工程项目",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "三个项目，从路径规划到协同与执行。",
+      "new": "覆盖路径规划、多机器人协同调度与在线任务执行。",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "把不规则田块变成覆盖任务，再把访问顺序转化为考虑转弯约束的运动轨迹。",
+      "new": "面向不规则田块开展网格离散化、覆盖访问顺序优化与受转弯约束的参考轨迹生成。",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "母车运输与部署机器人，组织田间作业、按需补给、断点续作，最后全员回收。",
+      "new": "基于规则调度与有限状态机，实现母车运输、机器人部署、资源补给、断点续作及任务回收。",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "处理覆盖任务中的动态干扰，并通过六轴模型与原始录屏展示移动操作扩展。",
+      "new": "研究动态干扰下的覆盖任务恢复，展示六轴运动学模型及 Gazebo 移动操作运行记录。",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "播放路线与转弯演示 →",
+      "new": "路径规划项目详情 →",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "播放任务与决策演示 →",
+      "new": "协同调度项目详情 →",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "操作机械臂与观看录屏 →",
+      "new": "ROS 2 项目详情 →",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "规划怎样走 · 调度何时做 · 执行与反馈",
+      "new": "离线路径规划 · 多机任务调度 · 在线任务执行",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "查看系统衔接 →",
+      "new": "系统架构概述 →",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "<h2>工程背景</h2>",
+      "new": "<h2>教育背景</h2>",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "<h2>实践与技能</h2>",
+      "new": "<h2>实践经历与专业技能</h2>",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "LET’S CONNECT",
+      "new": "CONTACT",
+      "occurrences": 1
+    },
+    {
+      "file": "index.html",
+      "old": "交流机器人规划与系统集成。",
+      "new": "联系方式",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "从覆盖顺序，到连续轨迹。",
+      "new": "全覆盖路径规划与轨迹生成",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "面向不规则田块，生成覆盖访问顺序，并考虑转弯半径与运动约束，把折线路线转换为连续的参考轨迹。",
+      "new": "面向不规则田块开展任务网格离散化与覆盖访问顺序规划，结合车辆转弯半径、速度和加速度约束生成连续参考轨迹。通过离线回放展示网格表示、任务顺序及曲线运动结果。",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "看机器人怎样走。",
+      "new": "覆盖路径与参考轨迹回放",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "选一个方案，切换视图，点击播放。",
+      "new": "支持规划案例选择、网格与路径视图切换及轨迹回放。",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "观看机器人沿保存的参考轨迹移动。",
+      "new": "基于已保存参考轨迹的机器人运动回放。",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "看回环掉头",
+      "new": "回环掉头回放",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "转弯，不只是把折角磨圆。",
+      "new": "运动约束下的转弯轨迹",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "保留完整运动过程，而非静态路径截图。",
+      "new": "展示回环掉头与换行转弯的完整运动过程。",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "回访时的回环掉头",
+      "new": "任务回访中的前进回环掉头",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "在保持前进的情况下调整航向，继续后续访问。",
+      "new": "通过前进回环调整航向，并衔接后续任务访问。",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "考虑半径的换行转弯",
+      "new": "最小转弯半径约束下的换行轨迹",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "把车辆转弯约束纳入相邻作业行的连接。",
+      "new": "相邻作业行之间的连接轨迹满足车辆最小转弯半径约束。",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "了解技术方法与展示边界",
+      "new": "技术方法与验证范围",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "路径决定怎样走。调度决定何时出发、补给与返回。",
+      "new": "相关项目：多机器人任务分配与资源协同调度。",
+      "occurrences": 1
+    },
+    {
+      "file": "ccpp.html",
+      "old": "下一个项目：农田协同 →",
+      "new": "农田协同调度项目 →",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "送进农田，再全员带回。",
+      "new": "农田多机器人协同调度系统",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "一台母车与三台作业机器人，完成运输、田间作业、按需补给和回收；每台机器人保存自己的任务、资源与断点。",
+      "new": "构建由一台母车与三台作业机器人组成的协同调度仿真系统，基于规则调度与有限状态机组织运输部署、田间作业、资源补给、断点续作与回收，并维护各机器人任务和资源状态。",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "一张地图，看懂协作。",
+      "new": "协同任务回放与运行状态",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "选择机器人，观察它的状态与资源。",
+      "new": "展示母车与机器人位置、任务状态及资源消耗。",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "为什么现在这样行动？",
+      "new": "调度决策与状态转换",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "地图、调度树与 Agent 状态保持同一时刻。",
+      "new": "地图、调度规则与 Agent 状态基于同一时间戳同步展示。",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "点选状态可查看转换条件。补给后从断点继续，全员装车后母车才能离场。",
+      "new": "支持状态转换条件查询；补给完成后恢复任务断点，机器人全部回收后进入母车离场阶段。",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "了解实现方式与展示边界",
+      "new": "系统实现与验证范围",
+      "occurrences": 1
+    },
+    {
+      "file": "farm-carrier.html",
+      "old": "从仿真演示，进入可运行代码。",
+      "new": "Java 仿真工程与复现材料",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "从规划到执行 | 董泽豪",
+      "new": "任务规划与执行架构 | 董泽豪",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "规划、调度、执行。",
+      "new": "机器人任务规划与执行架构",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "三层分别回答：怎样走、何时做，以及怎样根据反馈继续任务。",
+      "new": "三个项目分别涉及离线覆盖路径规划、多机器人任务调度与 ROS 2 在线执行，通过任务表示、状态管理和执行反馈说明各层职责及接口关系。",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "查看路线演示 →",
+      "new": "覆盖路径规划项目 →",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "查看任务演示 →",
+      "new": "协同调度项目 →",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "论文研究覆盖任务的动态干扰恢复；移动操作扩展展示六轴机械臂、场景与原始 Gazebo 录像。",
+      "new": "在线覆盖研究涉及动态干扰恢复与剩余任务记账；移动操作扩展包含六轴机械臂模型、源码场景及 Gazebo 运行记录。",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "三个项目展示不同层级的工作，尚不代表已打通多机实时反馈闭环。论文导航与搬运工程的配置分别说明。",
+      "new": "各项目对应不同技术层级，完整的多机实时反馈闭环尚需集成验证；论文导航与搬运工程采用的配置分别说明。",
+      "occurrences": 1
+    },
+    {
+      "file": "projects.html",
+      "old": "打开第三个项目 →",
+      "new": "ROS 2 项目详情 →",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "让计划执行，让机械臂作业。",
+      "new": "ROS 2 在线覆盖导航与机械臂扩展",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "面向动态环境中的覆盖任务，研究等待、让行与局部恢复；再以移动操作工程扩展作业动作。通过论文决策、六轴机械臂交互、场景地图和原始录像，查看从导航到抓放的执行过程。",
+      "new": "围绕动态环境中的覆盖任务执行，研究分层任务监督、局部恢复与剩余区域记账；移动操作扩展包含六轴机械臂运动学交互、源码场景重建及 Gazebo 原始运行记录。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "拖动关节，看看它怎样动。",
+      "new": "六轴机械臂运动学交互",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "旋转视图、选择预设，或播放完整动作。",
+      "new": "支持视角调整、关节参数设置、预设姿态及动作序列回放。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "遇到干扰，怎样继续覆盖。",
+      "new": "动态干扰下的任务监督与恢复",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "选择一个分支，查看任务如何恢复。",
+      "new": "展示各恢复模式的触发条件、执行接口与任务记录。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "滚动窗口衔接路径与 Nav2；任务监督处理等待、让行、重接和结构修复，并记录未完成区域。",
+      "new": "基于滚动路径窗口衔接覆盖计划与 Nav2 执行，通过任务监督组织等待、让行、有序重接和结构修复，并维护剩余区域记录。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "看真实的运行过程。",
+      "new": "Gazebo 仿真运行记录",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "约 6 分 24 秒，保留完整时序与失败终止。",
+      "new": "完整运行录像约 6 分 24 秒，包含任务状态与异常终止记录。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "从状态变化定位失败边界",
+      "new": "导航中止与异常分析",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "从场景坐标，到抓取与放置。",
+      "new": "移动操作场景与任务流程",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "切换范围、选择对象，查看任务阶段。",
+      "new": "展示源码场景、对象坐标及导航—抓取—放置任务流程。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "点击阶段查看接口。这里是源码流程讲解，地图不播放虚构的导航轨迹。",
+      "new": "各阶段关联相应执行接口；地图展示源码保存状态，不包含在线导航轨迹。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "查看论文架构与原图",
+      "new": "论文系统架构与原图",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "查看通信接口与导航配置",
+      "new": "ROS 2 通信接口与导航配置",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "了解项目来源与展示边界",
+      "new": "项目来源与验证范围",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "从规划与协同，到任务执行与作业动作。",
+      "new": "相关研究：覆盖路径规划、多机调度与移动操作。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "返回三个项目 →",
+      "new": "返回项目总览 →",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "按原覆盖任务继续跟踪",
+      "new": "正常覆盖任务跟踪",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "没有需要升级处理的干扰时，保持分段顺序，把当前路径窗口交给 Nav2 执行。",
+      "new": "未触发恢复条件时，保持原分段顺序，通过 Nav2 执行当前路径窗口。",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "把输入任务变成可检查的搬运顺序",
+      "new": "任务解析与搬运序列构建",
+      "occurrences": 1
+    },
+    {
+      "file": "ros2.html",
+      "old": "控制器把颜色、数量和目标放置区转为逐件 pick / place 序列，发布任务与进度。解析成功只表示任务结构可执行，不能代替机器人动作完成。",
+      "new": "控制器根据颜色、数量和目标放置区生成逐件 pick / place 序列，并发布任务与进度。任务解析结果与实际动作完成状态分别核验。",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "按原覆盖任务继续跟踪",
+      "new": "正常覆盖任务跟踪",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "没有需要升级处理的干扰时，保持分段顺序，把当前路径窗口交给 Nav2 执行。",
+      "new": "未触发恢复条件时，保持原分段顺序，通过 Nav2 执行当前路径窗口。",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "把输入任务变成可检查的搬运顺序",
+      "new": "任务解析与搬运序列构建",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "控制器把颜色、数量和目标放置区转为逐件 pick / place 序列，发布任务与进度。解析成功只表示任务结构可执行，不能代替机器人动作完成。",
+      "new": "控制器根据颜色、数量和目标放置区生成逐件 pick / place 序列，并发布任务与进度。任务解析结果与实际动作完成状态分别核验。",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "为短暂干扰保留当前任务",
+      "new": "短时干扰等待",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "让出局部空间，维持任务连续性",
+      "new": "动态交互让行",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "绕过局部阻塞，接回当前段",
+      "new": "同段局部绕行与重接",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "在保持段顺序的前提下接入下一段",
+      "new": "下一覆盖段有序重接",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "保留原有路径段，调整局部执行顺序",
+      "new": "剩余覆盖段局部重排序",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "对剩余区域生成替代几何",
+      "new": "剩余区域覆盖几何替换",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "通过 Nav2 到达配置的取物服务位",
+      "new": "取物服务位导航",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "预设关节轨迹与仿真附着组成抓取动作",
+      "new": "预设关节轨迹与仿真附着",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "携带目标前往放置区域",
+      "new": "目标区域导航与物体携带",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "释放后收回机械臂，再按配置退出",
+      "new": "物体释放、机械臂回收与底盘退出",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "将账面完成与实际物体位置对照",
+      "new": "仿真真值核验与完成审计",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "场景全景与机器人移动。录像中的机械臂较小，可用上方源码模型查看其结构。",
+      "new": "场景全景与机器人移动记录。机械臂结构可在“机械臂交互”标签中查看。",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "不把等待记成覆盖完成",
+      "new": "等待状态不计入覆盖完成",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "候选需要带来有意义的前进",
+      "new": "候选需满足有效进度推进条件",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": "再回到短路径跟踪",
+      "new": "随后恢复短路径跟踪",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/ros2.js",
+      "old": " 已跳转并暂停；按播放器播放键开始观看。",
+      "new": " 已定位至对应章节并暂停，可通过播放器继续播放。",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/replay.js",
+      "old": "观察田界、障碍与可访问的任务单元。",
+      "new": "田界、障碍与可访问任务单元的网格表示。",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/replay.js",
+      "old": "观察机器人依次访问哪些任务，必要回访仍被保留。",
+      "new": "任务访问顺序及必要回访路径。",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/replay.js",
+      "old": "观看机器人沿保存的参考轨迹移动。",
+      "new": "基于已保存参考轨迹的机器人运动回放。",
+      "occurrences": 1
+    },
+    {
+      "file": "assets/replay.js",
+      "old": "点击“看回环掉头”，聚焦一次完整转弯。",
+      "new": "“回环掉头回放”可定位至完整的局部转弯过程。",
+      "occurrences": 1
+    },
+    {
+      "file": "START_HERE.html",
+      "old": "三个项目，一个精简作品集。",
+      "new": "机器人研究与工程项目作品集",
+      "occurrences": 1
+    },
+    {
+      "file": "AGENTS.md",
+      "old": "Keep introductions brief and visual. Preserve the existing project evidence.",
+      "new": "Keep introductions brief and visual. Preserve the existing project evidence.\nUse professional technical headings and objective project descriptions. Avoid slogans, rhetorical questions and conversational titles. Use 项目介绍 / 研究与工程项目 / 联系方式 for the main navigation and sections.",
+      "occurrences": 1
+    }
+  ],
+  "evidenceAssets": [
+    {
+      "path": "assets/data/arm-model.js",
+      "unchanged": true,
+      "sha256": "8743390f0b5cb82a859846d5ff848007a280ce985c1abc6057d56ea37d551b8c"
+    },
+    {
+      "path": "assets/data/car_r060_visits.csv",
+      "unchanged": true,
+      "sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6"
+    },
+    {
+      "path": "assets/data/car_r090_visits.csv",
+      "unchanged": true,
+      "sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6"
+    },
+    {
+      "path": "assets/data/cases.js",
+      "unchanged": true,
+      "sha256": "4f557ce7ee4e9d2c5882bf1a5276ee5f3e78d33bbd88ed13825ddb812a560f5d"
+    },
+    {
+      "path": "assets/data/comparison.csv",
+      "unchanged": true,
+      "sha256": "07db631a858d7f93e007cee9a8e9c6a71404064629a3df1fbb9a29155ed3d3dc"
+    },
+    {
+      "path": "assets/data/evidence_manifest.json",
+      "unchanged": true,
+      "sha256": "1870998033592d31651a7bfcf9d0a78322f05857618689359f3163d8544048b8"
+    },
+    {
+      "path": "assets/data/farm-core-benchmark.json",
+      "unchanged": true,
+      "sha256": "a3fe4618027bcdb3b09eaefb72727fff2145019bb031e3fb9a7cae967a9f3732"
+    },
+    {
+      "path": "assets/data/farm-core-browser-tests.json",
+      "unchanged": true,
+      "sha256": "45075f743a10ec679419a5e1fe0d97fd76abe569582df086d1c3fd76c262275e"
+    },
+    {
+      "path": "assets/data/farm-core-core-tests.json",
+      "unchanged": true,
+      "sha256": "e72b1b972439b5dc873838051d98386dd443c021cb78a88e0e10e26beef345d8"
+    },
+    {
+      "path": "assets/data/farm-core-http-tests.json",
+      "unchanged": true,
+      "sha256": "13cfb6d428550c5efe42a6898398818501dd77771588c96f957af64b38b27bb3"
+    },
+    {
+      "path": "assets/data/farm-core-verification.json",
+      "unchanged": true,
+      "sha256": "2ca80c73c409135f4c5f0b4edc41070de0107cfb230afedfed62d2e5b16b2164"
+    },
+    {
+      "path": "assets/data/farm-decision-model.js",
+      "unchanged": true,
+      "sha256": "49e4e7feff9237e9ac70332c9005dfdef9e071cb7ba23e208a2ad1be8b1ba1b4"
+    },
+    {
+      "path": "assets/data/farm-evidence.json",
+      "unchanged": true,
+      "sha256": "f85be4f0834055765eb5c5a4a9b2aaf41349ef07262cd69f0e65b3bcbe32aa80"
+    },
+    {
+      "path": "assets/data/farm-map.json",
+      "unchanged": true,
+      "sha256": "0a1fb603c7fc948706ad5d1a6aa18eedf762109585e457a04b7fe357344b27d9"
+    },
+    {
+      "path": "assets/data/farm-replays.js",
+      "unchanged": true,
+      "sha256": "fb88d1252642821b5a2aae3b71baeee7601d416d81415d0d755f80c80e65c417"
+    },
+    {
+      "path": "assets/data/media_manifest.json",
+      "unchanged": true,
+      "sha256": "2da16e99d5226928d8bf809a99b0f0f226ecd03c0fda6feea141f36130389458"
+    },
+    {
+      "path": "assets/data/project03-evidence.json",
+      "unchanged": true,
+      "sha256": "0b3e93b01c730fb60ee74047ad059fb7e028c75fb1caebc5a35d7b58e87327d4"
+    },
+    {
+      "path": "assets/data/robot-scene.js",
+      "unchanged": true,
+      "sha256": "9d803040f96bddeb3b5d2da28e301f44aa5a4505da88f8b9b7c8d8508107391c"
+    },
+    {
+      "path": "assets/data/robot-scene.json",
+      "unchanged": true,
+      "sha256": "480e8cc89d3fd5738aeb8b73b027332c778b0155777c5b862dd784f33d986972"
+    },
+    {
+      "path": "assets/data/square_ga_circular_visits.csv",
+      "unchanged": true,
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb"
+    },
+    {
+      "path": "assets/data/square_ga_conservative_visits.csv",
+      "unchanged": true,
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb"
+    },
+    {
+      "path": "assets/data/square_ga_visits.csv",
+      "unchanged": true,
+      "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb"
+    },
+    {
+      "path": "assets/data/square_greedy_visits.csv",
+      "unchanged": true,
+      "sha256": "1dda0c3564c50b782f710dfc5add9855c9431eb10ec55ad239aa40a7204aaf01"
+    },
+    {
+      "path": "assets/data/square_mst_visits.csv",
+      "unchanged": true,
+      "sha256": "ebec751f4ab6d4f90c3132afef27556149e057bd82248109ac88031e368cfd38"
+    },
+    {
+      "path": "assets/data/test-summary.js",
+      "unchanged": true,
+      "sha256": "1da2df8e39155b24d4d132386c7ae5c194dcbb467d6d3a9a61e5dbfcd49f51e6"
+    },
+    {
+      "path": "assets/data/thesis-figure-sources.json",
+      "unchanged": true,
+      "sha256": "114a2b26731e7dd5246bf574494d9c8b4d1acf44962a7eac249e54fde4c3b663"
+    },
+    {
+      "path": "assets/data/thesis-results.json",
+      "unchanged": true,
+      "sha256": "f58abeb5b5db8a233e23243760ba43925f300bae2ff6d2b738f51b23e2098269"
+    },
+    {
+      "path": "assets/data/triangle_ga_visits.csv",
+      "unchanged": true,
+      "sha256": "a82c08b0999f253c490484713638795aa036e15662ed5d70a285eddb05723a89"
+    },
+    {
+      "path": "assets/data/triangle_greedy_visits.csv",
+      "unchanged": true,
+      "sha256": "20f50b65ab521e51da913f98c99c23140857bcf19d00f6732ffe6ba1c0d04492"
+    },
+    {
+      "path": "assets/data/triangle_mst_visits.csv",
+      "unchanged": true,
+      "sha256": "af4bdad0db4b3358c5f27f2f8cc855de62df61cafd913bf45face0948e0cac24"
+    },
+    {
+      "path": "assets/data/video-chapters.json",
+      "unchanged": true,
+      "sha256": "346bb5956aa62f8d04f0f2429e50e879a8b29229711a3a67418f33a2995c8219"
+    },
+    {
+      "path": "assets/source/Geometry.java",
+      "unchanged": true,
+      "sha256": "c6343815a18096b083e2b576240a104c3a3efab78c34d089182ba7de2c04db5a"
+    },
+    {
+      "path": "assets/source/MissionEngine.java",
+      "unchanged": true,
+      "sha256": "cc9d06ce3b3137706f43b3ab66b700d7576f530df9119c9add75d585efc65c99"
+    },
+    {
+      "path": "assets/source/yzbot/01-six-arm-model.txt",
+      "unchanged": true,
+      "sha256": "a4bc4bb106f4c59c7497941ad2c311f7214298b0ea97598ea6adb577488edd00"
+    },
+    {
+      "path": "assets/source/yzbot/02-grasp-execution.txt",
+      "unchanged": true,
+      "sha256": "260a6973aa0f4886832f685dc15cffdcad950eb00b7e7f177c613f8b99e32375"
+    },
+    {
+      "path": "assets/source/yzbot/03-task-controller.txt",
+      "unchanged": true,
+      "sha256": "61859faa234818809798e0acc431111c0819eac9e48ced3261e3650b8588f889"
+    },
+    {
+      "path": "assets/source/yzbot/04-navigation-configuration.txt",
+      "unchanged": true,
+      "sha256": "7fbaf8431d892e9fc258bfb0c9c7aee67a428df802aa2377d3e10babd5e564d8"
+    },
+    {
+      "path": "assets/source/yzbot/05-model-truth-bridge.txt",
+      "unchanged": true,
+      "sha256": "61beb22debebb734e34da2468dd20cab77e8b8b922797578f9eb9d8441d750bc"
+    },
+    {
+      "path": "assets/source/yzbot/LICENSE-source-Apache-2.0.txt",
+      "unchanged": true,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "assets/source/yzbot/source-manifest.json",
+      "unchanged": true,
+      "sha256": "e513ca0561f92c5dccde520af26286d7bbc6866bdda676add9ebebc30f2c3d29"
+    },
+    {
+      "path": "assets/source/yzbot/SOURCE-NOTES.txt",
+      "unchanged": true,
+      "sha256": "37aed8350f2d1423e7d082d640d0ede0242e94b50758680e5d2a7ecc8d7af2de"
+    },
+    {
+      "path": "assets/downloads/farm-carrier-system-v1.0.zip",
+      "unchanged": true,
+      "sha256": "74a67a8c1ad1a0a244894d8584f8bdd60d619f7f9e0f3f4a6d4ed4b87948339e"
+    },
+    {
+      "path": "assets/videos/forward_uturn.csv",
+      "unchanged": true,
+      "sha256": "5f24de50726e1727aed394b28f4f0ca7baa05970cfacbb3d89bc0d1ae6780973"
+    },
+    {
+      "path": "assets/videos/forward_uturn.jpg",
+      "unchanged": true,
+      "sha256": "825ee4c419785b006dd0bbeaa2a45eea2414a358d0b7bd8c57f3654465eb5646"
+    },
+    {
+      "path": "assets/videos/forward_uturn.mp4",
+      "unchanged": true,
+      "sha256": "bc98ce25fce2afa1298c846642cdcb1ed12e5f7cdb200da4ca6cc94b023a3b3c"
+    },
+    {
+      "path": "assets/videos/heading_loop.csv",
+      "unchanged": true,
+      "sha256": "8029c91eec6e01a04c9a5c1459596cd1127de8f25ba71a3c43fb5da42036a201"
+    },
+    {
+      "path": "assets/videos/heading_loop.jpg",
+      "unchanged": true,
+      "sha256": "9fdc6391c11ab58a9579bbf01ab7b4e36066214d5e9e0ebc527b1292a8ce34cf"
+    },
+    {
+      "path": "assets/videos/heading_loop.mp4",
+      "unchanged": true,
+      "sha256": "a686e2e3ea1e0c9858b56fdfd1fade9f57c74ff9968404ffb2b2d8f0d4e80658"
+    },
+    {
+      "path": "assets/videos/yzbot-gazebo-recording.mp4",
+      "unchanged": true,
+      "sha256": "c6ea512d177e2c2a9d6d31e6d69e37741fbf2fcb66df7505b814be8a78ed09cd"
+    },
+    {
+      "path": "assets/images/bezier_closeup.png",
+      "unchanged": true,
+      "sha256": "33dd5a0310975d7e4f8eb20a7550f5b0b1250baffeee288253e291787923ee8d"
+    },
+    {
+      "path": "assets/images/farm-map-preview.svg",
+      "unchanged": true,
+      "sha256": "c4a88401dd83990438b5baea0d72e0cd776515416ff8c39d2b1e610287b94e01"
+    },
+    {
+      "path": "assets/images/heading_loop.png",
+      "unchanged": true,
+      "sha256": "6886615fe9d94265a47609eec86f01aecd34b1af8924ab361b54e56393c7f1f0"
+    },
+    {
+      "path": "assets/images/ordered_route.png",
+      "unchanged": true,
+      "sha256": "3cb7876ba86f1d9844bbf8c406a77b2e84015d27426b69d77d22ca0435ca7b1e"
+    },
+    {
+      "path": "assets/images/radius_comparison.png",
+      "unchanged": true,
+      "sha256": "f3fd4fa1cf1750f4f836d259179c78b5c30403bba63bb14eb050d0c2636f147e"
+    },
+    {
+      "path": "assets/images/square_ga.png",
+      "unchanged": true,
+      "sha256": "5b9541653e0d411f5e7b5ad8eeec81e0803b1e5eae43fadc89a2e5f7fa1bb279"
+    },
+    {
+      "path": "assets/images/square_ga_grid.png",
+      "unchanged": true,
+      "sha256": "afa019876c3d76aa61e5f89d7d4a4a59928979b4b1ff7cc1c5b66413cb17ab87"
+    },
+    {
+      "path": "assets/images/thesis-architecture.png",
+      "unchanged": true,
+      "sha256": "f27a0094e6a10681f38e63738aefaa7df954be7538a33f02068475faf43a0830"
+    },
+    {
+      "path": "assets/images/thesis-hierarchy.png",
+      "unchanged": true,
+      "sha256": "1e3aa97331f9844ff4e57e445f2fb7bf34e09a38565a51dd252900d2af3082cb"
+    },
+    {
+      "path": "assets/images/thesis-rejoin.png",
+      "unchanged": true,
+      "sha256": "d381b842a8c5c04737f53ac2d135dfdc9b0efe9ecc13669f92cd55071da55389"
+    },
+    {
+      "path": "assets/images/thesis-results.png",
+      "unchanged": true,
+      "sha256": "70532cb948f34634a8a045d40f27d673dd6b30a195730f6d6b075577e59ac5ce"
+    },
+    {
+      "path": "assets/images/triangle_ga.png",
+      "unchanged": true,
+      "sha256": "9b05ed7ba788131d822dc84525ac2dd6c320807d86c69612848cd55e3c0ff5e0"
+    },
+    {
+      "path": "assets/images/triangle_ga_grid.png",
+      "unchanged": true,
+      "sha256": "eeb7c6dd0db76648218d48fba0254066507ac12c7177667f50ed93648ad604b1"
+    },
+    {
+      "path": "assets/images/yzbot-recording-poster.jpg",
+      "unchanged": true,
+      "sha256": "7e216f22455320d48faf0e7aa605089fd14b9d0edaf7c2c62972a2a2d7729bba"
+    },
+    {
+      "path": "assets/images/yzbot-watchdog-evidence.jpg",
+      "unchanged": true,
+      "sha256": "c474f0003e6bd5df7723d9910ab0a0ddef7bd37f3395530d48d889492a0fcba4"
+    }
+  ]
+}

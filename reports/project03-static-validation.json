@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "checked_at_utc": "2026-10-22T17:02:46+00:00",
+  "scope": "Source HTML references, fragment and control associations, and original CCPP artifact preservation; generated directories excluded",
+  "excluded_directories": [
+    ".cache",
+    ".git",
+    ".output",
+    "__pycache__",
+    "build",
+    "dist",
+    "node_modules",
+    "out"
+  ],
+  "summary": {
+    "html_files": 7,
+    "local_references": 131,
+    "html_fragments": 33,
+    "element_associations": 12,
+    "original_ccpp_assets": 30,
+    "errors": 0,
+    "warnings": 0,
+    "pending": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "pending": [],
+  "original_ccpp_assets": {
+    "archive": "Zehao_Portfolio_Redesigned(1).zip",
+    "archive_sha256": "5b48ecf19aea6fa9143274dfe3853a1f2b477cb33a9bddc593be5c02bca78723",
+    "files": [
+      {
+        "path": "assets/data/car_r060_visits.csv",
+        "sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6",
+        "size_bytes": 6582,
+        "actual_sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/car_r090_visits.csv",
+        "sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6",
+        "size_bytes": 6582,
+        "actual_sha256": "546aa954982db007fc4461490d5c7039aef5b6a015e2651d21c3d887732c95e6",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/cases.js",
+        "sha256": "4f557ce7ee4e9d2c5882bf1a5276ee5f3e78d33bbd88ed13825ddb812a560f5d",
+        "size_bytes": 3819348,
+        "actual_sha256": "4f557ce7ee4e9d2c5882bf1a5276ee5f3e78d33bbd88ed13825ddb812a560f5d",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/comparison.csv",
+        "sha256": "07db631a858d7f93e007cee9a8e9c6a71404064629a3df1fbb9a29155ed3d3dc",
+        "size_bytes": 1486,
+        "actual_sha256": "07db631a858d7f93e007cee9a8e9c6a71404064629a3df1fbb9a29155ed3d3dc",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/evidence_manifest.json",
+        "sha256": "1870998033592d31651a7bfcf9d0a78322f05857618689359f3163d8544048b8",
+        "size_bytes": 2208,
+        "actual_sha256": "1870998033592d31651a7bfcf9d0a78322f05857618689359f3163d8544048b8",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/media_manifest.json",
+        "sha256": "2da16e99d5226928d8bf809a99b0f0f226ecd03c0fda6feea141f36130389458",
+        "size_bytes": 422,
+        "actual_sha256": "2da16e99d5226928d8bf809a99b0f0f226ecd03c0fda6feea141f36130389458",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/square_ga_circular_visits.csv",
+        "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+        "size_bytes": 4610,
+        "actual_sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/square_ga_conservative_visits.csv",
+        "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+        "size_bytes": 4610,
+        "actual_sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/square_ga_visits.csv",
+        "sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+        "size_bytes": 4610,
+        "actual_sha256": "94d6f9170073baf1e3e06ba65c16f875723dc320d6e5cb4c41d4357fd91138bb",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/square_greedy_visits.csv",
+        "sha256": "1dda0c3564c50b782f710dfc5add9855c9431eb10ec55ad239aa40a7204aaf01",
+        "size_bytes": 6953,
+        "actual_sha256": "1dda0c3564c50b782f710dfc5add9855c9431eb10ec55ad239aa40a7204aaf01",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/square_mst_visits.csv",
+        "sha256": "ebec751f4ab6d4f90c3132afef27556149e057bd82248109ac88031e368cfd38",
+        "size_bytes": 6343,
+        "actual_sha256": "ebec751f4ab6d4f90c3132afef27556149e057bd82248109ac88031e368cfd38",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/test-summary.js",
+        "sha256": "1da2df8e39155b24d4d132386c7ae5c194dcbb467d6d3a9a61e5dbfcd49f51e6",
+        "size_bytes": 63,
+        "actual_sha256": "1da2df8e39155b24d4d132386c7ae5c194dcbb467d6d3a9a61e5dbfcd49f51e6",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/triangle_ga_visits.csv",
+        "sha256": "a82c08b0999f253c490484713638795aa036e15662ed5d70a285eddb05723a89",
+        "size_bytes": 6223,
+        "actual_sha256": "a82c08b0999f253c490484713638795aa036e15662ed5d70a285eddb05723a89",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/triangle_greedy_visits.csv",
+        "sha256": "20f50b65ab521e51da913f98c99c23140857bcf19d00f6732ffe6ba1c0d04492",
+        "size_bytes": 9650,
+        "actual_sha256": "20f50b65ab521e51da913f98c99c23140857bcf19d00f6732ffe6ba1c0d04492",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/data/triangle_mst_visits.csv",
+        "sha256": "af4bdad0db4b3358c5f27f2f8cc855de62df61cafd913bf45face0948e0cac24",
+        "size_bytes": 8458,
+        "actual_sha256": "af4bdad0db4b3358c5f27f2f8cc855de62df61cafd913bf45face0948e0cac24",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/images/bezier_closeup.png",
+        "sha256": "33dd5a0310975d7e4f8eb20a7550f5b0b1250baffeee288253e291787923ee8d",
+        "size_bytes": 101633,
+        "actual_sha256": "33dd5a0310975d7e4f8eb20a7550f5b0b1250baffeee288253e291787923ee8d",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/images/heading_loop.png",
+        "sha256": "6886615fe9d94265a47609eec86f01aecd34b1af8924ab361b54e56393c7f1f0",
+        "size_bytes": 105411,
+        "actual_sha256": "6886615fe9d94265a47609eec86f01aecd34b1af8924ab361b54e56393c7f1f0",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/images/ordered_route.png",
+        "sha256": "3cb7876ba86f1d9844bbf8c406a77b2e84015d27426b69d77d22ca0435ca7b1e",
+        "size_bytes": 90118,
+        "actual_sha256": "3cb7876ba86f1d9844bbf8c406a77b2e84015d27426b69d77d22ca0435ca7b1e",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/images/radius_comparison.png",
+        "sha256": "f3fd4fa1cf1750f4f836d259179c78b5c30403bba63bb14eb050d0c2636f147e",
+        "size_bytes": 75891,
+        "actual_sha256": "f3fd4fa1cf1750f4f836d259179c78b5c30403bba63bb14eb050d0c2636f147e",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/images/square_ga.png",
+        "sha256": "5b9541653e0d411f5e7b5ad8eeec81e0803b1e5eae43fadc89a2e5f7fa1bb279",
+        "size_bytes": 138519,
+        "actual_sha256": "5b9541653e0d411f5e7b5ad8eeec81e0803b1e5eae43fadc89a2e5f7fa1bb279",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/images/square_ga_grid.png",
+        "sha256": "afa019876c3d76aa61e5f89d7d4a4a59928979b4b1ff7cc1c5b66413cb17ab87",
+        "size_bytes": 43631,
+        "actual_sha256": "afa019876c3d76aa61e5f89d7d4a4a59928979b4b1ff7cc1c5b66413cb17ab87",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/images/triangle_ga.png",
+        "sha256": "9b05ed7ba788131d822dc84525ac2dd6c320807d86c69612848cd55e3c0ff5e0",
+        "size_bytes": 145124,
+        "actual_sha256": "9b05ed7ba788131d822dc84525ac2dd6c320807d86c69612848cd55e3c0ff5e0",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/images/triangle_ga_grid.png",
+        "sha256": "eeb7c6dd0db76648218d48fba0254066507ac12c7177667f50ed93648ad604b1",
+        "size_bytes": 130340,
+        "actual_sha256": "eeb7c6dd0db76648218d48fba0254066507ac12c7177667f50ed93648ad604b1",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/replay.js",
+        "sha256": "187b7acdf4d19714a2fdb4637e1d62be0d03eeba29faed85b9548a1a5cc7ccf6",
+        "size_bytes": 17309,
+        "actual_sha256": "187b7acdf4d19714a2fdb4637e1d62be0d03eeba29faed85b9548a1a5cc7ccf6",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/videos/forward_uturn.csv",
+        "sha256": "5f24de50726e1727aed394b28f4f0ca7baa05970cfacbb3d89bc0d1ae6780973",
+        "size_bytes": 219397,
+        "actual_sha256": "5f24de50726e1727aed394b28f4f0ca7baa05970cfacbb3d89bc0d1ae6780973",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/videos/forward_uturn.jpg",
+        "sha256": "825ee4c419785b006dd0bbeaa2a45eea2414a358d0b7bd8c57f3654465eb5646",
+        "size_bytes": 46901,
+        "actual_sha256": "825ee4c419785b006dd0bbeaa2a45eea2414a358d0b7bd8c57f3654465eb5646",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/videos/forward_uturn.mp4",
+        "sha256": "bc98ce25fce2afa1298c846642cdcb1ed12e5f7cdb200da4ca6cc94b023a3b3c",
+        "size_bytes": 470219,
+        "actual_sha256": "bc98ce25fce2afa1298c846642cdcb1ed12e5f7cdb200da4ca6cc94b023a3b3c",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/videos/heading_loop.csv",
+        "sha256": "8029c91eec6e01a04c9a5c1459596cd1127de8f25ba71a3c43fb5da42036a201",
+        "size_bytes": 219828,
+        "actual_sha256": "8029c91eec6e01a04c9a5c1459596cd1127de8f25ba71a3c43fb5da42036a201",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/videos/heading_loop.jpg",
+        "sha256": "9fdc6391c11ab58a9579bbf01ab7b4e36066214d5e9e0ebc527b1292a8ce34cf",
+        "size_bytes": 47800,
+        "actual_sha256": "9fdc6391c11ab58a9579bbf01ab7b4e36066214d5e9e0ebc527b1292a8ce34cf",
+        "status": "PASS"
+      },
+      {
+        "path": "assets/videos/heading_loop.mp4",
+        "sha256": "a686e2e3ea1e0c9858b56fdfd1fade9f57c74ff9968404ffb2b2d8f0d4e80658",
+        "size_bytes": 628710,
+        "actual_sha256": "a686e2e3ea1e0c9858b56fdfd1fade9f57c74ff9968404ffb2b2d8f0d4e80658",
+        "status": "PASS"
+      }
+    ]
+  },
+  "limits": [
+    "No browser execution, JavaScript runtime assertions, or visual layout validation.",
+    "Only HTML references are resolved; arbitrary strings inside Markdown are not treated as links.",
+    "The allowed pending list is effective only with --allow-pending; a pending report is never PASS.",
+    "New Farm Carrier assets are checked for existence, not compared against the original CCPP archive."
+  ]
+}

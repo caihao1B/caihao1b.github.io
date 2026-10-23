@@ -1,0 +1,177 @@
+{
+  "version": "concise-v2",
+  "generatedAt": "2026-10-22T16:46:57.058236+00:00",
+  "scope": "Static local links, anchors, IDs, hooks and required assets; not a browser/runtime verification.",
+  "checks": [
+    {
+      "name": "index.html: unique IDs",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "index.html: local references",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "index.html: no tables",
+      "passed": true,
+      "details": {
+        "tableCount": 0
+      }
+    },
+    {
+      "name": "projects.html: unique IDs",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "projects.html: local references",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "projects.html: no tables",
+      "passed": true,
+      "details": {
+        "tableCount": 0
+      }
+    },
+    {
+      "name": "ccpp.html: unique IDs",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "ccpp.html: local references",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "ccpp.html: no tables",
+      "passed": true,
+      "details": {
+        "tableCount": 0
+      }
+    },
+    {
+      "name": "farm-carrier.html: unique IDs",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "farm-carrier.html: local references",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "farm-carrier.html: no tables",
+      "passed": true,
+      "details": {
+        "tableCount": 0
+      }
+    },
+    {
+      "name": "START_HERE.html: unique IDs",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "START_HERE.html: local references",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "ccpp.html: required JavaScript hooks",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "checked": 17
+      }
+    },
+    {
+      "name": "farm-carrier.html: required JavaScript hooks",
+      "passed": true,
+      "details": {
+        "missing": [],
+        "checked": 48
+      }
+    },
+    {
+      "name": "Farm scripts load in dependency order",
+      "passed": true,
+      "details": [
+        "assets/data/farm-replays.js",
+        "assets/data/farm-decision-model.js",
+        "assets/farm-graphs.js",
+        "assets/farm.js"
+      ]
+    },
+    {
+      "name": "Required file: .nojekyll",
+      "passed": true,
+      "details": ".nojekyll"
+    },
+    {
+      "name": "Required file: AGENTS.md",
+      "passed": true,
+      "details": "AGENTS.md"
+    },
+    {
+      "name": "Required file: README.md",
+      "passed": true,
+      "details": "README.md"
+    },
+    {
+      "name": "Required file: preview_server.py",
+      "passed": true,
+      "details": "preview_server.py"
+    },
+    {
+      "name": "Required file: START_PREVIEW.cmd",
+      "passed": true,
+      "details": "START_PREVIEW.cmd"
+    },
+    {
+      "name": "Required file: assets/data/cases.js",
+      "passed": true,
+      "details": "assets/data/cases.js"
+    },
+    {
+      "name": "Required file: assets/data/farm-replays.js",
+      "passed": true,
+      "details": "assets/data/farm-replays.js"
+    },
+    {
+      "name": "Required file: assets/data/farm-decision-model.js",
+      "passed": true,
+      "details": "assets/data/farm-decision-model.js"
+    },
+    {
+      "name": "Required file: assets/videos/heading_loop.mp4",
+      "passed": true,
+      "details": "assets/videos/heading_loop.mp4"
+    },
+    {
+      "name": "Required file: assets/videos/forward_uturn.mp4",
+      "passed": true,
+      "details": "assets/videos/forward_uturn.mp4"
+    },
+    {
+      "name": "Required file: assets/downloads/farm-carrier-system-v1.0.zip",
+      "passed": true,
+      "details": "assets/downloads/farm-carrier-system-v1.0.zip"
+    },
+    {
+      "name": "Required file: docs/EDIT_WITH_CODEX_ZH.md",
+      "passed": true,
+      "details": "docs/EDIT_WITH_CODEX_ZH.md"
+    },
+    {
+      "name": "Coverage progress uses fraction scale",
+      "passed": true,
+      "details": "fraction 0–1; resource meters 0–100"
+    }
+  ],
+  "passed": true
+}

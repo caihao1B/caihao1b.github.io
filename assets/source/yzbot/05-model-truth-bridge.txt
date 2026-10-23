@@ -1,0 +1,147 @@
+Gazebo真值桥与保存场景读取
+来源：用户上传 yzbot_competition_deploy_20260604_181348.rar
+类型：静态源码摘录；未在当前环境运行 ROS 2 / Gazebo。
+行号保留原文件位置；区间之间省略了非相关内容。
+这些摘录用于解释现有实现，不代表所有源文件均为个人独立原创。
+
+================================================================
+原始路径：competition_truth_bridge/src/competition_model_truth_bridge.cpp
+SHA-256（原文件字节）：860611098f4abc076a1e80bf37dab32a01ba2812c3eea82b0e9be071da91c41d
+原文件行 22–108
+   22 | class CompetitionModelTruthBridge : public rclcpp::Node
+   23 | {
+   24 | public:
+   25 |   CompetitionModelTruthBridge()
+   26 |   : Node("competition_model_truth_bridge"),
+   27 |     output_topic_(
+   28 |       this->declare_parameter<std::string>(
+   29 |         "output_topic",
+   30 |         "/competition/model_states")),
+   31 |     stale_timeout_sec_(this->declare_parameter<double>("stale_timeout_sec", 2.0)),
+   32 |     relevant_prefixes_(
+   33 |       this->declare_parameter<std::vector<std::string>>(
+   34 |         "relevant_prefixes",
+   35 |         {"red_cube_", "blue_cube_"})),
+   36 |     seed_prefixes_(
+   37 |       this->declare_parameter<std::vector<std::string>>(
+   38 |         "seed_prefixes",
+   39 |         {"zone_"})),
+   40 |     robot_name_(
+   41 |       this->declare_parameter<std::string>(
+   42 |         "robot_name",
+   43 |         "six_arm")),
+   44 |     world_file_(
+   45 |       this->declare_parameter<std::string>(
+   46 |         "world_file",
+   47 |         "")),
+   48 |     allow_pose_local_fallback_(
+   49 |       this->declare_parameter<bool>(
+   50 |         "allow_pose_local_fallback",
+   51 |         false))
+   52 |   {
+   53 |     publisher_ = this->create_publisher<gazebo_msgs::msg::ModelStates>(output_topic_, 10);
+   54 |     this->seed_truth_cache_from_world_file();
+   55 | 
+   56 |     pose_info_topics_ = this->declare_parameter<std::vector<std::string>>(
+   57 |       "pose_info_topics",
+   58 |       {"/gazebo/my_world/pose/info", "/gazebo/default/pose/info"});
+   59 |     pose_local_info_topics_ = this->declare_parameter<std::vector<std::string>>(
+   60 |       "pose_local_info_topics",
+   61 |       {"/gazebo/my_world/pose/local/info", "/gazebo/default/pose/local/info"});
+   62 | 
+   63 |     gazebo::client::setup();
+   64 |     gazebo_node_ = gazebo::transport::NodePtr(new gazebo::transport::Node());
+   65 |     gazebo_node_->Init();
+   66 | 
+   67 |     for (const auto & topic_name : pose_info_topics_) {
+   68 |       auto subscriber = gazebo_node_->Subscribe(
+   69 |         topic_name,
+   70 |         &CompetitionModelTruthBridge::handle_pose_info_batch,
+   71 |         this);
+   72 |       if (!subscriber) {
+   73 |         RCLCPP_WARN(
+   74 |           get_logger(),
+   75 |           "Failed to subscribe to Gazebo pose/info topic: %s",
+   76 |           topic_name.c_str());
+   77 |         continue;
+   78 |       }
+   79 |       pose_info_subscribers_.push_back(subscriber);
+   80 |     }
+   81 | 
+   82 |     for (const auto & topic_name : pose_local_info_topics_) {
+   83 |       auto subscriber = gazebo_node_->Subscribe(
+   84 |         topic_name,
+   85 |         &CompetitionModelTruthBridge::handle_pose_local_info_batch,
+   86 |         this);
+   87 |       if (!subscriber) {
+   88 |         RCLCPP_WARN(
+   89 |           get_logger(),
+   90 |           "Failed to subscribe to Gazebo pose/local/info topic: %s",
+   91 |           topic_name.c_str());
+   92 |         continue;
+   93 |       }
+   94 |       pose_local_info_subscribers_.push_back(subscriber);
+   95 |     }
+   96 | 
+   97 |     stale_timer_ = this->create_wall_timer(
+   98 |       std::chrono::seconds(1),
+   99 |       [this]() {
+  100 |         this->check_staleness();
+  101 |       });
+  102 |     publish_period_sec_ = this->declare_parameter<double>("publish_period_sec", 0.2);
+  103 |     publish_timer_ = this->create_wall_timer(
+  104 |       std::chrono::duration_cast<std::chrono::milliseconds>(
+  105 |         std::chrono::duration<double>(publish_period_sec_)),
+  106 |       [this]() {
+  107 |         this->publish_cached_poses();
+  108 |       });
+
+================================================================
+原始路径：tools_demo/tools_demo/world_truth_audit.py
+SHA-256（原文件字节）：41f67b368893c202b4f57efa4344eb19ddd916f45269ce948bc4ccb7534c92ed
+原文件行 47–90
+   47 | def load_direct_world_model_poses(world_file: str | Path) -> dict[str, dict[str, Any]]:
+   48 |     """Read direct world model definitions, ignoring saved <state>."""
+   49 |     path = Path(world_file).expanduser()
+   50 |     root = ET.parse(path).getroot()
+   51 |     world = root.find("world") if root.tag == "sdf" else root
+   52 |     if world is None:
+   53 |         return {}
+   54 | 
+   55 |     poses: dict[str, dict[str, Any]] = {}
+   56 |     for model in world.findall("model"):
+   57 |         name = model.attrib.get("name", "").strip()
+   58 |         pose = _parse_sdf_pose_text(model.findtext("pose"))
+   59 |         if not name or pose is None:
+   60 |             continue
+   61 |         x, y, z, yaw = pose
+   62 |         poses[name] = _pose_dict(x=x, y=y, z=z, yaw=yaw, source="world_model")
+   63 |     return poses
+   64 | 
+   65 | 
+   66 | def load_state_world_model_poses(world_file: str | Path) -> dict[str, dict[str, Any]]:
+   67 |     """Read saved Gazebo <state> model poses from a world file."""
+   68 |     path = Path(world_file).expanduser()
+   69 |     root = ET.parse(path).getroot()
+   70 |     world = root.find("world") if root.tag == "sdf" else root
+   71 |     if world is None:
+   72 |         return {}
+   73 | 
+   74 |     poses: dict[str, dict[str, Any]] = {}
+   75 |     for state in world.findall("state"):
+   76 |         for model in state.findall("model"):
+   77 |             name = model.attrib.get("name", "").strip()
+   78 |             pose = _parse_sdf_pose_text(model.findtext("pose"))
+   79 |             if not name or pose is None:
+   80 |                 continue
+   81 |             x, y, z, yaw = pose
+   82 |             poses[name] = _pose_dict(x=x, y=y, z=z, yaw=yaw, source="world_state")
+   83 |     return poses
+   84 | 
+   85 | 
+   86 | def load_effective_world_model_poses(world_file: str | Path) -> dict[str, dict[str, Any]]:
+   87 |     """Read world poses as Gazebo displays them, preferring saved <state> poses."""
+   88 |     poses = load_direct_world_model_poses(world_file)
+   89 |     poses.update(load_state_world_model_poses(world_file))
+   90 |     return poses
+

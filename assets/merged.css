@@ -1,0 +1,69 @@
+/* Three-project integration. Presentation overrides only. */
+.profile-portrait{margin:0;justify-self:center;width:min(100%,220px);aspect-ratio:4/5;overflow:hidden;border:1px solid #e1e8ee;border-radius:12px;background:#fff}
+.profile-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 32%}
+.three-projects{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.three-projects .feature-image{height:210px}
+.three-projects .feature-copy{padding:23px}
+.three-projects .feature-copy h3{font-size:21px}
+.three-projects .feature-copy p{min-height:76px}
+.three-projects .tags{gap:6px}
+.three-projects .tags span{padding:4px 7px;font-size:10px}
+.ros-feature{padding:14px;background:#fff}
+.ros-feature img{object-fit:contain;object-position:center}
+.project-bridge{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.project-bridge img{border-radius:8px;border:1px solid #dde6ed}
+.ros-concise .wrap{--max:1120px}
+.ros-concise .project-hero h1{font-size:40px}
+.ros-demo-tabs{display:flex;gap:28px;border-bottom:1px solid #dce5eb;margin:0 0 26px}
+.ros-demo-tabs button{border:0;border-bottom:2px solid transparent;background:none;padding:13px 2px;color:#788d9d;font-size:14px;white-space:nowrap}
+.ros-demo-tabs button[aria-selected=true]{border-bottom-color:#193b5c;color:#193b5c;font-weight:600}
+.ros-panel{padding:0 0 12px;outline-offset:6px}
+.ros-concise .section-heading h2{font-size:25px}
+.ros-panel-intro{font-size:14px;color:#637b8c;max-width:800px;margin:0 0 22px}
+.ros-panel .technical-details{margin-top:22px}
+.ros-panel .ros-details{margin-top:20px}
+.ros-concise .ros-small-note{font-size:11px;color:#768c9b}
+.ros-concise .ros-decision-lab{margin-top:0;border-radius:8px;box-shadow:none}
+.ros-concise .ros-mode-panel{font-size:13px}
+.ros-concise .ros-paper-figure{margin:12px 0 20px}
+.ros-concise .ros-flow-card h3{font-size:18px}
+.ros-concise .ros-map-card #sceneCanvas{aspect-ratio:1.38}
+.ros-concise .ros-video-box{min-width:0}
+.ros-concise .ros-chapters{min-width:0}
+.source-links{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:12px;margin-top:18px}
+.ros-concise .arm-lab{border-radius:9px;box-shadow:none}
+.ros-concise .arm-lab-head h3{font-size:17px}
+.ros-concise .arm-source-badge{font-size:10px}
+.ros-concise .arm-source-note{font-size:11px}
+.ros-concise .arm-source-note>p{font-size:11px}
+.ros-concise .arm-view-tools button{font-size:11px}
+@media(max-width:1000px){
+  .three-projects{grid-template-columns:1fr 1fr}
+  .three-projects .feature-card:last-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+  .three-projects .feature-card:last-child .feature-image{height:100%;min-height:235px;border-bottom:0}
+  .concise-page .nav-links{gap:17px}
+  .concise-page .brand span{display:none}
+}
+@media(max-width:740px){
+  .home-page .profile-hero{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+  .profile-portrait{order:-1;width:112px;aspect-ratio:1;border-radius:50%}
+  .profile-portrait img{object-position:center 30%}
+  .three-projects{grid-template-columns:1fr}
+  .three-projects .feature-card:last-child{grid-column:auto;display:block}
+  .three-projects .feature-card:last-child .feature-image,.three-projects .feature-image{height:220px;min-height:0}
+  .three-projects .feature-copy{padding:22px}
+  .three-projects .feature-copy p{min-height:0}
+  .project-bridge{grid-template-columns:1fr;gap:25px}
+  .ros-concise .project-hero h1{font-size:29px}
+  .ros-demo-tabs{gap:0;justify-content:space-between;margin-bottom:22px}
+  .ros-demo-tabs button{font-size:12px;padding:12px 2px}
+  .ros-concise .section-heading h2{font-size:22px}
+  .ros-concise .section-heading p{font-size:12px}
+  .ros-panel-intro{font-size:13px}
+  .ros-concise .arm-source-badge{display:none}
+  .ros-concise .arm-lab-head h3{font-size:16px}
+  .ros-concise .ros-map-toolbar{gap:12px}
+  .ros-concise .ros-map-toolbar label{max-width:100%}
+  .ros-concise .ros-map-toolbar select{max-width:160px}
+  .source-links{display:grid;gap:10px}
+}
