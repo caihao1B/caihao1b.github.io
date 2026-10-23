@@ -1,7 +1,7 @@
 {
   "name": "Zehao Portfolio · Three concise projects",
-  "version": "3.2-research-first",
-  "created_utc": "2026-10-23T01:26:07.052652+00:00",
+  "version": "3.2.1-ccpp-source",
+  "created_utc": "2026-10-23T02:14:07.895923+00:00",
   "entry": "index.html",
   "project_entries": [
     "ccpp.html",
@@ -428,8 +428,8 @@
     },
     {
       "path": "ccpp.html",
-      "bytes": 6872,
-      "sha256": "d2ea9766e24485061e687fab24bccbd5c775f19b9f5b017ce00112a000c43434"
+      "bytes": 7035,
+      "sha256": "6a1ac0cafb282911785bf91cddc23e3403a1064f9beb10f5addbb6c94ff28c4b"
     },
     {
       "path": "docs/CONCISE_SITE_VALIDATION_ZH.md",
@@ -483,8 +483,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 6173,
-      "sha256": "726d99657972f67f3503a85d7ef73425a91c2216dc43d89846f0832ee02334cc"
+      "bytes": 6323,
+      "sha256": "c6e1fd5236657f920b97d3587adfe5c8c540b505f66d8cb0f501d7ee23eb73f8"
     },
     {
       "path": "preview_server.py",
@@ -498,13 +498,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 3857,
-      "sha256": "e90623c6f3704c723dacadb7639ed818460faf09849a5a58d363f9a0b50c59fb"
+      "bytes": 3999,
+      "sha256": "b4271d5dcab94e0d4b0260c3b0f58e491486e79ec3747b5c652a709642e367c7"
     },
     {
       "path": "reports/arm-kinematics-validation.json",
       "bytes": 1702,
       "sha256": "33b6f7b72e94eb2e7f9c51902d2d4ab035b5fd0a23836d5b821aced4c393bce6"
+    },
+    {
+      "path": "reports/ccpp-source-static-checks.json",
+      "bytes": 7415,
+      "sha256": "c2771306e865d744afe9accdde09d3a7fe4701f25be9765e02e64d5c7f2ee5bf"
     },
     {
       "path": "reports/concise-browser-checks.json",
@@ -783,8 +788,8 @@
     },
     {
       "path": "tools/package_portfolio.py",
-      "bytes": 2686,
-      "sha256": "44eb4e96b560652d9c3948b6cc091e11917d0f40a0d604e54f7be2f10a85dc1f"
+      "bytes": 2685,
+      "sha256": "d55d8ce7c0f9e75303ece67d02f286238c644adce69719d5f3f24ddd7e6cd0ac"
     },
     {
       "path": "tools/README.md",

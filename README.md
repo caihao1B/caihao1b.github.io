@@ -18,7 +18,7 @@ Windows 双击 START_PREVIEW.cmd。它会检查可用的 Python 3（先 py，后
 ## 三个项目
 
 - index.html：简短介绍、三个项目入口、教育与联系方式。
-- ccpp.html：覆盖路线、全部案例、三层视图与两段转弯视频。
+- ccpp.html：覆盖路线、全部案例、三层视图与两段转弯视频；首页项目卡片和此详情页均提供 [CCPP 工程源码](https://github.com/caihao1B/CCPP) 入口，对应 CCPP Mowing Planner v2.1.0。
 - farm-carrier.html：五类场景、真实记录回放、完整调度树及母车 / 机器人状态机。
 - ros2.html：论文决策（默认）、机械臂交互、原始录像、场景与任务四个标签；支持直接访问相应锚点。
 - projects.html：三个项目之间的关系。

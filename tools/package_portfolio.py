@@ -26,7 +26,7 @@ def main():
     files = sorted(p for p in ROOT.rglob('*') if included(p))
     manifest = {
         'name': 'Zehao Portfolio · Three concise projects',
-        'version': '3.2-research-first',
+        'version': '3.2.1-ccpp-source',
         'created_utc': datetime.now(timezone.utc).isoformat(),
         'entry': 'index.html',
         'project_entries': ['ccpp.html', 'farm-carrier.html', 'ros2.html'],
