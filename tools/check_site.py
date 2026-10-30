@@ -74,8 +74,9 @@ def validate() -> dict:
     required_ros = {'armLab','arm','research','recording','system','modeCode','modeTitle','modeDescription','modeAction','modeLedger','modeSource','flowCode','flowTitle','flowDescription','flowSource','mapFull','mapWork','sceneCanvas','sceneSelect','sceneDetail','robotVideo','chapterNote'}
     record('ROS interactive mounts and dynamic text targets', required_ros <= set(ros.ids), sorted(required_ros - set(ros.ids)))
     ros_content = (ROOT/'ros2.html').read_text(encoding='utf-8')
-    record('ROS demonstration coverage', all(len(re.findall(pattern, ros_content)) == count for pattern, count in [(r'data-ros-tab=',4),(r'data-mode=',7),(r'data-seek=',6),(r'data-flow=',6)]), '4 panels, 7 decision modes, 6 video chapters, 6 task phases')
-    record('ROS tabs have matching panels', all(f'aria-controls="{key}"' in ros_content and f'aria-labelledby="tab-{key}"' in ros_content for key in ['arm','research','recording','system']), 'Matching labelled tabs and panels')
+    record('ROS demonstration coverage', all(len(re.findall(pattern, ros_content)) == count for pattern, count in [(r'data-ros-tab=',2),(r'data-mode=',7),(r'data-seek=',6),(r'data-flow=',6)]), '2 primary panels; preserved 7 decision modes, 6 video chapters, 6 task phases')
+    record('ROS tabs have matching panels', all(f'aria-controls="{key}"' in ros_content and f'aria-labelledby="tab-{key}"' in ros_content for key in ['arm','coverage']), 'Matching labelled tabs and panels')
+    record('Dino scenario selectors', len(re.findall(r'data-dino-clip=',ros_content))==3, '3 recorded scenario choices')
     for filename in PUBLIC:
         record(filename + ': ROS project reachable', 'ros2.html' in (ROOT/filename).read_text(encoding='utf-8'), filename)
     for filename in ['.nojekyll','AGENTS.md','README.md','preview_server.py','START_PREVIEW.cmd',

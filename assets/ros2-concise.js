@@ -7,7 +7,8 @@
   function activate(key, focus = false, updateHash = false) {
     if (!tabs.some(tab => tab.dataset.rosTab === key)) return;
     if (key !== 'arm' && window.ArmLab?.getState?.().playing) document.getElementById('armPlay').click();
-    if (key !== 'recording') document.getElementById('robotVideo')?.pause();
+    if (key !== 'arm') document.getElementById('robotVideo')?.pause();
+    if (key !== 'coverage') document.getElementById('dinoVideo')?.pause();
     tabs.forEach((tab, i) => {
       const selected = tab.dataset.rosTab === key;
       tab.setAttribute('aria-selected', String(selected));
@@ -29,9 +30,10 @@
   });
   function fromHash() {
     const key = location.hash.slice(1);
-    if (!key) { activate('research'); return; }
+    if (!key) { activate('coverage'); return; }
     const panel = document.getElementById(key)?.closest('[role="tabpanel"]');
-    if (panel) activate(panel.id);
+    if (panel) { activate(panel.id); const target = document.getElementById(key); for (let el = target; el && el !== panel; el = el.parentElement) if (el.tagName === 'DETAILS') el.open = true; }
+    else activate('coverage');
   }
   window.addEventListener('hashchange', fromHash);
   fromHash();

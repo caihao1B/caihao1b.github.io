@@ -1,3 +1,7 @@
+# 2026-10-30：第三项双入口展示
+
+`ros2.html` 默认展示 Dino 小场景视频，另一入口保留机械臂交互、原始录像及场景。当前来源与验证范围见 `docs/DINO_P13_SHOWCASE_ZH.md`。本轮检查使用 `reports/dino-p13-*`，历史检查不代表本轮。
+
 # 董泽豪 · 三项目精简版作品集
 
 由 Zehao_Portfolio_Concise.zip 的前两个项目与本地 ROS 2 项目合并。纯 HTML / CSS / JavaScript，无构建和依赖安装步骤。

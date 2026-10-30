@@ -1,0 +1,84 @@
+{
+  "dimensions": [
+    1280,
+    720
+  ],
+  "files": {
+    "obstacles": {
+      "bytes": 161810,
+      "duration_s": 10.4,
+      "file": "dino-p13-obstacles.mp4",
+      "format": "H264_MP4_FASTSTART_NO_AUDIO",
+      "fps": 10.0,
+      "frames": 104,
+      "sha256": "1224e4a84892ab00565b4757358acaaad52270d936a366e13324558410cd39c2",
+      "source_ranges": [
+        {
+          "first_frame": 0,
+          "first_source": 110.194,
+          "last_source": 173.23
+        }
+      ]
+    },
+    "overview": {
+      "bytes": 841088,
+      "duration_s": 53.1,
+      "file": "dino-p13-overview.mp4",
+      "format": "H264_MP4_FASTSTART_NO_AUDIO",
+      "fps": 10.0,
+      "frames": 531,
+      "sha256": "14718d0c0208841e58f88ebeb5cd28a811bf6e22c554f7a76a17c215304ec823",
+      "source_ranges": [
+        {
+          "first_frame": 0,
+          "first_source": 10.438,
+          "last_source": 334.798
+        }
+      ]
+    },
+    "repair": {
+      "bytes": 508261,
+      "duration_s": 33.0,
+      "file": "dino-p13-repair.mp4",
+      "format": "H264_MP4_FASTSTART_NO_AUDIO",
+      "fps": 10.0,
+      "frames": 330,
+      "sha256": "6a4e918c4b670d369a1bb42529ed10b38183b25cac5b5dc56d4a8402ec3582e0",
+      "source_ranges": [
+        {
+          "first_frame": 0,
+          "first_source": 10.438,
+          "last_source": 45.322
+        },
+        {
+          "first_frame": 58,
+          "first_source": 168.946,
+          "last_source": 334.798
+        }
+      ]
+    }
+  },
+  "full_field_completed": false,
+  "mode": "DISPLAY_ONLY_RECORDED_XY_YAW_RECONSTRUCTION",
+  "parent_run": "P13_20261030T043846Z_representative_gate",
+  "real_tool_verified": false,
+  "source_audit_sha256": "69218890e6b439d40dd105b54b24f44b95e945f514e358eeb078faec0c552811",
+  "source_obstacle_sha256": "c119d077d6d54e2968888a372e7a1226fee53a9b34dadb8a24068eef8771328f",
+  "source_result_sha256": "1abacb68d5ea47377234396977747a9ec5c1a94913af406b7976d4c87e1b8d80",
+  "source_run": "mixed01",
+  "source_runtime_revision": "8a3fee97cf7cf44141c214455d02c241d2dcd76b41befd9c03f8a25f0ddb63d9",
+  "source_trace_sha256": "a27af7aecaa8dc55ed9ae87ed2d5d4775c128bc9f3ca92fea5a9976ca3b9b419",
+  "status": "PASS",
+  "truth_navigation_input": false,
+  "wheel_joint_replay": false,
+  "current_stage_status": "P13_PARTIAL",
+  "source_scope": "REPRESENTATIVE_FUNCTIONAL_PASS_PERFORMANCE_PARTIAL",
+  "latest_candidate": {
+    "status": "FAIL",
+    "reason": "FORWARD_SCAN_STALE",
+    "wall_s": 378.880589067001,
+    "emitter_max_wall_s": 0.010986445000526146
+  },
+  "full_field_95": "FROZEN",
+  "real_cutting": "UNKNOWN"
+}

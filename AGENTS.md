@@ -54,3 +54,6 @@ Do not push, publish, force-push, delete a repository, overwrite `.git`, or alte
 Do not run `git reset --hard`, `git clean -fd`, or silently discard changes.
 `commit` and `push` are separate from saving files. Confirm the actual remote and publishing branch before a user-authorized publication.
 Do not upload local login/session files. Never claim the remote site was updated unless a successful push/deployment was verified.
+
+## Current project 03 layout (2026-10-30)
+The user explicitly authorized the Dino showcase update and publication. Project 03 now has two primary tabs (coverage and arm). Keep seven research modes, six original video chapters, and task scene controls in their respective expandable sections. Preserve source/failure attribution. Dino videos are Gazebo pose-log reconstructions from the named audited small-scene run, not a new live navigation or full-field acceptance. Current P13 remains PARTIAL.

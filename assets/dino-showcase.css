@@ -1,0 +1,14 @@
+.dino-main-tabs { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.dino-player { margin: 1.4rem 0 0; overflow: hidden; background: #10221f; border-radius: 16px; border: 1px solid #d4dfda; }
+.dino-player video { display: block; width: 100%; aspect-ratio: 16/9; background: #10221f; object-fit: contain; }
+.dino-player figcaption { color: #d9e8e0; padding: .7rem 1.1rem; font-size: .85rem; line-height: 1.6; }
+.dino-scenes { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; margin: 1rem 0; }
+.dino-scenes button { text-align: left; border: 1px solid #d6ded8; border-radius: 12px; padding: 1rem; background: #fff; color: #273c33; cursor: pointer; font: inherit; }
+.dino-scenes button.active { border-color: #426d50; background: #eef4e9; box-shadow: inset 0 3px 0 #426d50; }
+.dino-scenes button small { color: #687e6d; font-size: .7rem; letter-spacing: .08em; display: block; }
+.dino-scenes button strong { display: block; margin: .3rem 0; font-size: 1rem; }
+.dino-scenes button span { font-size: .82rem; line-height: 1.5; color: #526157; display: block; }
+.dino-scenes button:focus-visible { outline: 3px solid #cc8e47; outline-offset: 3px; }
+.dino-main-tabs button { min-height: 48px; }
+.archived-research .section-heading { margin-top: .7rem; }
+@media (max-width: 650px) { .dino-scenes { grid-template-columns: 1fr; gap: .5rem; } .dino-scenes button { padding: .75rem 1rem; } .dino-scenes button small { display: inline; margin-right: .5rem; } .dino-scenes button strong { display: inline; } .dino-scenes button span { margin-top: .25rem; } }
